@@ -1,4 +1,3 @@
-import { useRef } from 'react'
 import { useScrollReveal } from '../animations/useScrollReveal'
 import SectionTag from '../ui/SectionTag'
 
