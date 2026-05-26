@@ -6,7 +6,7 @@ function SmallWorkCard({ work }) {
     <div className="small-work-card bg-card rounded-[20px] overflow-hidden flex flex-col group">
       {/* Image placeholder */}
       <div
-        className="w-full aspect-video bg-gradient-to-br from-ink/5 to-ink/15
+        className="w-full aspect-video bg-gradient-to-br from-ink/5 to-ink/10 dark:from-surface dark:to-card
                     flex items-center justify-center overflow-hidden"
       >
         <span className="font-display font-bold text-2xl text-ink/20 group-hover:scale-110 transition-transform duration-500">

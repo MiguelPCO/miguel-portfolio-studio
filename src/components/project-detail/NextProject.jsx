@@ -37,9 +37,9 @@ export default function NextProject({ nextSlug }) {
 
             <Link
               to={`/projects/${nextProject.slug}`}
-              className="inline-flex items-center gap-3 bg-ink dark:bg-gray-900 text-white
+              className="inline-flex items-center gap-3 bg-ink text-surface
                          px-6 py-3 rounded-full font-semibold text-sm
-                         hover:bg-gray-800 transition-colors shrink-0"
+                         hover:bg-ink/90 transition-colors shrink-0"
               aria-label={`Ver proyecto ${nextProject.title}`}
             >
               Siguiente Proyecto

@@ -19,14 +19,14 @@ export default function VisionMission() {
               <div className="mb-6">
                 <SectionTag>Vision</SectionTag>
               </div>
-              <p className="text-gray-300 text-base md:text-lg leading-relaxed">
+              <p className="text-white/80 text-base md:text-lg leading-relaxed">
                 Crear productos digitales que combinen diseño de alta calidad con código sólido —
                 donde cada píxel tiene un propósito y cada función tiene sentido para quien la usa.
               </p>
             </div>
 
             {/* [PLACEHOLDER 3D: objeto decorativo de visión] */}
-            <div className="mt-8 w-full h-32 rounded-2xl bg-gradient-to-br from-gray-600 to-gray-800 opacity-40" />
+            <div className="mt-8 w-full h-32 rounded-2xl bg-gradient-to-br from-white/20 to-white/5 opacity-40" />
           </Card>
 
           {/* Misión — card clara */}
@@ -43,7 +43,7 @@ export default function VisionMission() {
             </div>
 
             {/* [PLACEHOLDER 3D: objeto decorativo de misión] */}
-            <div className="mt-8 w-full h-32 rounded-2xl bg-gradient-to-br from-gray-200 to-gray-400 opacity-40" />
+            <div className="mt-8 w-full h-32 rounded-2xl bg-gradient-to-br from-gray-200 to-gray-400 dark:from-card dark:to-surface opacity-40" />
           </Card>
         </div>
       </div>

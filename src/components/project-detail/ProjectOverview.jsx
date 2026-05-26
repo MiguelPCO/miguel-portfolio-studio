@@ -20,6 +20,7 @@ export default function ProjectOverview({ project }) {
           </p>
           {/* Placeholder 3D decorativo */}
           <div className="w-full h-40 rounded-[16px] bg-gradient-to-br from-gray-200 via-gray-300 to-gray-200
+                          dark:from-card dark:via-surface dark:to-card
                           flex items-center justify-center">
             <span className="text-muted text-sm">3D Object</span>
           </div>
@@ -36,6 +37,7 @@ export default function ProjectOverview({ project }) {
           </p>
           {/* Placeholder 3D decorativo */}
           <div className="w-full h-40 rounded-[16px] bg-gradient-to-tr from-gray-300 via-gray-200 to-gray-300
+                          dark:from-surface dark:via-card dark:to-surface
                           flex items-center justify-center">
             <span className="text-muted text-sm">3D Object</span>
           </div>

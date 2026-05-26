@@ -77,7 +77,7 @@ export default function CareersSection() {
                   <span className="text-muted hidden sm:inline">·</span>
                   <span className="text-lg md:text-xl font-semibold text-ink flex-1">{item.title}</span>
                   <div className="flex gap-2">
-                    <span className="px-3 py-1 rounded-full text-xs font-medium bg-white/10 text-gray-300 border border-gray-600">
+                    <span className="px-3 py-1 rounded-full text-xs font-medium bg-ink/10 text-ink/60 border border-ink/20">
                       {item.detail}
                     </span>
                     <span className="px-3 py-1 rounded-full text-xs font-medium bg-accent/20 text-ink border border-accent/30">
@@ -85,7 +85,7 @@ export default function CareersSection() {
                     </span>
                   </div>
                 </div>
-                <p className="text-sm text-gray-400 max-w-2xl">{item.description}</p>
+                <p className="text-sm text-muted max-w-2xl">{item.description}</p>
               </div>
             ))}
 
