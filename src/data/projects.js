@@ -166,7 +166,12 @@ export const featuredProjects = [
       "/projects/spritz-2.jpg",
       "/projects/spritz-3.jpg",
     ],
-    liveUrl: "",
+    sectionImages: [
+      { src: "/projects/spritz-section-1.jpg", alt: "Perfil olfativo y recomendaciones de Descubrir" },
+      { src: "/projects/spritz-section-2.jpg", alt: "Búsqueda de fragancias con autocompletado" },
+      { src: "/projects/spritz-section-3.jpg", alt: "Registro de uso en calendario" },
+    ],
+    liveUrl: "https://spritz-jet.vercel.app",
     repoUrl: "",
     testimonial: null,
     next: "veta-web",
