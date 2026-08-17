@@ -7,9 +7,8 @@ import { prefersReducedMotion, EASE_BACK } from '../animations/animationConfig'
 
 const socialLinks = [
   { name: 'GitHub', icon: 'GH', href: 'https://github.com/MiguelPCO' },
-  { name: 'LinkedIn', icon: 'LI', href: '' },
-  { name: 'Twitter', icon: 'X', href: '' },
-  { name: 'Dribbble', icon: 'DR', href: '' },
+  { name: 'LinkedIn', icon: 'LI', href: 'https://www.linkedin.com/in/miguelcastillo-dev' },
+  { name: 'Email', icon: '@', href: 'mailto:miguelcastilloolivares@gmail.com', full: true },
 ]
 
 // Hover animación para iconos sociales — no depende de props/estado del componente
@@ -82,23 +81,26 @@ export default function CTASection() {
 
           {/* Grid 2x2 — Redes sociales */}
           <div className="grid grid-cols-2 gap-4">
-            {socialLinks.map((social) => (
-              <a
-                key={social.name}
-                href={social.href}
-                target="_blank"
-                rel="noopener noreferrer"
-                onMouseEnter={handleMouseEnter}
-                onMouseLeave={handleMouseLeave}
-                className="bg-card rounded-[24px] flex items-center justify-center
-                           min-h-[190px] hover:bg-ink/10 transition-colors"
-                aria-label={`Visitar ${social.name}`}
-              >
-                <span className="social-icon text-3xl font-display font-bold text-ink">
-                  {social.icon}
-                </span>
-              </a>
-            ))}
+            {socialLinks.map((social) => {
+              const isExternal = social.href.startsWith('http')
+              return (
+                <a
+                  key={social.name}
+                  href={social.href}
+                  {...(isExternal && { target: '_blank', rel: 'noopener noreferrer' })}
+                  onMouseEnter={handleMouseEnter}
+                  onMouseLeave={handleMouseLeave}
+                  className={`bg-card rounded-[24px] flex items-center justify-center
+                             min-h-[190px] hover:bg-ink/10 transition-colors
+                             ${social.full ? 'col-span-2' : ''}`}
+                  aria-label={`Visitar ${social.name}`}
+                >
+                  <span className="social-icon text-3xl font-display font-bold text-ink">
+                    {social.icon}
+                  </span>
+                </a>
+              )
+            })}
           </div>
         </div>
       </div>
