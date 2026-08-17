@@ -172,7 +172,7 @@ export const featuredProjects = [
       { src: "/projects/spritz-section-3.jpg", alt: "Registro de uso en calendario" },
     ],
     liveUrl: "https://spritz-jet.vercel.app",
-    repoUrl: "",
+    repoUrl: "https://github.com/MiguelPCO/Spritz",
     testimonial: null,
     next: "veta-web",
   },
