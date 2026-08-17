@@ -7,21 +7,21 @@ import { prefersReducedMotion } from '../animations/animationConfig'
 const steps = [
   {
     num: '01',
-    title: 'Discover',
-    duration: '1–2 weeks',
-    description: 'We dive deep into your brand, audience, and goals. Through research and workshops, we uncover insights that shape the creative direction.',
+    title: 'Descubrir',
+    duration: '1–2 semanas',
+    description: 'Entiendo tu marca, audiencia y objetivos. A través de preguntas y análisis descubro los insights que dan forma a la dirección del proyecto.',
   },
   {
     num: '02',
-    title: 'Design',
-    duration: '2–4 weeks',
-    description: 'We craft visual concepts, wireframes, and high-fidelity designs. Every pixel is intentional, every interaction meaningful.',
+    title: 'Diseñar',
+    duration: '2–4 semanas',
+    description: 'Creo conceptos visuales, wireframes y diseños de alta fidelidad. Cada píxel tiene un propósito, cada interacción tiene sentido.',
   },
   {
     num: '03',
-    title: 'Deliver',
-    duration: '2–3 weeks',
-    description: 'We build, test, and launch. From development to deployment, we ensure everything works flawlessly across all devices.',
+    title: 'Entregar',
+    duration: '2–3 semanas',
+    description: 'Construyo, pruebo y lanzo. Del desarrollo al despliegue, me aseguro de que todo funcione perfectamente en cualquier dispositivo.',
   },
 ]
 
@@ -56,7 +56,7 @@ export default function WorkProcess() {
             >
               {/* Tag */}
               <div className="mb-6">
-                <SectionTag>Step {step.num} · Our Work Process</SectionTag>
+                <SectionTag>Paso {step.num} · Mi proceso</SectionTag>
               </div>
 
               {/* Contenido */}

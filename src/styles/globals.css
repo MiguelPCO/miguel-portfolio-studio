@@ -1,0 +1,73 @@
+@import "tailwindcss";
+
+/* ━━━━ Dark mode: activado con clase .dark en <html> ━━━━ */
+@variant dark (&:where(.dark, .dark *));
+
+/* ━━━━ Design System Tokens ━━━━ */
+@theme {
+  --color-surface: #F8F8F5;
+  --color-ink: #0D0D0D;
+  --color-accent: #FFE830;
+  --color-card: #EFEFED;
+  --color-muted: #8A8A8A;
+
+  --font-display: "Bricolage Grotesque", sans-serif;
+  --font-body: "Inter", sans-serif;
+
+  --radius-card-lg: 24px;
+  --radius-card-sm: 16px;
+  --radius-pill: 999px;
+  --radius-hero-img: 20px;
+}
+
+/* ━━━━ Dark Mode Token Overrides ━━━━ */
+.dark {
+  --color-surface: #111110;
+  --color-ink: #F0EFE8;
+  --color-card: #1A1A18;
+  --color-muted: #9A9A97;
+  /* --color-accent stays #FFE830 — el amarillo funciona en ambos modos */
+}
+
+/* ━━━━ Base Styles ━━━━ */
+body {
+  font-family: var(--font-body);
+  background-color: var(--color-surface);
+  color: var(--color-ink);
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+h1, h2, h3, h4 {
+  font-family: var(--font-display);
+}
+
+/* ━━━━ Custom Cursor ━━━━ */
+@media (pointer: fine) {
+  html {
+    cursor: none;
+  }
+  /* Restaurar cursor nativo en campos de formulario */
+  input, textarea, select {
+    cursor: auto;
+  }
+}
+
+.cursor-ring {
+  transition: background-color 0.3s ease, border-color 0.3s ease;
+}
+
+.cursor-ring.cursor-active {
+  border-color: var(--color-accent);
+  background-color: rgba(255, 232, 48, 0.12);
+}
+
+/* ━━━━ Accesibilidad: reducir movimiento ━━━━ */
+@media (prefers-reduced-motion: reduce) {
+  *, *::before, *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+}

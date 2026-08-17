@@ -2,7 +2,7 @@ import { useParams } from 'react-router'
 import { featuredProjects } from '../data/projects'
 import ProjectHeader from '../components/project-detail/ProjectHeader'
 import ProjectHero from '../components/project-detail/ProjectHero'
-import ProjectOverview from '../components/project-detail/ProjectOverview'
+import ProjectSections from '../components/project-detail/ProjectSections'
 import ProjectGallery from '../components/project-detail/ProjectGallery'
 import ProjectTestimonial from '../components/project-detail/ProjectTestimonial'
 import NextProject from '../components/project-detail/NextProject'
@@ -32,7 +32,7 @@ export default function ProjectDetailPage() {
     <>
       <ProjectHeader project={project} />
       <ProjectHero project={project} />
-      <ProjectOverview project={project} />
+      <ProjectSections project={project} />
       <ProjectGallery project={project} />
       <ProjectTestimonial testimonial={project.testimonial} />
       <NextProject nextSlug={project.next} />

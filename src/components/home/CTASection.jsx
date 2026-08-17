@@ -12,6 +12,19 @@ const socialLinks = [
   { name: 'Dribbble', icon: 'DR', href: '' },
 ]
 
+// Hover animación para iconos sociales — no depende de props/estado del componente
+function handleMouseEnter(e) {
+  if (prefersReducedMotion()) return
+  const icon = e.currentTarget.querySelector('.social-icon')
+  gsap.to(icon, { scale: 1.2, duration: 0.3, ease: EASE_BACK })
+}
+
+function handleMouseLeave(e) {
+  if (prefersReducedMotion()) return
+  const icon = e.currentTarget.querySelector('.social-icon')
+  gsap.to(icon, { scale: 1, duration: 0.2, ease: 'power2.out' })
+}
+
 export default function CTASection() {
   const sectionRef = useRef(null)
 
@@ -27,19 +40,6 @@ export default function CTASection() {
       transformOrigin: 'center center',
     })
   }, { scope: sectionRef })
-
-  // Hover animación para iconos sociales
-  const handleMouseEnter = (e) => {
-    if (prefersReducedMotion()) return
-    const icon = e.currentTarget.querySelector('.social-icon')
-    gsap.to(icon, { scale: 1.2, duration: 0.3, ease: EASE_BACK })
-  }
-
-  const handleMouseLeave = (e) => {
-    if (prefersReducedMotion()) return
-    const icon = e.currentTarget.querySelector('.social-icon')
-    gsap.to(icon, { scale: 1, duration: 0.2, ease: 'power2.out' })
-  }
 
   return (
     <section ref={sectionRef} className="px-6 py-20 md:py-30">

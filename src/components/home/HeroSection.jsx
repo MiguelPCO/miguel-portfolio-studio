@@ -99,9 +99,9 @@ export default function HeroSection() {
 
         {/* Columna derecha — Stats */}
         <div className="flex flex-col gap-4 lg:items-end">
-          {heroStats.map((stat, i) => (
+          {heroStats.map((stat) => (
             <div
-              key={i}
+              key={stat.label}
               className="hero-stat flex items-center gap-3 bg-white/60 dark:bg-card/80 backdrop-blur-sm
                          rounded-full px-5 py-3 w-full lg:max-w-xs"
             >

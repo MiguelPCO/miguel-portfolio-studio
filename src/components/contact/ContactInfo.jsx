@@ -61,8 +61,8 @@ export default function ContactInfo() {
             </div>
 
             <h3 className="font-display font-bold text-lg text-ink mb-2">{card.title}</h3>
-            {card.lines.map((line, i) => (
-              <p key={i} className="text-sm text-muted">{line}</p>
+            {card.lines.map((line) => (
+              <p key={line} className="text-sm text-muted">{line}</p>
             ))}
           </div>
         ))}

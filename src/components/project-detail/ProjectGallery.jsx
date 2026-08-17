@@ -1,4 +1,4 @@
-import { useRef } from 'react'
+import { useRef, useState } from 'react'
 import { useGSAP } from '@gsap/react'
 import { gsap } from 'gsap'
 import { prefersReducedMotion, STAGGER } from '../animations/animationConfig'
@@ -59,31 +59,49 @@ export default function ProjectGallery({ project }) {
           className="columns-1 md:columns-2 gap-6"
         >
           {project.images.map((img, i) => (
-            <div
-              key={img}
-              className={`gallery-item break-inside-avoid mb-6 relative group
-                         rounded-[16px] overflow-hidden cursor-pointer`}
-            >
-              {/* Placeholder con gradiente y altura variada */}
-              <div
-                className={`w-full ${placeholderHeights[i % placeholderHeights.length]}
-                           bg-gradient-to-br ${placeholderGradients[i % placeholderGradients.length]}
-                           flex items-center justify-center`}
-              >
-                <span className="text-muted text-sm font-display">
-                  {project.title} — {i + 1}
-                </span>
-              </div>
-
-              {/* Overlay oscuro al hover */}
-              <div
-                className="absolute inset-0 bg-black/0 group-hover:bg-black/20
-                           transition-colors duration-300 rounded-[16px]"
-              />
-            </div>
+            <GalleryItem key={img} project={project} src={img} index={i} />
           ))}
         </div>
       </div>
     </section>
+  )
+}
+
+// Item de galería: imagen real con fallback a placeholder degradado si no existe/falla
+function GalleryItem({ project, src, index }) {
+  const [imgError, setImgError] = useState(false)
+  const showImage = src && !imgError
+
+  return (
+    <div
+      className="gallery-item break-inside-avoid mb-6 relative group
+                 rounded-[16px] overflow-hidden cursor-pointer"
+    >
+      {showImage ? (
+        <img
+          src={src}
+          alt={`${project.title} — ${index + 1}`}
+          loading="lazy"
+          className="w-full h-auto block"
+          onError={() => setImgError(true)}
+        />
+      ) : (
+        <div
+          className={`w-full ${placeholderHeights[index % placeholderHeights.length]}
+                     bg-gradient-to-br ${placeholderGradients[index % placeholderGradients.length]}
+                     flex items-center justify-center`}
+        >
+          <span className="text-muted text-sm font-display">
+            {project.title} — {index + 1}
+          </span>
+        </div>
+      )}
+
+      {/* Overlay oscuro al hover */}
+      <div
+        className="absolute inset-0 bg-black/0 group-hover:bg-black/20
+                   transition-colors duration-300 rounded-[16px]"
+      />
+    </div>
   )
 }

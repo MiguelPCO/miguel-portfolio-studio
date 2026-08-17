@@ -43,7 +43,7 @@ export default function Accordion({ items, defaultOpen = 0 }) {
     }
 
     setOpenIndex(isOpening ? index : -1)
-  }), [openIndex])
+  }), [openIndex, contextSafe])
 
   return (
     <div ref={containerRef} className="w-full">
