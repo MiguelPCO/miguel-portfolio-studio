@@ -1,6 +1,12 @@
 import Card from '../ui/Card'
 import SectionTag from '../ui/SectionTag'
+import DiamondIcon from '../ui/DiamondIcon'
 import { useScrollReveal } from '../animations/useScrollReveal'
+
+const DOT_PATTERN = {
+  backgroundImage: 'radial-gradient(circle, #FFE830 1.5px, transparent 1.5px)',
+  backgroundSize: '20px 20px',
+}
 
 /**
  * Sección de Visión y Misión — dos cards lado a lado
@@ -25,8 +31,15 @@ export default function VisionMission() {
               </p>
             </div>
 
-            {/* [PLACEHOLDER 3D: objeto decorativo de visión] */}
-            <div className="mt-8 w-full h-32 rounded-2xl bg-gradient-to-br from-white/20 to-white/5 opacity-40" />
+            {/* Marca decorativa: grano de diamantes + glow acento */}
+            <div className="relative mt-8 w-full h-32 rounded-2xl overflow-hidden bg-white/5">
+              <div className="absolute inset-0 opacity-[0.15]" style={DOT_PATTERN} />
+              <div
+                className="absolute inset-0"
+                style={{ background: 'radial-gradient(circle at 50% 50%, rgba(255,232,48,0.18), transparent 65%)' }}
+              />
+              <DiamondIcon className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-12 h-12 text-accent opacity-60" />
+            </div>
           </Card>
 
           {/* Misión — card clara */}
@@ -42,8 +55,15 @@ export default function VisionMission() {
               </p>
             </div>
 
-            {/* [PLACEHOLDER 3D: objeto decorativo de misión] */}
-            <div className="mt-8 w-full h-32 rounded-2xl bg-gradient-to-br from-gray-200 to-gray-400 dark:from-card dark:to-surface opacity-40" />
+            {/* Marca decorativa: grano de diamantes + glow acento */}
+            <div className="relative mt-8 w-full h-32 rounded-2xl overflow-hidden bg-ink/[0.06] border border-ink/10">
+              <div className="absolute inset-0 opacity-[0.2]" style={DOT_PATTERN} />
+              <div
+                className="absolute inset-0"
+                style={{ background: 'radial-gradient(circle at 50% 50%, rgba(255,232,48,0.22), transparent 65%)' }}
+              />
+              <DiamondIcon className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-12 h-12 text-accent opacity-80" />
+            </div>
           </Card>
         </div>
       </div>
