@@ -271,6 +271,33 @@ export const featuredProjects = [
 
 export const smallWorks = [
   {
+    slug: "nodo",
+    title: "NODO",
+    category: "E-commerce · Producto",
+    tags: ["Next.js", "Supabase", "Motion"],
+    description:
+      "Cápsulas de memoria familiar: caja física + archivo digital privado para guardar fotos, cartas y voces que merecen volver.",
+    brief:
+      "NODO es un producto físico-digital: cajas de archivo premium con tarjetas guiadas y QR privados que enlazan cada objeto a su versión digital en un archivo propio, sin feeds ni redes sociales de por medio. Construí el sitio de marca completo — Memory Box, tres kits temáticos (Primeros Años, Promesa, Legado), guía de regalos, journal editorial con contenido MDX y una app autenticada donde las familias crean y gestionan sus cápsulas. Magic link con Supabase, sin contraseñas.",
+    insight:
+      "El reto fue diseñar para un producto que vive a la vez en papel y en pantalla: cada página tenía que transmitir la calidez de una caja física sin renunciar a que la parte digital (login, cápsulas, archivo) se sintiera igual de cuidada. La tipografía editorial y la fotografía de producto hacen ese puente.",
+    tools: ["Next.js 16", "TypeScript", "Supabase", "Motion", "Tailwind v4"],
+    image: "/projects/nodo-hero.jpg",
+    images: [
+      "/projects/nodo-1-ritual.jpg",
+      "/projects/nodo-2-memory-box.jpg",
+      "/projects/nodo-3-como-funciona.jpg",
+      "/projects/nodo-4-regalos.jpg",
+      "/projects/nodo-5-archivo.jpg",
+      "/projects/nodo-6-journal.jpg",
+      "/projects/nodo-7-faq.jpg",
+      "/projects/nodo-8-kit-promesa.jpg",
+      "/projects/nodo-9-kit-primeros-anos.jpg",
+    ],
+    liveUrl: "",
+    repoUrl: "https://github.com/MiguelPCO/Nodo",
+  },
+  {
     slug: "veta",
     title: "VETA",
     category: "E-commerce · Branding",
