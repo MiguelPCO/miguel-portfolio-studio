@@ -321,7 +321,7 @@ export const smallWorks = [
     description:
       "Tienda online de cuidado personal inspirada en mármol. Catálogo, guía de aromas, sets de regalo y carrito completo.",
     brief:
-      "Sitio de marca completo para VETA, jabones sólidos minerales con packaging inspirado en mármol. Diez páginas: catálogo con filtros por familia olfativa, ficha de producto, guía de aromas, ingredientes, sets de regalo, historia de marca, journal editorial y una sección de hospitality para hoteles y spas. Carrito con contexto propio y persistencia local. Proyecto en desarrollo activo, todavía sin desplegar.",
+      "Sitio de marca completo para VETA, jabones sólidos minerales con packaging inspirado en mármol. Diez páginas: catálogo con filtros por familia olfativa, ficha de producto, guía de aromas, ingredientes, sets de regalo, historia de marca, journal editorial y una sección de hospitality para hoteles y spas. Carrito con contexto propio y persistencia local.",
     tools: ["Next.js 16", "TypeScript", "Tailwind v4", "Framer Motion", "Radix UI"],
     image: "/projects/veta-hero.jpg",
     images: [
@@ -335,7 +335,7 @@ export const smallWorks = [
       "/projects/veta-8-journal.jpg",
       "/projects/veta-9-hospitality.jpg",
     ],
-    liveUrl: "",
+    liveUrl: "https://veta-orpin.vercel.app",
     repoUrl: "https://github.com/MiguelPCO/VETA",
   },
   {
