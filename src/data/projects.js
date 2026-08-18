@@ -271,6 +271,33 @@ export const featuredProjects = [
 
 export const smallWorks = [
   {
+    slug: "unfilt",
+    title: "unfilt",
+    category: "E-commerce · Skincare",
+    tags: ["Next.js", "GSAP", "Zustand"],
+    description:
+      "Tienda de skincare clínico. Ficha de producto con rueda de ingredientes interactiva, carrito propio y prueba social con estadísticas clínicas.",
+    brief:
+      "unfilt es una marca de skincare que vende transparencia como producto: fórmulas cortas, cold-process, sin marketing hueco. Construí la tienda completa — home, catálogo, ficha de producto con selector de formato y rueda de ingredientes interactiva que visualiza el porcentaje de cada activo, sección de ciencia con los resultados clínicos, historia de marca y carrito propio con recomendaciones cruzadas — todo animado con GSAP para reforzar la sensación premium sin sacrificar velocidad.",
+    insight:
+      "El componente más interesante fue la rueda de ingredientes: un SVG generado dinámicamente a partir de los porcentajes de cada activo, no una imagen estática. Eso significa que cambiar la fórmula de un producto en los datos actualiza automáticamente el gráfico, sin tocar diseño — la clase de detalle que hace escalable un catálogo con decenas de referencias.",
+    tools: ["Next.js 16", "TypeScript", "GSAP", "Zustand", "React Hook Form", "Tailwind v4"],
+    image: "/projects/unfilt-hero.jpg",
+    images: [
+      "/projects/unfilt-1-press.jpg",
+      "/projects/unfilt-2-shop.jpg",
+      "/projects/unfilt-3-product.jpg",
+      "/projects/unfilt-4-science.jpg",
+      "/projects/unfilt-5-about.jpg",
+      "/projects/unfilt-6-science-formula.jpg",
+      "/projects/unfilt-7-founder.jpg",
+      "/projects/unfilt-8-ingredients.jpg",
+      "/projects/unfilt-9-cart.jpg",
+    ],
+    liveUrl: "",
+    repoUrl: "https://github.com/MiguelPCO/unfilt",
+  },
+  {
     slug: "nodo",
     title: "NODO",
     category: "E-commerce · Producto",
