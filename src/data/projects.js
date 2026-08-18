@@ -314,6 +314,31 @@ export const featuredProjects = [
 
 export const smallWorks = [
   {
+    slug: "veta",
+    title: "VETA",
+    category: "E-commerce · Branding",
+    tags: ["Next.js", "Tailwind v4", "Framer Motion"],
+    description:
+      "Tienda online de cuidado personal inspirada en mármol. Catálogo, guía de aromas, sets de regalo y carrito completo.",
+    brief:
+      "Sitio de marca completo para VETA, jabones sólidos minerales con packaging inspirado en mármol. Diez páginas: catálogo con filtros por familia olfativa, ficha de producto, guía de aromas, ingredientes, sets de regalo, historia de marca, journal editorial y una sección de hospitality para hoteles y spas. Carrito con contexto propio y persistencia local. Proyecto en desarrollo activo, todavía sin desplegar.",
+    tools: ["Next.js 16", "TypeScript", "Tailwind v4", "Framer Motion", "Radix UI"],
+    image: "/projects/veta-hero.jpg",
+    images: [
+      "/projects/veta-1-collection.jpg",
+      "/projects/veta-2-shop.jpg",
+      "/projects/veta-3-product.jpg",
+      "/projects/veta-4-gift-sets.jpg",
+      "/projects/veta-5-scent-guide.jpg",
+      "/projects/veta-6-ingredients.jpg",
+      "/projects/veta-7-our-story.jpg",
+      "/projects/veta-8-journal.jpg",
+      "/projects/veta-9-hospitality.jpg",
+    ],
+    liveUrl: "",
+    repoUrl: "https://github.com/MiguelPCO/VETA",
+  },
+  {
     slug: "vybe",
     title: "VYBE",
     category: "App · Música",
@@ -401,6 +426,3 @@ export const smallWorks = [
     repoUrl: "",
   },
 ];
-
-// Backwards compat for any remaining imports
-export const projects = featuredProjects;
