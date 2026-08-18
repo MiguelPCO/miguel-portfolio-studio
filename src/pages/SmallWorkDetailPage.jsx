@@ -114,12 +114,20 @@ function WorkHero({ work }) {
       <div className="max-w-[1200px] mx-auto">
         <div
           ref={containerRef}
-          className="w-full h-[40vh] md:h-[60vh] rounded-[24px] overflow-hidden
+          className="relative w-full h-[40vh] md:h-[60vh] rounded-[24px] overflow-hidden
                      bg-gradient-to-br from-gray-200 to-gray-400 dark:from-card dark:to-surface
                      flex items-center justify-center"
           style={{ clipPath: 'inset(100% 0% 0% 0%)' }}
         >
-          <span className="text-muted text-2xl font-display">{work.title}</span>
+          {work.image ? (
+            <img
+              src={work.image}
+              alt={work.title}
+              className="absolute inset-0 w-full h-full object-cover"
+            />
+          ) : (
+            <span className="text-muted text-2xl font-display">{work.title}</span>
+          )}
         </div>
       </div>
     </section>

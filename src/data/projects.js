@@ -314,14 +314,33 @@ export const featuredProjects = [
 
 export const smallWorks = [
   {
+    slug: "vybe",
+    title: "VYBE",
+    category: "App · Música",
+    tags: ["React", "Supabase", "TanStack Query"],
+    description:
+      "Playlists colaborativas con votación en tiempo real. Crea una sala, invita colaboradores y decide juntos qué suena.",
+    brief:
+      "App para crear playlists colaborativas: invitas a otros usuarios, cada uno propone canciones y el grupo vota qué entra en la lista. Login con Spotify, Google o magic link. Proyecto en desarrollo activo, todavía sin desplegar.",
+    tools: ["React 19", "TypeScript", "Vite", "Supabase", "TanStack Query", "Tailwind CSS"],
+    image: "/projects/vybe-hero.jpg",
+    images: [
+      "/projects/vybe-1-dashboard.jpg",
+      "/projects/vybe-2-playlists.jpg",
+      "/projects/vybe-3-session.jpg",
+    ],
+    liveUrl: "",
+    repoUrl: "https://github.com/MiguelPCO/VYBE",
+  },
+  {
     slug: "magic-tracker",
     title: "Magic Tracker",
     category: "App · Dashboard",
     tags: ["Next.js", "Supabase", "Tailwind v4"],
     description:
-      "Gestión de colección de cartas Magic: The Gathering. CRUD completo, KPIs de inversión/beneficio, filtros y exportación CSV.",
+      "Gestión de colecciones e inventario personal. CRUD completo, KPIs de inversión/beneficio, filtros y exportación CSV.",
     brief:
-      "Herramienta personal para gestionar una colección de cartas Magic: The Gathering. Registra compras, ventas y envíos, calcula ROI y beneficio acumulado, y exporta el historial a CSV. Construida como proyecto real para uso diario.",
+      "Herramienta personal para gestionar una colección de objetos coleccionables. Registra compras, ventas y envíos, calcula ROI y beneficio acumulado, y exporta el historial a CSV. Construida como proyecto real para uso diario, adaptable a cualquier tipo de colección o inventario de producto.",
     tools: [
       "Next.js 16",
       "TypeScript",
@@ -330,9 +349,14 @@ export const smallWorks = [
       "shadcn/ui",
       "Zod",
     ],
-    images: [],
-    liveUrl: "",
-    repoUrl: "",
+    image: "/projects/magictracker-hero.jpg",
+    images: [
+      "/projects/magictracker-1-dashboard.jpg",
+      "/projects/magictracker-2-collection.jpg",
+      "/projects/magictracker-3-addcard.jpg",
+    ],
+    liveUrl: "https://magic-tracker-one.vercel.app",
+    repoUrl: "https://github.com/MiguelPCO/magic-tracker",
   },
   {
     slug: "cupping",
