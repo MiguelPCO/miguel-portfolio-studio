@@ -19,8 +19,14 @@ export default function Lightbox({ images, index, onClose, onNavigate }) {
     [index, images.length, onNavigate]
   )
 
+  const latestRef = useRef({ onClose, hasMultiple, goNext, goPrev })
+  useEffect(() => {
+    latestRef.current = { onClose, hasMultiple, goNext, goPrev }
+  })
+
   useEffect(() => {
     function handleKeyDown(e) {
+      const { onClose, hasMultiple, goNext, goPrev } = latestRef.current
       if (e.key === 'Escape') onClose()
       if (e.key === 'ArrowRight' && hasMultiple) goNext()
       if (e.key === 'ArrowLeft' && hasMultiple) goPrev()
@@ -34,7 +40,7 @@ export default function Lightbox({ images, index, onClose, onNavigate }) {
       document.removeEventListener('keydown', handleKeyDown)
       document.body.style.overflow = ''
     }
-  }, [onClose, hasMultiple, goNext, goPrev])
+  }, [])
 
   if (!current) return null
 

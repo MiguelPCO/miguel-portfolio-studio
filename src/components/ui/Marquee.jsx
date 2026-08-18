@@ -54,7 +54,7 @@ export default function Marquee({ items, speed = 20 }) {
       <div className="marquee-track-1 flex gap-12 w-[200%] mb-8">
         {doubled.map((item, i) => (
           <img
-            key={`t1-${i}`}
+            key={`t1-${item.src}-${i < items.length ? 'a' : 'b'}`}
             src={item.src}
             alt={item.alt}
             className="h-8 opacity-50 grayscale hover:opacity-100 hover:grayscale-0 transition-[opacity,filter]"
@@ -68,7 +68,7 @@ export default function Marquee({ items, speed = 20 }) {
       <div className="marquee-track-2 flex gap-12 w-[200%] -translate-x-1/2">
         {doubled.map((item, i) => (
           <img
-            key={`t2-${i}`}
+            key={`t2-${item.src}-${i < items.length ? 'a' : 'b'}`}
             src={item.src}
             alt={item.alt}
             className="h-8 opacity-50 grayscale hover:opacity-100 hover:grayscale-0 transition-[opacity,filter]"

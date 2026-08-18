@@ -1,4 +1,4 @@
-import { useState, useRef, useCallback } from 'react'
+import { useState, useRef } from 'react'
 import { useGSAP } from '@gsap/react'
 import { gsap } from 'gsap'
 import { cn } from '../../lib/utils'
@@ -16,7 +16,7 @@ export default function Accordion({ items, defaultOpen = 0 }) {
 
   const { contextSafe } = useGSAP(() => {}, { scope: containerRef })
 
-  const handleToggle = useCallback(contextSafe((index) => {
+  const handleToggle = contextSafe((index) => {
     const isOpening = openIndex !== index
 
     // Cerrar el actual si hay uno abierto
@@ -43,7 +43,7 @@ export default function Accordion({ items, defaultOpen = 0 }) {
     }
 
     setOpenIndex(isOpening ? index : -1)
-  }), [openIndex, contextSafe])
+  })
 
   return (
     <div ref={containerRef} className="w-full">
