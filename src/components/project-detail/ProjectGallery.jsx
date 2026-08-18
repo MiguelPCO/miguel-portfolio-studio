@@ -2,6 +2,7 @@ import { useRef, useState } from 'react'
 import { useGSAP } from '@gsap/react'
 import { gsap } from 'gsap'
 import { prefersReducedMotion, STAGGER } from '../animations/animationConfig'
+import Lightbox from '../ui/Lightbox'
 
 /**
  * Galería masonry de imágenes del proyecto
@@ -21,6 +22,11 @@ const placeholderGradients = [
 
 export default function ProjectGallery({ project }) {
   const galleryRef = useRef(null)
+  const [lightboxIndex, setLightboxIndex] = useState(null)
+
+  const lightboxImages = project.images
+    .filter(Boolean)
+    .map((src, i) => ({ src, alt: `${project.title} — ${i + 1}` }))
 
   // Animación de entrada escalonada
   useGSAP(() => {
@@ -59,16 +65,31 @@ export default function ProjectGallery({ project }) {
           className="columns-1 md:columns-2 gap-6"
         >
           {project.images.map((img, i) => (
-            <GalleryItem key={img} project={project} src={img} index={i} />
+            <GalleryItem
+              key={img}
+              project={project}
+              src={img}
+              index={i}
+              onOpen={() => setLightboxIndex(i)}
+            />
           ))}
         </div>
       </div>
+
+      {lightboxIndex !== null && (
+        <Lightbox
+          images={lightboxImages}
+          index={lightboxIndex}
+          onClose={() => setLightboxIndex(null)}
+          onNavigate={setLightboxIndex}
+        />
+      )}
     </section>
   )
 }
 
 // Item de galería: imagen real con fallback a placeholder degradado si no existe/falla
-function GalleryItem({ project, src, index }) {
+function GalleryItem({ project, src, index, onOpen }) {
   const [imgError, setImgError] = useState(false)
   const showImage = src && !imgError
 
@@ -76,6 +97,11 @@ function GalleryItem({ project, src, index }) {
     <div
       className="gallery-item break-inside-avoid mb-6 relative group
                  rounded-[16px] overflow-hidden cursor-pointer"
+      onClick={showImage ? onOpen : undefined}
+      role={showImage ? 'button' : undefined}
+      tabIndex={showImage ? 0 : undefined}
+      aria-label={showImage ? `Ampliar imagen ${index + 1} de ${project.title}` : undefined}
+      onKeyDown={showImage ? (e) => { if (e.key === 'Enter' || e.key === ' ') { e.preventDefault(); onOpen() } } : undefined}
     >
       {showImage ? (
         <img
@@ -100,8 +126,19 @@ function GalleryItem({ project, src, index }) {
       {/* Overlay oscuro al hover */}
       <div
         className="absolute inset-0 bg-black/0 group-hover:bg-black/20
-                   transition-colors duration-300 rounded-[16px]"
-      />
+                   transition-colors duration-300 rounded-[16px] flex items-center justify-center"
+      >
+        {showImage && (
+          <span
+            className="w-11 h-11 rounded-full bg-white/90 opacity-0 group-hover:opacity-100
+                       scale-90 group-hover:scale-100 transition-[opacity,transform] duration-300
+                       flex items-center justify-center text-lg"
+            style={{ color: '#0D0D0D' }}
+          >
+            &#128269;
+          </span>
+        )}
+      </div>
     </div>
   )
 }
