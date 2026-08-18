@@ -149,10 +149,16 @@ function WorkContent({ work }) {
         {/* Lo interesante */}
         <div className="wc-reveal bg-card rounded-[20px] p-8 flex flex-col gap-4">
           <SectionTag>Lo interesante</SectionTag>
-          <p className="text-ink/60 leading-relaxed italic">
-            Case study en desarrollo — próximamente.
-          </p>
-          <div className="mt-auto w-full h-24 rounded-[12px] bg-gradient-to-br from-ink/5 to-ink/10 dark:from-surface dark:to-card" />
+          {work.insight ? (
+            <p className="text-ink/70 leading-relaxed">{work.insight}</p>
+          ) : (
+            <>
+              <p className="text-ink/60 leading-relaxed italic">
+                Case study en desarrollo — próximamente.
+              </p>
+              <div className="mt-auto w-full h-24 rounded-[12px] bg-gradient-to-br from-ink/5 to-ink/10 dark:from-surface dark:to-card" />
+            </>
+          )}
         </div>
       </div>
     </section>

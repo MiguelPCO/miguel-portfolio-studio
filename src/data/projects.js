@@ -174,54 +174,11 @@ export const featuredProjects = [
     liveUrl: "https://spritz-jet.vercel.app",
     repoUrl: "https://github.com/MiguelPCO/Spritz",
     testimonial: null,
-    next: "veta-web",
-  },
-  {
-    slug: "veta-web",
-    num: "04",
-    title: "VETA",
-    category: "Web · Branding · E-commerce",
-    tags: ["Web", "Branding", "Next.js"],
-    brief:
-      "Identidad digital completa para marca artesanal de jabones minerales. 24 páginas estáticas con SEO optimizado y diseño que refleja la naturaleza y artesanía del producto.",
-    tools: ["Next.js 16", "Tailwind v4", "TypeScript", "Vercel"],
-    duration: "1 mes",
-    deliverables: [
-      "Web corporativa completa",
-      "24 páginas estáticas",
-      "SEO optimizado",
-      "Diseño de identidad visual",
-    ],
-    metrics: [
-      "24 páginas con SEO metadata individual",
-      "Build estático optimizado para Vercel",
-      "Diseño coherente con identidad de marca",
-    ],
-    // — Case study sections —
-    context:
-      "VETA es una marca artesanal de jabones y cosmética mineral que necesitaba presencia digital coherente con sus valores: naturaleza, proceso artesanal y autenticidad. El producto tiene alta calidad pero la comunicación online era inexistente.",
-    problem:
-      "Sin web propia, la marca dependía exclusivamente de Instagram para ventas y comunicación. Esto limitaba el SEO, la credibilidad y la capacidad de explicar el proceso artesanal detrás de cada producto.",
-    solution:
-      "Web corporativa completa con 24 páginas estáticas que narran la historia de la marca, el proceso de fabricación, el catálogo de productos y los puntos de venta. Diseño que usa texturas naturales, tipografía editorial y fotografía del producto como protagonista.",
-    designGoal:
-      "Comunicar artesanía sin perder modernidad. Cada decisión visual tenía que reflejar que el producto es hecho a mano con materiales naturales, pero sin caer en el estereario rústico de otras marcas del sector.",
-    reflection:
-      "El mayor aprendizaje fue la importancia del sistema de diseño antes de maquetar. Con 24 páginas, tener tokens de color, tipografía y espaciado definidos desde el inicio ahorró tiempo y garantizó consistencia. Sin ese sistema, las últimas páginas habrían sido incoherentes con las primeras.",
-    image: "/projects/veta-hero.jpg",
-    images: [
-      "/projects/veta-1.jpg",
-      "/projects/veta-2.jpg",
-      "/projects/veta-3.jpg",
-    ],
-    liveUrl: "",
-    repoUrl: "",
-    testimonial: null,
     next: "altitud-coffee",
   },
   {
     slug: "altitud-coffee",
-    num: "05",
+    num: "04",
     title: "Altitud Coffee",
     category: "Web · Café de Especialidad",
     tags: ["Web", "Landing", "Next.js"],
@@ -264,7 +221,7 @@ export const featuredProjects = [
   },
   {
     slug: "lumie",
-    num: "06",
+    num: "05",
     title: "Lumié",
     category: "Landing · Animaciones · Skincare",
     tags: ["Landing", "GSAP", "React"],
@@ -321,7 +278,9 @@ export const smallWorks = [
     description:
       "Tienda online de cuidado personal inspirada en mármol. Catálogo, guía de aromas, sets de regalo y carrito completo.",
     brief:
-      "Sitio de marca completo para VETA, jabones sólidos minerales con packaging inspirado en mármol. Diez páginas: catálogo con filtros por familia olfativa, ficha de producto, guía de aromas, ingredientes, sets de regalo, historia de marca, journal editorial y una sección de hospitality para hoteles y spas. Carrito con contexto propio y persistencia local.",
+      "VETA es una marca de jabones sólidos minerales que necesitaba presencia digital coherente con sus valores: naturaleza, artesanía y autenticidad. Sin tienda propia, dependía de redes sociales para vender, lo que limitaba el SEO y la capacidad de contar el proceso detrás de cada pieza. Construí un sitio de marca completo con diez páginas — catálogo filtrable por familia olfativa, ficha de producto, guía de aromas, ingredientes, sets de regalo, historia de marca, journal editorial y una sección de hospitality para hoteles y spas — con carrito propio y persistencia local, usando fotografía de producto y tipografía editorial como protagonistas.",
+    insight:
+      "El reto de diseño fue comunicar artesanía sin caer en el tópico rústico del sector: cada textura y veta de mármol tenía que sentirse deliberada, no decorativa. Con diez páginas y un catálogo de diez productos, definir tokens de color, tipografía y espaciado antes de maquetar fue lo que mantuvo todo coherente de principio a fin.",
     tools: ["Next.js 16", "TypeScript", "Tailwind v4", "Framer Motion", "Radix UI"],
     image: "/projects/veta-hero.jpg",
     images: [
