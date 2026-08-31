@@ -203,7 +203,7 @@ export const featuredProjects = [
     problem:
       "La percepción del color es subjetiva y difícil de convertir en un reto claro. Faltaba un formato que obligara a razonar sobre luminosidad e intensidad en vez de adivinar al azar, y que funcionara tanto en solitario como cara a cara con otra persona.",
     solution:
-      "Una cuadrícula de matices donde el eje horizontal es luminosidad (oscuro → claro) y el vertical es intensidad (vivo → apagado). Cada tiro cuesta puntos y el termómetro solo indica cuánto te falta, nunca hacia dónde — encontrarlo es cosa del jugador. Tres modos cubren distintos contextos: Solo para practicar, Duelo hotseat para competir en el mismo dispositivo con pases de turno y pantalla de \"mantén pulsado\", y Diario con un color nuevo cada 24h, racha y calendario de resultados.",
+      "Una cuadrícula de matices donde el eje horizontal es luminosidad (oscuro → claro) y el vertical es intensidad (vivo → apagado). Cada tiro cuesta puntos y el termómetro solo indica cuánto te falta, nunca hacia el resultado, eso es cosa del jugador. Tres modos cubren distintos contextos: Solo para practicar, Duelo hotseat para competir en el mismo dispositivo con pases de turno y pantalla de \"mantén pulsado\", y Diario con un color nuevo cada 24h, racha y calendario de resultados.",
     features: [
       "Cuadrículas configurables de 4×4 a 8×8 con tres niveles de dificultad",
       "Pistas por palabra o por imagen, con coste en puntos por pista pedida",
