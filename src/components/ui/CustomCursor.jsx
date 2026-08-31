@@ -43,6 +43,10 @@ export default function CustomCursor() {
     }
 
     const onMouseOver = (e) => {
+      if (e.target.closest('img, picture, [data-cursor-dark]')) {
+        dot.classList.add('cursor-dot--on-image')
+      }
+
       if (isHovering) return
       if (e.target.closest('a, button, [role="button"]')) {
         isHovering = true
@@ -53,6 +57,13 @@ export default function CustomCursor() {
     }
 
     const onMouseOut = (e) => {
+      if (e.target.closest('img, picture, [data-cursor-dark]')) {
+        const rel = e.relatedTarget
+        if (!rel?.closest('img, picture, [data-cursor-dark]')) {
+          dot.classList.remove('cursor-dot--on-image')
+        }
+      }
+
       if (!isHovering) return
       if (e.target.closest('a, button, [role="button"]')) {
         const rel = e.relatedTarget
@@ -89,7 +100,7 @@ export default function CustomCursor() {
       {/* Dot central — sigue inmediatamente */}
       <div
         ref={dotRef}
-        className="fixed top-0 left-0 w-2 h-2 bg-ink rounded-full pointer-events-none z-[9999]"
+        className="cursor-dot fixed top-0 left-0 w-2 h-2 bg-ink rounded-full pointer-events-none z-[9999]"
         aria-hidden="true"
       />
       {/* Ring exterior — sigue con lag suave */}

@@ -17,6 +17,7 @@ const contactSchema = z.object({
 
 export default function ContactForm() {
   const [submitted, setSubmitted] = useState(false)
+  const [sendError, setSendError] = useState(null)
   const successRef = useRef(null)
   const formRef = useRef(null)
 
@@ -32,25 +33,33 @@ export default function ContactForm() {
   const { contextSafe } = useGSAP(() => {}, { scope: formRef })
 
   const onSubmit = contextSafe(async (data) => {
-    // [PLACEHOLDER: integrar con Resend o EmailJS]
-    console.log('Formulario enviado:', data)
+    setSendError(null)
 
-    // Simular envío
-    await new Promise((r) => setTimeout(r, 800))
+    try {
+      const res = await fetch('/api/contact', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify(data),
+      })
 
-    setSubmitted(true)
-    reset()
+      if (!res.ok) throw new Error('send failed')
 
-    // Animación de éxito
-    if (!prefersReducedMotion() && successRef.current) {
-      gsap.fromTo(successRef.current,
-        { scale: 0, opacity: 0 },
-        { scale: 1, opacity: 1, duration: 0.5, ease: 'back.out(1.5)' }
-      )
+      setSubmitted(true)
+      reset()
+
+      // Animación de éxito
+      if (!prefersReducedMotion() && successRef.current) {
+        gsap.fromTo(successRef.current,
+          { scale: 0, opacity: 0 },
+          { scale: 1, opacity: 1, duration: 0.5, ease: 'back.out(1.5)' }
+        )
+      }
+
+      // Resetear estado después de 3 segundos
+      setTimeout(() => setSubmitted(false), 3000)
+    } catch {
+      setSendError('No se pudo enviar el mensaje. Inténtalo de nuevo o escríbeme directamente por email.')
     }
-
-    // Resetear estado después de 3 segundos
-    setTimeout(() => setSubmitted(false), 3000)
   })
 
   const inputBase = `w-full bg-white dark:bg-card border border-gray-200 dark:border-ink/20 rounded-[16px] px-5 py-4 text-sm text-ink
@@ -145,6 +154,10 @@ export default function ContactForm() {
                   <p id="message-error" className="text-red-500 text-xs mt-1">{errors.message.message}</p>
                 )}
               </div>
+
+              {sendError && (
+                <p className="text-red-500 text-sm">{sendError}</p>
+              )}
 
               {/* Submit */}
               <Button

@@ -1,15 +1,15 @@
 import { useRef } from 'react'
 import { useGSAP } from '@gsap/react'
 import { gsap } from 'gsap'
-import { SplitText } from 'gsap/SplitText'
 import Button from '../ui/Button'
 import { prefersReducedMotion } from '../animations/animationConfig'
 
 const heroStats = [
   { label: 'Proyectos completados', value: '10+' },
   { label: 'Años de experiencia', value: '3+' },
-  { label: 'Clientes satisfechos', value: '5+' },
 ]
+
+const HERO_NAME = 'MIGUEL'
 
 export default function HeroSection() {
   const heroRef = useRef(null)
@@ -26,15 +26,31 @@ export default function HeroSection() {
       transformOrigin: 'center center',
     })
 
-    // Título: slide-up por caracteres
-    const split = new SplitText('.hero-title', { type: 'chars' })
-    gsap.from(split.chars, {
+    // Saludo: fade-in sutil, primero en aparecer
+    gsap.from('.hero-greeting', {
+      opacity: 0,
+      y: 10,
+      duration: 0.5,
+      ease: 'power2.out',
+    })
+
+    // Título: slide-up por letra (spans ya en el JSX, sin SplitText)
+    gsap.from('.hero-letter', {
       opacity: 0,
       yPercent: 120,
       duration: 0.8,
       ease: 'power4.out',
       stagger: 0.025,
-      delay: 0.2,
+      delay: 0.15,
+    })
+
+    // Intro: fade-in tras el nombre
+    gsap.from('.hero-intro', {
+      opacity: 0,
+      y: 16,
+      duration: 0.6,
+      delay: 0.6,
+      ease: 'power3.out',
     })
 
     // Stats: fade-in escalonado
@@ -52,11 +68,9 @@ export default function HeroSection() {
       opacity: 0,
       scale: 0.8,
       duration: 0.5,
-      delay: 1.0,
+      delay: 1.05,
       ease: 'back.out(1.5)',
     })
-
-    return () => split.revert()
   }, { scope: heroRef })
 
   return (
@@ -77,9 +91,24 @@ export default function HeroSection() {
       <div className="relative z-10 max-w-[1200px] mx-auto w-full grid grid-cols-1 lg:grid-cols-2 gap-8 items-center">
         {/* Columna izquierda */}
         <div>
-          <h1 className="hero-title font-display font-black text-[clamp(64px,10vw,140px)] leading-[0.9] text-ink mb-8">
-            MIGUEL
+          <p className="hero-greeting text-lg md:text-xl text-muted mb-1">
+            Hola, soy
+          </p>
+
+          <h1
+            className="hero-title font-display font-black text-[clamp(64px,10vw,140px)] leading-[0.9] text-ink mb-6"
+            aria-label={HERO_NAME}
+          >
+            {HERO_NAME.split('').map((ch, i) => (
+              <span key={i} className="hero-letter inline-block" aria-hidden="true">
+                {ch}
+              </span>
+            ))}
           </h1>
+
+          <p className="hero-intro text-xl md:text-2xl font-medium text-ink/80 leading-snug max-w-md mb-8">
+            Diseño y desarrollo productos digitales.
+          </p>
 
           {/* Pill de consulta */}
           <div className="hero-consultation flex items-center gap-4 bg-white dark:bg-card rounded-full px-4 py-3 shadow-sm w-fit">

@@ -47,12 +47,22 @@ export default function ProjectHero({ project }) {
           style={{ clipPath: "inset(100% 0% 0% 0%)" }}
         >
           {showImage ? (
-            <img
-              src={project.image}
-              alt={project.title}
-              className="absolute inset-0 w-full h-full object-cover"
-              onError={() => setImgError(true)}
-            />
+            <>
+              {project.imageFit === "contain" && (
+                <img
+                  src={project.image}
+                  alt=""
+                  aria-hidden="true"
+                  className="absolute inset-0 w-full h-full object-cover blur-2xl scale-110 opacity-40"
+                />
+              )}
+              <img
+                src={project.image}
+                alt={project.title}
+                className={`absolute inset-0 w-full h-full ${project.imageFit === "contain" ? "object-contain" : "object-cover"}`}
+                onError={() => setImgError(true)}
+              />
+            </>
           ) : (
             <span className="text-muted text-2xl font-display">
               {project.title}

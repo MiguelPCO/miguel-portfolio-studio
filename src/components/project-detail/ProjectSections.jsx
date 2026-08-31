@@ -59,20 +59,20 @@ const PLACEHOLDER_GRADIENTS = [
   'from-gray-200 to-gray-300 dark:from-card dark:to-surface',
 ]
 
-function SectionImage({ src, alt, index = 0, onOpen }) {
+function SectionImage({ src, alt, index = 0, onOpen, fit = 'cover' }) {
   const gradient = PLACEHOLDER_GRADIENTS[index % PLACEHOLDER_GRADIENTS.length]
 
   if (src) {
     return (
       <div
-        className="w-full h-[320px] md:h-[440px] rounded-[20px] overflow-hidden relative group cursor-pointer"
+        className={`w-full h-[320px] md:h-[440px] rounded-[20px] overflow-hidden relative group cursor-pointer ${fit === 'contain' ? 'bg-card' : ''}`}
         onClick={onOpen}
         role="button"
         tabIndex={0}
         aria-label={`Ampliar imagen: ${alt}`}
         onKeyDown={(e) => { if (e.key === 'Enter' || e.key === ' ') { e.preventDefault(); onOpen() } }}
       >
-        <img src={src} alt={alt} className="w-full h-full object-cover" loading="lazy" />
+        <img src={src} alt={alt} className={`w-full h-full ${fit === 'contain' ? 'object-contain' : 'object-cover'}`} loading="lazy" />
         <div className="absolute inset-0 bg-black/0 group-hover:bg-black/20
                         transition-colors duration-300 flex items-center justify-center">
           <span
@@ -131,6 +131,7 @@ export default function ProjectSections({ project }) {
           src={imgs[0]?.src}
           alt={imgs[0]?.alt || project.title}
           index={0}
+          fit={imgs[0]?.fit}
           onOpen={() => setLightboxIndex(lightboxIndexFor(0))}
         />
 
@@ -145,6 +146,7 @@ export default function ProjectSections({ project }) {
               src={imgs[1]?.src}
               alt={imgs[1]?.alt || project.title}
               index={1}
+              fit={imgs[1]?.fit}
               onOpen={() => setLightboxIndex(lightboxIndexFor(1))}
             />
             <div className="grid grid-cols-1 lg:grid-cols-2 gap-6">
@@ -161,6 +163,7 @@ export default function ProjectSections({ project }) {
             src={imgs[2]?.src}
             alt={imgs[2]?.alt || project.title}
             index={2}
+            fit={imgs[2]?.fit}
             onOpen={() => setLightboxIndex(lightboxIndexFor(2))}
           />
         )}

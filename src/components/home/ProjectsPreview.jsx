@@ -106,12 +106,21 @@ function PreviewImage({ project }) {
 
   return (
     <div className="relative w-full h-[300px] md:h-[500px] bg-gradient-to-br from-gray-200 to-gray-300 dark:from-gray-800 dark:to-gray-700 flex items-center justify-center">
+      {showImage && project.imageFit === "contain" && (
+        <img
+          src={project.image}
+          alt=""
+          aria-hidden="true"
+          loading="lazy"
+          className="absolute inset-0 w-full h-full object-cover blur-2xl scale-110 opacity-40"
+        />
+      )}
       {showImage && (
         <img
           src={project.image}
           alt={project.title}
           loading="lazy"
-          className="absolute inset-0 w-full h-full object-cover"
+          className={`absolute inset-0 w-full h-full ${project.imageFit === "contain" ? "object-contain" : "object-cover"}`}
           onError={() => setImgError(true)}
         />
       )}

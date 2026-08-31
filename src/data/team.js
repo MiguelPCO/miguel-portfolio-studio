@@ -14,20 +14,9 @@ export const profile = {
 export const stats = [
   { endValue: 10, suffix: "+", label: "Proyectos completados" },
   { endValue: 3, suffix: "+", label: "Años de experiencia" },
-  { endValue: 5, suffix: "+", label: "Clientes satisfechos" },
 ];
 
 export const techStack = [
-  "React",
-  "Next.js",
-  "TypeScript",
-  "Tailwind CSS",
-  "GSAP",
-  "Supabase",
-  "Node.js",
-  "Figma",
-  "Claude API",
-  "Vercel",
   "React",
   "Next.js",
   "TypeScript",

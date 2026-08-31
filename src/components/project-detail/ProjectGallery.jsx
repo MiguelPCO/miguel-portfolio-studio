@@ -70,6 +70,7 @@ export default function ProjectGallery({ project }) {
               project={project}
               src={img}
               index={i}
+              constrain={project.imageFit === 'contain'}
               onOpen={() => setLightboxIndex(i)}
             />
           ))}
@@ -89,14 +90,15 @@ export default function ProjectGallery({ project }) {
 }
 
 // Item de galería: imagen real con fallback a placeholder degradado si no existe/falla
-function GalleryItem({ project, src, index, onOpen }) {
+function GalleryItem({ project, src, index, onOpen, constrain = false }) {
   const [imgError, setImgError] = useState(false)
   const showImage = src && !imgError
 
   return (
     <div
-      className="gallery-item break-inside-avoid mb-6 relative group
-                 rounded-[16px] overflow-hidden cursor-pointer"
+      className={`gallery-item break-inside-avoid mb-6 relative group
+                 rounded-[16px] overflow-hidden cursor-pointer
+                 ${constrain ? 'max-w-[320px] mx-auto bg-card' : ''}`}
       onClick={showImage ? onOpen : undefined}
       role={showImage ? 'button' : undefined}
       tabIndex={showImage ? 0 : undefined}
