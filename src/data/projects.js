@@ -278,6 +278,61 @@ export const featuredProjects = [
     liveUrl: "",
     repoUrl: "",
     testimonial: null,
+    next: "zuma",
+  },
+  {
+    slug: "zuma",
+    num: "06",
+    title: "ZUMA",
+    category: "Marca · E-commerce · Fruit Water",
+    tags: ["Branding", "E-commerce", "Next.js"],
+    brief:
+      "Marca y tienda online de fruit water premium. Dos líneas de producto, quiz de sabor, catálogo filtrable y checkout completo — todo con identidad visual propia.",
+    tools: ["Next.js 16", "TypeScript", "Tailwind CSS", "Framer Motion"],
+    duration: "2 semanas",
+    deliverables: [
+      "Identidad de marca (naming, paleta, tono)",
+      "Sitio web completo con dos líneas de producto",
+      "Catálogo filtrable + ficha de producto",
+      "Quiz de sabor, carrito y checkout",
+    ],
+    metrics: [
+      "Dos líneas de producto (FIZZ / STILL) con 16 sabores",
+      "Catálogo filtrable por línea, familia de sabor y formato",
+      "Flujo completo: quiz → catálogo → carrito → checkout",
+    ],
+    // — Case study sections —
+    context:
+      "Proyecto de marca desde cero: crear una bebida que compitiera entre las premium accesibles y las aguas saborizadas genéricas, con una idea simple — la hidratación no tiene por qué ser neutra. Definí naming, paleta, tono de voz y arquitectura de producto antes de tocar código.",
+    problem:
+      "El mercado de aguas saborizadas se divide en dos extremos: marcas premium con precio elevado y marcas genéricas sin identidad. Faltaba un punto medio con personalidad visual fuerte, fruta real y una web que se sintiera tan cuidada como el producto.",
+    solution:
+      "Una marca paraguas con dos líneas diferenciadas — ZUMA FIZZ (con gas, en lata, energética) y ZUMA STILL (sin gas, en botella, de consumo diario) — que comparten logo, tipografía e iconografía de fruta pero se distinguen por ritmo cromático. La web traduce esa dualidad en un catálogo filtrable, un quiz de sabor en home que recomienda producto según preferencias, y un flujo de compra propio de principio a fin.",
+    features: [
+      "Quiz de sabor en home que recomienda producto según respuestas",
+      "Catálogo filtrable por línea (FIZZ/STILL), familia de sabor y formato",
+      "16 sabores con ficha propia, variety packs y página de marca (Our Story)",
+      "Carrito y checkout completos construidos a medida",
+      "Sistema visual por sabor: color dominante, fruta protagonista y acento secundario",
+    ],
+    interactionDesign:
+      "El reto de interacción fue que las dos líneas se sintieran hermanas sin ser idénticas: FIZZ usa transiciones más rápidas y saturadas, STILL más lentas y limpias, ambas con Framer Motion sobre la misma base de componentes. El quiz de home actúa como puerta de entrada emocional antes de llegar al catálogo funcional.",
+    reflection:
+      "Diseñar la marca y la web en paralelo obligó a tomar decisiones de identidad directamente en código — probar si una paleta funciona en un grid de 16 productos es distinto a verla en un moodboard. Con más tiempo, llevaría el sistema de color por sabor a variables de marca reutilizables para escalar a nuevas líneas sin tocar componentes.",
+    image: "/projects/zuma-hero.png",
+    images: [
+      "/projects/zuma-1.png",
+      "/projects/zuma-2.png",
+      "/projects/zuma-3.jpg",
+    ],
+    sectionImages: [
+      { src: "/projects/zuma-section-1.jpg", alt: "Home con quiz de sabor" },
+      { src: "/projects/zuma-section-2.jpg", alt: "Línea ZUMA FIZZ" },
+      { src: "/projects/zuma-section-3.jpg", alt: "Carrito de compra" },
+    ],
+    liveUrl: "",
+    repoUrl: "https://github.com/MiguelPCO/zuma",
+    testimonial: null,
     next: "fitgame-pro",
   },
 ];
