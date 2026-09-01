@@ -7,10 +7,9 @@ const resend = new Resend(process.env.RESEND_API_KEY)
 // para poder enviar a miguelcastilloolivares@gmail.com u otra dirección.
 const TO_EMAIL = 'xtremzmiguel@gmail.com'
 
-const escapeHtml = (str) =>
-  String(str).replace(/[&<>"']/g, (c) => ({
-    '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;', "'": '&#39;',
-  }[c]))
+// Templates creados en resend.com/templates
+const NOTIFICATION_TEMPLATE_ID = '80abbd35-f9f5-4002-90ed-a0935a5c13da'
+const CONFIRMATION_TEMPLATE_ID = '09a7e36e-c86c-4133-b8e6-8f682ebe713b'
 
 export default async function handler(req, res) {
   if (req.method !== 'POST') {
@@ -29,14 +28,15 @@ export default async function handler(req, res) {
       from: 'Portfolio <onboarding@resend.dev>',
       to: TO_EMAIL,
       replyTo: email,
-      subject: `Nuevo mensaje de ${name} — Portfolio`,
-      html: `
-        <p><strong>Nombre:</strong> ${escapeHtml(name)}</p>
-        <p><strong>Email:</strong> ${escapeHtml(email)}</p>
-        ${location ? `<p><strong>Ubicación:</strong> ${escapeHtml(location)}</p>` : ''}
-        <p><strong>Mensaje:</strong></p>
-        <p>${escapeHtml(message).replace(/\n/g, '<br>')}</p>
-      `,
+      template: {
+        id: NOTIFICATION_TEMPLATE_ID,
+        variables: {
+          NAME: name,
+          EMAIL: email,
+          LOCATION: location || 'No especificada',
+          MESSAGE: message,
+        },
+      },
     })
 
     // El SDK de Resend no lanza excepción en fallo: devuelve { data, error }
@@ -44,6 +44,24 @@ export default async function handler(req, res) {
       console.error('Resend error:', error)
       return res.status(502).json({ error: 'No se pudo enviar el mensaje' })
     }
+
+    // Best-effort: auto-respuesta al remitente. En sandbox (sin dominio
+    // verificado) Resend rechaza envíos a cualquier email que no sea el de
+    // la propia cuenta, así que esto fallará hasta verificar un dominio en
+    // resend.com/domains — no debe romper la respuesta principal.
+    resend.emails
+      .send({
+        from: 'Miguel <onboarding@resend.dev>',
+        to: email,
+        template: {
+          id: CONFIRMATION_TEMPLATE_ID,
+          variables: { NAME: name, MESSAGE: message },
+        },
+      })
+      .then(({ error: confirmError }) => {
+        if (confirmError) console.error('Resend confirmation error:', confirmError)
+      })
+      .catch((confirmError) => console.error('Resend confirmation error:', confirmError))
 
     return res.status(200).json({ ok: true })
   } catch (error) {
