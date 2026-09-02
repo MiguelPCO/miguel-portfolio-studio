@@ -92,8 +92,8 @@ export const featuredProjects = [
     research:
       "Analicé los flujos de Midjourney, Adobe Firefly y herramientas específicas de interiorismo. El patrón común era la sobre-complejidad del input. La decisión clave fue eliminar la pantalla de configuración y centrar todo en dos acciones: subir foto y elegir estilo.",
     constraints: [
-      "Latencia de Replicate (8-15s por generación) — requirió estados de carga expresivos",
-      "Coste por generación — sin tier gratuito ilimitado",
+      "Latencia de Replicate (8-15s por generación), que requirió estados de carga expresivos",
+      "Coste por generación, sin tier gratuito ilimitado",
       "Calidad variable del modelo según calidad de la foto de entrada",
     ],
     interactionDesign:
@@ -183,7 +183,7 @@ export const featuredProjects = [
     category: "Juego · Percepción del Color",
     tags: ["Juego", "Next.js", "GSAP"],
     brief:
-      "Juego de percepción del color a ciegas. Una pista de palabra o imagen, una cuadrícula de matices y tres tiros para acertar el correcto — en solitario, por reto diario o en duelo hotseat.",
+      "Juego de percepción del color a ciegas. Una pista de palabra o imagen, una cuadrícula de matices y tres tiros para acertar el correcto, en solitario, por reto diario o en duelo hotseat.",
     tools: ["Next.js 15", "TypeScript", "GSAP", "Tailwind CSS"],
     duration: "En desarrollo",
     deliverables: [
@@ -214,7 +214,7 @@ export const featuredProjects = [
     interactionDesign:
       "El detalle que sostiene todo el juego es el termómetro tras cada tiro: solo comunica distancia, no dirección, así que el jugador tiene que razonar con los ejes de la carta en vez de tantear a ciegas. En duelo hotseat, la pantalla \"mantén pulsado\" entre turnos evita que un jugador vea la pista o el tablero del otro por accidente al pasarse el móvil.",
     reflection:
-      "Diseñar para daltonismo desde el principio cambió decisiones de UI: el eje horizontal (luminosidad) se mantiene legible sin percibir color, y la guía del juego lo dice de forma explícita en vez de ignorar el problema. El modo Diario con calendario y racha fue el que más enganchó en pruebas informales — convertir un puzzle de color en un hábito diario tipo Wordle fue la validación más clara del concepto.",
+      "Diseñar para daltonismo desde el principio cambió decisiones de UI: el eje horizontal (luminosidad) se mantiene legible sin percibir color, y la guía del juego lo dice de forma explícita en vez de ignorar el problema. El modo Diario con calendario y racha fue el que más enganchó en pruebas informales: convertir un puzzle de color en un hábito diario tipo Wordle fue la validación más clara del concepto.",
     image: "/projects/matiz-hero.png",
     imageFit: "contain",
     images: [
@@ -239,7 +239,7 @@ export const featuredProjects = [
     category: "Marca · E-commerce · Fruit Water",
     tags: ["Branding", "E-commerce", "Next.js"],
     brief:
-      "Marca y tienda online de fruit water premium. Dos líneas de producto, quiz de sabor, catálogo filtrable y checkout completo — todo con identidad visual propia.",
+      "Marca y tienda online de fruit water premium. Dos líneas de producto, quiz de sabor, catálogo filtrable y checkout completo, todo con identidad visual propia.",
     tools: ["Next.js 16", "TypeScript", "Tailwind CSS", "Framer Motion"],
     duration: "2 semanas",
     deliverables: [
@@ -255,11 +255,11 @@ export const featuredProjects = [
     ],
     // — Case study sections —
     context:
-      "Proyecto de marca desde cero: crear una bebida que compitiera entre las premium accesibles y las aguas saborizadas genéricas, con una idea simple — la hidratación no tiene por qué ser neutra. Definí naming, paleta, tono de voz y arquitectura de producto antes de tocar código.",
+      "Proyecto de marca desde cero: crear una bebida que compitiera entre las premium accesibles y las aguas saborizadas genéricas, con una idea simple: la hidratación no tiene por qué ser neutra. Definí naming, paleta, tono de voz y arquitectura de producto antes de tocar código.",
     problem:
       "El mercado de aguas saborizadas se divide en dos extremos: marcas premium con precio elevado y marcas genéricas sin identidad. Faltaba un punto medio con personalidad visual fuerte, fruta real y una web que se sintiera tan cuidada como el producto.",
     solution:
-      "Una marca paraguas con dos líneas diferenciadas — ZUMA FIZZ (con gas, en lata, energética) y ZUMA STILL (sin gas, en botella, de consumo diario) — que comparten logo, tipografía e iconografía de fruta pero se distinguen por ritmo cromático. La web traduce esa dualidad en un catálogo filtrable, un quiz de sabor en home que recomienda producto según preferencias, y un flujo de compra propio de principio a fin.",
+      "Una marca paraguas con dos líneas diferenciadas: ZUMA FIZZ (con gas, en lata, energética) y ZUMA STILL (sin gas, en botella, de consumo diario), que comparten logo, tipografía e iconografía de fruta pero se distinguen por ritmo cromático. La web traduce esa dualidad en un catálogo filtrable, un quiz de sabor en home que recomienda producto según preferencias, y un flujo de compra propio de principio a fin.",
     features: [
       "Quiz de sabor en home que recomienda producto según respuestas",
       "Catálogo filtrable por línea (FIZZ/STILL), familia de sabor y formato",
@@ -270,7 +270,7 @@ export const featuredProjects = [
     interactionDesign:
       "El reto de interacción fue que las dos líneas se sintieran hermanas sin ser idénticas: FIZZ usa transiciones más rápidas y saturadas, STILL más lentas y limpias, ambas con Framer Motion sobre la misma base de componentes. El quiz de home actúa como puerta de entrada emocional antes de llegar al catálogo funcional.",
     reflection:
-      "Diseñar la marca y la web en paralelo obligó a tomar decisiones de identidad directamente en código — probar si una paleta funciona en un grid de 16 productos es distinto a verla en un moodboard. Con más tiempo, llevaría el sistema de color por sabor a variables de marca reutilizables para escalar a nuevas líneas sin tocar componentes.",
+      "Diseñar la marca y la web en paralelo obligó a tomar decisiones de identidad directamente en código: probar si una paleta funciona en un grid de 16 productos es distinto a verla en un moodboard. Con más tiempo, llevaría el sistema de color por sabor a variables de marca reutilizables para escalar a nuevas líneas sin tocar componentes.",
     image: "/projects/zuma-hero.png",
     images: [
       "/projects/zuma-1.png",
@@ -298,9 +298,9 @@ export const smallWorks = [
     description:
       "Tienda de skincare clínico. Ficha de producto con rueda de ingredientes interactiva, carrito propio y prueba social con estadísticas clínicas.",
     brief:
-      "unfilt es una marca de skincare que vende transparencia como producto: fórmulas cortas, cold-process, sin marketing hueco. Construí la tienda completa — home, catálogo, ficha de producto con selector de formato y rueda de ingredientes interactiva que visualiza el porcentaje de cada activo, sección de ciencia con los resultados clínicos, historia de marca y carrito propio con recomendaciones cruzadas — todo animado con GSAP para reforzar la sensación premium sin sacrificar velocidad.",
+      "unfilt es una marca de skincare que vende transparencia como producto: fórmulas cortas, cold-process, sin marketing hueco. Construí la tienda completa (home, catálogo, ficha de producto con selector de formato y rueda de ingredientes interactiva que visualiza el porcentaje de cada activo, sección de ciencia con los resultados clínicos, historia de marca y carrito propio con recomendaciones cruzadas), todo animado con GSAP para reforzar la sensación premium sin sacrificar velocidad.",
     insight:
-      "El componente más interesante fue la rueda de ingredientes: un SVG generado dinámicamente a partir de los porcentajes de cada activo, no una imagen estática. Eso significa que cambiar la fórmula de un producto en los datos actualiza automáticamente el gráfico, sin tocar diseño — la clase de detalle que hace escalable un catálogo con decenas de referencias.",
+      "El componente más interesante fue la rueda de ingredientes: un SVG generado dinámicamente a partir de los porcentajes de cada activo, no una imagen estática. Eso significa que cambiar la fórmula de un producto en los datos actualiza automáticamente el gráfico sin tocar diseño: la clase de detalle que hace escalable un catálogo con decenas de referencias.",
     tools: ["Next.js 16", "TypeScript", "GSAP", "Zustand", "React Hook Form", "Tailwind v4"],
     image: "/projects/unfilt-hero.jpg",
     images: [
@@ -325,7 +325,7 @@ export const smallWorks = [
     description:
       "Cápsulas de memoria familiar: caja física + archivo digital privado para guardar fotos, cartas y voces que merecen volver.",
     brief:
-      "NODO es un producto físico-digital: cajas de archivo premium con tarjetas guiadas y QR privados que enlazan cada objeto a su versión digital en un archivo propio, sin feeds ni redes sociales de por medio. Construí el sitio de marca completo — Memory Box, tres kits temáticos (Primeros Años, Promesa, Legado), guía de regalos, journal editorial con contenido MDX y una app autenticada donde las familias crean y gestionan sus cápsulas. Magic link con Supabase, sin contraseñas.",
+      "NODO es un producto físico-digital: cajas de archivo premium con tarjetas guiadas y QR privados que enlazan cada objeto a su versión digital en un archivo propio, sin feeds ni redes sociales de por medio. Construí el sitio de marca completo: Memory Box, tres kits temáticos (Primeros Años, Promesa, Legado), guía de regalos, journal editorial con contenido MDX y una app autenticada donde las familias crean y gestionan sus cápsulas. Magic link con Supabase, sin contraseñas.",
     insight:
       "El reto fue diseñar para un producto que vive a la vez en papel y en pantalla: cada página tenía que transmitir la calidez de una caja física sin renunciar a que la parte digital (login, cápsulas, archivo) se sintiera igual de cuidada. La tipografía editorial y la fotografía de producto hacen ese puente.",
     tools: ["Next.js 16", "TypeScript", "Supabase", "Motion", "Tailwind v4"],
@@ -352,7 +352,7 @@ export const smallWorks = [
     description:
       "Tienda online de cuidado personal inspirada en mármol. Catálogo, guía de aromas, sets de regalo y carrito completo.",
     brief:
-      "VETA es una marca de jabones sólidos minerales que necesitaba presencia digital coherente con sus valores: naturaleza, artesanía y autenticidad. Sin tienda propia, dependía de redes sociales para vender, lo que limitaba el SEO y la capacidad de contar el proceso detrás de cada pieza. Construí un sitio de marca completo con diez páginas — catálogo filtrable por familia olfativa, ficha de producto, guía de aromas, ingredientes, sets de regalo, historia de marca, journal editorial y una sección de hospitality para hoteles y spas — con carrito propio y persistencia local, usando fotografía de producto y tipografía editorial como protagonistas.",
+      "VETA es una marca de jabones sólidos minerales que necesitaba presencia digital coherente con sus valores: naturaleza, artesanía y autenticidad. Sin tienda propia, dependía de redes sociales para vender, lo que limitaba el SEO y la capacidad de contar el proceso detrás de cada pieza. Construí un sitio de marca completo con diez páginas (catálogo filtrable por familia olfativa, ficha de producto, guía de aromas, ingredientes, sets de regalo, historia de marca, journal editorial y una sección de hospitality para hoteles y spas), con carrito propio y persistencia local, usando fotografía de producto y tipografía editorial como protagonistas.",
     insight:
       "El reto de diseño fue comunicar artesanía sin caer en el tópico rústico del sector: cada textura y veta de mármol tenía que sentirse deliberada, no decorativa. Con diez páginas y un catálogo de diez productos, definir tokens de color, tipografía y espaciado antes de maquetar fue lo que mantuvo todo coherente de principio a fin.",
     tools: ["Next.js 16", "TypeScript", "Tailwind v4", "Framer Motion", "Radix UI"],

@@ -12,7 +12,7 @@ const availabilityTypes = [
     title: 'Proyecto freelance',
     detail: 'REMOTO',
     type: 'DISPONIBLE',
-    description: 'Apps web, landings, dashboards — desde el diseño hasta el deploy. Trabajo con React, Next.js y Supabase. Entrego código limpio, documentado y fácil de mantener.',
+    description: 'Apps web, landings, dashboards: desde el diseño hasta el deploy. Trabajo con React, Next.js y Supabase. Entrego código limpio, documentado y fácil de mantener.',
   },
   {
     num: '02',

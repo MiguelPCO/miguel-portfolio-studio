@@ -154,7 +154,7 @@ function WorkContent({ work }) {
           ) : (
             <>
               <p className="text-ink/60 leading-relaxed italic">
-                Case study en desarrollo — próximamente.
+                Case study en desarrollo, próximamente.
               </p>
               <div className="mt-auto w-full h-24 rounded-[12px] bg-gradient-to-br from-ink/5 to-ink/10 dark:from-surface dark:to-card" />
             </>

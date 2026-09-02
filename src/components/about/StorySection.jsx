@@ -38,7 +38,7 @@ export default function StorySection() {
         <div ref={contentRef} className="relative z-[1] max-w-2xl pt-16 md:pt-24">
           <p className="text-lg md:text-xl leading-relaxed text-ink">
             Empecé con una <strong>curiosidad simple</strong>: ¿cómo se construye algo que la gente quiere usar?
-            Esa pregunta me llevó a combinar diseño y código — dos disciplinas que parecen opuestas
+            Esa pregunta me llevó a combinar diseño y código, dos disciplinas que parecen opuestas
             pero que juntas crean los <strong>productos digitales más potentes</strong>.
           </p>
           <p className="text-lg md:text-xl leading-relaxed text-muted mt-6">

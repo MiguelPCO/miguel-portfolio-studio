@@ -30,10 +30,9 @@ export default function ProjectOverview({ project }) {
         <Card variant="light" radius="lg" className="overview-card p-8 md:p-10 flex flex-col gap-6">
           <SectionTag>Mi enfoque</SectionTag>
           <p className="text-ink leading-relaxed">
-            Combiné diseño visual y desarrollo técnico para crear una solución
-            que cumple los objetivos del proyecto y ofrece una experiencia de
-            usuario sobresaliente. Cada decisión fue guiada por las necesidades
-            reales, validada en el navegador, y refinada hasta el último detalle.
+            Empiezo por entender el problema real antes de tocar diseño o código.
+            Cada decisión, visual y técnica, se valida en el navegador, no en una
+            maqueta, y se ajusta hasta que funciona de verdad.
           </p>
           {/* Placeholder 3D decorativo */}
           <div className="w-full h-40 rounded-[16px] bg-gradient-to-tr from-gray-300 via-gray-200 to-gray-300

@@ -26,7 +26,7 @@ export default function VisionMission() {
                 <SectionTag>Vision</SectionTag>
               </div>
               <p className="text-white/80 text-base md:text-lg leading-relaxed">
-                Crear productos digitales que combinen diseño de alta calidad con código sólido —
+                Crear productos digitales que combinen diseño de alta calidad con código sólido,
                 donde cada píxel tiene un propósito y cada función tiene sentido para quien la usa.
               </p>
             </div>

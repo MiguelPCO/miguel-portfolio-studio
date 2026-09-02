@@ -22,9 +22,8 @@ export default function ProjectsHero() {
 
         {/* Columna derecha — Descripción */}
         <p className="text-muted text-lg leading-relaxed lg:pb-3">
-          Una selección de proyectos en los que la estrategia se une a la
-          maestría artesanal. Cada caso refleja mi compromiso con un diseño bien
-          pensado, ideas audaces y resultados cuantificables.
+          Una selección de proyectos donde el diseño se une al código, de
+          principio a fin: apps, e-commerce, juegos y marcas construidas desde cero.
         </p>
       </div>
     </section>

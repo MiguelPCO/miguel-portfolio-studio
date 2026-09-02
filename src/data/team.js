@@ -1,7 +1,7 @@
 export const profile = {
   name: "Miguel de la Peña",
   role: "Diseñador & Desarrollador Web",
-  bio: "Soy Miguel de la Peña, diseñador y desarrollador web especializado en crear experiencias digitales modernas. Combino diseño visual con desarrollo técnico para construir productos que destacan — desde apps complejas hasta landings de alto impacto.",
+  bio: "Soy Miguel de la Peña, diseñador y desarrollador web especializado en crear experiencias digitales modernas. Combino diseño visual con desarrollo técnico para construir productos que destacan, desde apps complejas hasta landings de alto impacto.",
   avatar: "/avatar.jpg",
   email: "miguelcastilloolivares@gmail.com",
   social: {
