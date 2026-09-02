@@ -28,7 +28,7 @@ export default function StorySection() {
       <div className="max-w-[1200px] mx-auto relative">
         <p
           className="story-ghost-text absolute top-0 left-0 w-full font-display font-black
-                     text-[clamp(48px,10vw,140px)] leading-[1.1] text-ink opacity-[0.06]
+                     text-[clamp(48px,10vw,140px)] leading-[1.1] text-ink opacity-10 dark:opacity-[0.06]
                      pointer-events-none select-none"
           aria-hidden="true"
         >
