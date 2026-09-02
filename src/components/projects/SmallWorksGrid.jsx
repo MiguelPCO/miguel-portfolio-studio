@@ -38,11 +38,11 @@ function SmallWorkCard({ work }) {
                   e.stopPropagation()
                   window.open(work.liveUrl, '_blank', 'noopener,noreferrer')
                 }}
-                className="shrink-0 w-8 h-8 rounded-full bg-ink/10 hover:bg-accent
+                className="group shrink-0 w-8 h-8 rounded-full bg-ink/10 hover:bg-accent
                            flex items-center justify-center transition-colors duration-200"
                 aria-label={`Ver ${work.title} en vivo`}
               >
-                <svg width="14" height="14" viewBox="0 0 14 14" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className="text-ink">
+                <svg width="14" height="14" viewBox="0 0 14 14" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className="text-ink group-hover:text-accent-ink">
                   <path d="M2.5 11.5L11.5 2.5M11.5 2.5H6.5M11.5 2.5V7.5" />
                 </svg>
               </button>

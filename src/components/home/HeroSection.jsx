@@ -113,7 +113,7 @@ export default function HeroSection() {
           {/* Pill de consulta */}
           <div className="hero-consultation flex items-center gap-4 bg-white dark:bg-card rounded-full px-4 py-3 shadow-sm w-fit">
             {/* Avatar placeholder */}
-            <div className="w-10 h-10 rounded-full bg-accent flex items-center justify-center text-ink text-sm font-bold shrink-0">
+            <div className="w-10 h-10 rounded-full bg-accent flex items-center justify-center text-accent-ink text-sm font-bold shrink-0">
               M
             </div>
             <div className="mr-2">

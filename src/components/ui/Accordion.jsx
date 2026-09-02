@@ -68,7 +68,7 @@ export default function Accordion({ items, defaultOpen = 0 }) {
               <span
                 className={cn(
                   'w-8 h-8 rounded-full flex items-center justify-center shrink-0 text-sm font-bold',
-                  isOpen ? 'bg-accent text-ink' : 'bg-accent text-ink'
+                  'bg-accent text-accent-ink'
                 )}
               >
                 {isOpen ? '−' : '+'}

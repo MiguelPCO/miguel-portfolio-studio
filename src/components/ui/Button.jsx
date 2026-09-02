@@ -2,7 +2,7 @@ import { Link } from 'react-router'
 import { cn } from '../../lib/utils'
 
 const variants = {
-  'yellow-pill': 'bg-accent text-ink hover:bg-yellow-300',
+  'yellow-pill': 'bg-accent text-accent-ink hover:bg-yellow-300',
   'black-pill': 'bg-ink text-surface hover:bg-ink/90',
   'outline': 'border-2 border-ink text-ink hover:bg-ink hover:text-surface',
 }
@@ -28,8 +28,8 @@ export default function Button({ href, variant = 'black-pill', children, onClick
         className={cn(
           'w-7 h-7 rounded-full flex items-center justify-center text-xs shrink-0',
           variant === 'yellow-pill'
-            ? 'bg-ink text-accent'
-            : 'bg-accent text-ink'
+            ? 'bg-accent-ink text-accent'
+            : 'bg-accent text-accent-ink'
         )}
       >
         →

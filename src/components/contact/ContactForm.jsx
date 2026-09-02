@@ -72,7 +72,7 @@ export default function ContactForm() {
         <div className="bg-card rounded-[24px] p-8 md:p-12 max-w-2xl mx-auto">
           {submitted ? (
             <div ref={successRef} className="text-center py-12">
-              <div className="w-16 h-16 bg-accent rounded-full flex items-center justify-center mx-auto mb-4 text-2xl">
+              <div className="w-16 h-16 bg-accent text-accent-ink rounded-full flex items-center justify-center mx-auto mb-4 text-2xl">
                 ✓
               </div>
               <h3 className="font-display font-bold text-2xl text-ink mb-2">

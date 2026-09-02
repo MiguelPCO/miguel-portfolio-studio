@@ -20,7 +20,7 @@ export default function AboutPreview() {
               />
             ) : (
               <div className="w-32 h-32 md:w-44 md:h-44 rounded-full bg-accent flex items-center justify-center
-                              text-ink text-4xl md:text-5xl font-display font-bold">
+                              text-accent-ink text-4xl md:text-5xl font-display font-bold">
                 M
               </div>
             )}

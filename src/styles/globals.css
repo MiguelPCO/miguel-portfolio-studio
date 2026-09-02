@@ -8,6 +8,7 @@
   --color-surface: #F8F8F5;
   --color-ink: #0D0D0D;
   --color-accent: #FFE830;
+  --color-accent-ink: #0D0D0D;
   --color-card: #EFEFED;
   --color-muted: #8A8A8A;
 
@@ -26,7 +27,8 @@
   --color-ink: #F0EFE8;
   --color-card: #1A1A18;
   --color-muted: #9A9A97;
-  /* --color-accent stays #FFE830 — el amarillo funciona en ambos modos */
+  /* --color-accent y --color-accent-ink no se redefinen aquí a propósito:
+     el amarillo y su texto de contraste (siempre oscuro) funcionan igual en ambos modos */
 }
 
 /* ━━━━ Base Styles ━━━━ */

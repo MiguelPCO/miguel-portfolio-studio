@@ -44,7 +44,7 @@ export default function NextProject({ nextSlug }) {
             >
               Siguiente Proyecto
               <span className="w-7 h-7 bg-accent rounded-full flex items-center
-                               justify-center text-ink text-xs">
+                               justify-center text-accent-ink text-xs">
                 &rarr;
               </span>
             </Link>

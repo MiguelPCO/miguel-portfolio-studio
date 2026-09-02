@@ -107,7 +107,7 @@ export default function Navbar() {
           {/* CTA */}
           <Link
             to="/contact"
-            className="flex items-center gap-2 bg-accent text-ink
+            className="flex items-center gap-2 bg-accent text-accent-ink
                        px-5 py-2.5 rounded-full text-sm font-semibold
                        hover:bg-yellow-300 transition-colors"
             aria-label="Ir a contacto"
@@ -172,7 +172,7 @@ export default function Navbar() {
 
           <Link
             to="/contact"
-            className="mt-4 flex items-center gap-2 bg-accent text-ink
+            className="mt-4 flex items-center gap-2 bg-accent text-accent-ink
                        px-8 py-3 rounded-full text-lg font-semibold"
           >
             Get In Touch

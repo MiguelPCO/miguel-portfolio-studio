@@ -67,7 +67,7 @@ export default function CTASection() {
               >
                 Hablemos
                 <span className="w-7 h-7 bg-accent rounded-full flex items-center
-                                 justify-center text-ink text-xs">
+                                 justify-center text-accent-ink text-xs">
                   →
                 </span>
               </Link>

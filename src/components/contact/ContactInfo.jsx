@@ -95,7 +95,7 @@ export default function ContactInfo() {
             className="info-card bg-card rounded-[24px] p-8 relative"
           >
             {/* Icono */}
-            <div className="w-10 h-10 bg-accent rounded-xl flex items-center justify-center text-ink mb-6">
+            <div className="w-10 h-10 bg-accent rounded-xl flex items-center justify-center text-accent-ink mb-6">
               <Icon />
             </div>
 
