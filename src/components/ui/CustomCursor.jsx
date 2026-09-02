@@ -43,8 +43,11 @@ export default function CustomCursor() {
     }
 
     const onMouseOver = (e) => {
-      if (e.target.closest('img, picture, [data-cursor-dark]')) {
+      if (e.target.closest('img, picture')) {
         dot.classList.add('cursor-dot--on-image')
+      }
+      if (e.target.closest('[data-cursor-dark]')) {
+        dot.classList.add('cursor-dot--on-dark-surface')
       }
 
       if (isHovering) return
@@ -57,10 +60,16 @@ export default function CustomCursor() {
     }
 
     const onMouseOut = (e) => {
-      if (e.target.closest('img, picture, [data-cursor-dark]')) {
+      if (e.target.closest('img, picture')) {
         const rel = e.relatedTarget
-        if (!rel?.closest('img, picture, [data-cursor-dark]')) {
+        if (!rel?.closest('img, picture')) {
           dot.classList.remove('cursor-dot--on-image')
+        }
+      }
+      if (e.target.closest('[data-cursor-dark]')) {
+        const rel = e.relatedTarget
+        if (!rel?.closest('[data-cursor-dark]')) {
+          dot.classList.remove('cursor-dot--on-dark-surface')
         }
       }
 

@@ -76,6 +76,11 @@ h1, h2, h3, h4 {
   background-color: #0D0D0D !important;
 }
 
+/* Dot fuerza blanco sobre superficies oscuras (footer, etc.) — en light mode --color-ink es casi negro y se pierde encima de fondos oscuros. En dark mode el dot ya es claro por defecto. */
+:root:not(.dark) .cursor-dot--on-dark-surface {
+  background-color: #FFFFFF !important;
+}
+
 /* ━━━━ Accesibilidad: reducir movimiento ━━━━ */
 @media (prefers-reduced-motion: reduce) {
   *, *::before, *::after {

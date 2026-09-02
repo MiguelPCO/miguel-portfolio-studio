@@ -11,7 +11,7 @@ const footerLinks = [
 
 export default function Footer() {
   return (
-    <footer className="bg-ink dark:bg-[#0D0D0D] text-white py-16 px-6">
+    <footer className="bg-ink dark:bg-[#0D0D0D] text-white py-16 px-6" data-cursor-dark>
       <div className="max-w-[1200px] mx-auto">
         <div className="flex flex-col md:flex-row justify-between items-start gap-12 mb-12">
           {/* Logo y descripción */}
@@ -21,8 +21,8 @@ export default function Footer() {
               <span className="font-display font-bold text-xl">STUDIO</span>
             </Link>
             <p className="text-muted text-sm leading-relaxed">
-              Design studio focused on building brands that stand out.
-              We craft visual identities, websites, and digital experiences.
+              Personal portfolio of Miguel de la Peña, designer and web
+              developer. I build digital products end to end, from brand to code.
             </p>
           </div>
 
@@ -46,7 +46,7 @@ export default function Footer() {
             © {new Date().getFullYear()} Studio. All rights reserved.
           </p>
           <p className="text-xs text-muted">
-            Designed & developed with passion.
+            Built with React, GSAP and Tailwind CSS.
           </p>
         </div>
       </div>
