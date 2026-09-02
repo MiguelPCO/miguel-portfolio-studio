@@ -230,59 +230,11 @@ export const featuredProjects = [
     liveUrl: "https://matiz-eight.vercel.app",
     repoUrl: "https://github.com/MiguelPCO/matiz",
     testimonial: null,
-    next: "lumie",
-  },
-  {
-    slug: "lumie",
-    num: "05",
-    title: "Lumié",
-    category: "Landing · Animaciones · Skincare",
-    tags: ["Landing", "GSAP", "React"],
-    brief:
-      "Landing cinematográfica para marca de skincare de lujo. Animaciones GSAP de alto impacto, diseño premium y storytelling visual que eleva la percepción de marca.",
-    tools: ["React 19", "GSAP 3", "Vite", "Tailwind v4", "TypeScript"],
-    duration: "1 semana",
-    deliverables: [
-      "Landing page premium",
-      "Animaciones GSAP",
-      "Diseño de identidad",
-      "Experiencia cinematográfica",
-    ],
-    metrics: [
-      "Animaciones ScrollTrigger + SplitText",
-      "Diseño mobile-first responsive",
-      "Build optimizado con Vite",
-    ],
-    // — Case study sections —
-    context:
-      "Ejercicio de concepto para explorar hasta dónde se puede llevar la experiencia visual de una landing con GSAP y React. El briefing: marca de skincare de lujo, posicionamiento premium, experiencia cinematográfica.",
-    problem:
-      "Las landings de skincare de lujo suelen ser visualmente potentes pero técnicamente mediocres: imágenes pesadas, animaciones CSS básicas, sin continuidad entre secciones. El reto era crear una experiencia que se sintiera como una producción cinematográfica.",
-    solution:
-      "Landing de una página con scroll-storytelling completo: cada sección tiene una animación de entrada específica diseñada para el contenido. SplitText para los títulos, clip-path reveals para las imágenes y parallax suave para crear profundidad.",
-    interactionDesign:
-      'El sistema de animaciones se construyó como una coreografía: cada elemento tiene un rol en la narrativa visual del scroll. Los títulos se revelan letra a letra para dar tiempo al usuario a procesar el mensaje antes de que aparezca la imagen. El clip-path en las imágenes crea una sensación de "descubrimiento" que encaja con el posicionamiento de lujo.',
-    constraints: [
-      "Performance en mobile — las animaciones complejas degradan en dispositivos de gama media",
-      "Semana de desarrollo — las animaciones más elaboradas requieren tiempo de refinamiento",
-      "prefers-reduced-motion — todas las animaciones tienen fallback instantáneo",
-    ],
-    reflection:
-      "GSAP con React y @gsap/react es una combinación muy potente pero requiere disciplina: el scope de useGSAP evita fugas de memoria y el registro de plugins en main.jsx garantiza que solo se inicializan una vez. Sin ese patrón, las animaciones se comportan de forma impredecible.",
-    image: "/projects/lumie-hero.jpg",
-    images: [
-      "/projects/lumie-1.jpg",
-      "/projects/lumie-2.jpg",
-      "/projects/lumie-3.jpg",
-    ],
-    liveUrl: "",
-    repoUrl: "",
-    testimonial: null,
     next: "zuma",
   },
   {
     slug: "zuma",
-    num: "06",
+    num: "05",
     title: "ZUMA",
     category: "Marca · E-commerce · Fruit Water",
     tags: ["Branding", "E-commerce", "Next.js"],
@@ -489,25 +441,6 @@ export const smallWorks = [
       "App móvil para diseñadores que necesitan generar y exportar paletas de color de forma rápida. Combina teoría del color con una interfaz táctil pensada para el móvil, exportando en formatos listos para usar en Figma o CSS.",
     tools: ["Expo", "React Native", "NativeWind", "TypeScript"],
     images: [],
-    liveUrl: "",
-    repoUrl: "",
-  },
-  {
-    slug: "altitud-coffee",
-    title: "Altitud Coffee",
-    category: "Web · Café de Especialidad",
-    tags: ["Web", "Landing", "Next.js"],
-    description:
-      "Web para cafetería de especialidad. Diseño elegante que comunica el origen, proceso y artesanía detrás de cada taza.",
-    brief:
-      "Altitud Coffee es una cafetería especializada en café de origen único y métodos de preparación alternativos. Construí una landing editorial que educa al visitante sobre el proceso, el origen y los métodos de preparación mientras comunica el ambiente y la propuesta de valor, con fotografía oscura y tipografía grande para una experiencia premium.",
-    tools: ["Next.js 15", "Tailwind CSS", "TypeScript", "Vercel"],
-    image: "/projects/altitud-hero.jpg",
-    images: [
-      "/projects/altitud-1.jpg",
-      "/projects/altitud-2.jpg",
-      "/projects/altitud-3.jpg",
-    ],
     liveUrl: "",
     repoUrl: "",
   },
