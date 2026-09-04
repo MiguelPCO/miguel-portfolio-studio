@@ -3,58 +3,59 @@ export const featuredProjects = [
     slug: "fitgame-pro",
     num: "01",
     title: "FitGame Pro",
-    category: "App · PWA · Gamificación",
+    category: { es: "App · PWA · Gamificación", en: "App · PWA · Gamification" },
     tags: ["App", "PWA", "React"],
-    brief:
-      "App de fitness gamificada que convierte tus entrenamientos en misiones. Con sistema de XP, rachas, historial detallado y soporte offline completo.",
-    tools: [
-      "React 19",
-      "TypeScript",
-      "Supabase",
-      "Vite",
-      "Tailwind CSS",
-      "Vitest",
-    ],
-    duration: "6 meses",
+    brief: {
+      es: "App de fitness gamificada que convierte tus entrenamientos en misiones. Con sistema de XP, rachas, historial detallado y soporte offline completo.",
+      en: "A gamified fitness app that turns your workouts into missions, with an XP system, streaks, detailed history and full offline support.",
+    },
+    tools: ["React 19", "TypeScript", "Supabase", "Vite", "Tailwind CSS", "Vitest"],
+    duration: { es: "6 meses", en: "6 months" },
     deliverables: [
-      "App web PWA",
-      "Sistema de XP y gamificación",
-      "Modo offline con sync",
-      "Suite de 138 tests",
+      { es: "App web PWA", en: "PWA web app" },
+      { es: "Sistema de XP y gamificación", en: "XP and gamification system" },
+      { es: "Modo offline con sync", en: "Offline mode with sync" },
+      { es: "Suite de 138 tests", en: "138-test suite" },
     ],
     metrics: [
-      "PWA installable con soporte offline total",
-      "138 tests unitarios + 36 E2E con Playwright",
-      "Supabase auth + localStorage fallback",
+      { es: "PWA installable con soporte offline total", en: "Installable PWA with full offline support" },
+      { es: "138 tests unitarios + 36 E2E con Playwright", en: "138 unit tests + 36 E2E tests with Playwright" },
+      { es: "Supabase auth + localStorage fallback", en: "Supabase auth + localStorage fallback" },
     ],
     // — Case study sections —
-    context:
-      "Proyecto personal nacido de la frustración con las apps de fitness existentes: demasiado complejas, sin feedback motivacional real y sin soporte offline fiable. Quería construir algo que yo mismo quisiera usar cada semana.",
-    problem:
-      "Las apps de fitness fallan en retención porque el registro de entrenamientos es aburrido y no hay recompensa emocional. El usuario abandona cuando no siente progreso tangible, especialmente si entrena sin conexión a internet.",
-    solution:
-      "Una PWA gamificada donde cada entrenamiento genera XP, rachas y niveles. El sistema de progresión convierte el hábito en un loop de recompensa. El modo offline con sync automático elimina la fricción de depender del móvil con datos.",
+    context: {
+      es: "Proyecto personal nacido de la frustración con las apps de fitness existentes: demasiado complejas, sin feedback motivacional real y sin soporte offline fiable. Quería construir algo que yo mismo quisiera usar cada semana.",
+      en: "A personal project born out of frustration with existing fitness apps: too complex, no real motivational feedback and no reliable offline support. I wanted to build something I'd actually want to use every week.",
+    },
+    problem: {
+      es: "Las apps de fitness fallan en retención porque el registro de entrenamientos es aburrido y no hay recompensa emocional. El usuario abandona cuando no siente progreso tangible, especialmente si entrena sin conexión a internet.",
+      en: "Fitness apps fail at retention because logging workouts is boring and there's no emotional payoff. Users quit when they don't feel tangible progress, especially if they train without an internet connection.",
+    },
+    solution: {
+      es: "Una PWA gamificada donde cada entrenamiento genera XP, rachas y niveles. El sistema de progresión convierte el hábito en un loop de recompensa. El modo offline con sync automático elimina la fricción de depender del móvil con datos.",
+      en: "A gamified PWA where every workout earns XP, streaks and levels. The progression system turns the habit into a reward loop, and offline mode with automatic sync removes the friction of depending on mobile data.",
+    },
     features: [
-      "Sistema de XP con multiplicadores por racha y RPE",
-      "Modo offline completo con cola de sync automática",
-      "Historial detallado con filtros por músculo y ejercicio",
-      "Peso recomendado basado en progresión doble",
-      "PWA instalable con notificaciones de recordatorio",
+      { es: "Sistema de XP con multiplicadores por racha y RPE", en: "XP system with streak and RPE multipliers" },
+      { es: "Modo offline completo con cola de sync automática", en: "Full offline mode with an automatic sync queue" },
+      { es: "Historial detallado con filtros por músculo y ejercicio", en: "Detailed history with filters by muscle group and exercise" },
+      { es: "Peso recomendado basado en progresión doble", en: "Recommended weight based on double progression" },
+      { es: "PWA instalable con notificaciones de recordatorio", en: "Installable PWA with reminder notifications" },
     ],
-    onboarding:
-      "El onboarding de 7 pasos recoge objetivo, nivel y equipamiento disponible para personalizar los templates de entrenamiento desde el primer día. Diseñado para completarse en menos de 2 minutos.",
-    reflection:
-      "El mayor aprendizaje fue la arquitectura localStorage-first: persistir inmediatamente y sincronizar con Supabase de forma asíncrona eliminó toda fricción de UX relacionada con la latencia de red. Lo replicaría en cualquier app móvil con datos críticos.",
+    onboarding: {
+      es: "El onboarding de 7 pasos recoge objetivo, nivel y equipamiento disponible para personalizar los templates de entrenamiento desde el primer día. Diseñado para completarse en menos de 2 minutos.",
+      en: "The 7-step onboarding collects your goal, level and available equipment to personalize workout templates from day one, designed to complete in under 2 minutes.",
+    },
+    reflection: {
+      es: "El mayor aprendizaje fue la arquitectura localStorage-first: persistir inmediatamente y sincronizar con Supabase de forma asíncrona eliminó toda fricción de UX relacionada con la latencia de red. Lo replicaría en cualquier app móvil con datos críticos.",
+      en: "The biggest lesson was the localStorage-first architecture: persisting immediately and syncing with Supabase asynchronously removed all the UX friction tied to network latency. I'd reuse that pattern in any mobile app with critical data.",
+    },
     image: "/projects/fitgame-hero.jpg",
-    images: [
-      "/projects/fitgame-1.jpg",
-      "/projects/fitgame-2.jpg",
-      "/projects/fitgame-3.jpg",
-    ],
+    images: ["/projects/fitgame-1.jpg", "/projects/fitgame-2.jpg", "/projects/fitgame-3.jpg"],
     sectionImages: [
-      { src: "/projects/fitgame-section-1.jpg", alt: "Plantillas de entrenamiento" },
-      { src: "/projects/fitgame-section-2.jpg", alt: "Configuración y onboarding" },
-      { src: "/projects/fitgame-section-3.jpg", alt: "Historial de sesiones" },
+      { src: "/projects/fitgame-section-1.jpg", alt: { es: "Plantillas de entrenamiento", en: "Workout templates" } },
+      { src: "/projects/fitgame-section-2.jpg", alt: { es: "Configuración y onboarding", en: "Settings and onboarding" } },
+      { src: "/projects/fitgame-section-3.jpg", alt: { es: "Historial de sesiones", en: "Session history" } },
     ],
     liveUrl: "https://fitgame-pro.vercel.app",
     repoUrl: "https://github.com/MiguelPCO/Fitgame-pro",
@@ -65,52 +66,62 @@ export const featuredProjects = [
     slug: "decoriai",
     num: "02",
     title: "Décoriai",
-    category: "App · Inteligencia Artificial",
+    category: { es: "App · Inteligencia Artificial", en: "App · Artificial Intelligence" },
     tags: ["IA", "App", "Next.js"],
-    brief:
-      "Plataforma de rediseño de interiores con IA. Sube una foto de tu habitación y recibe una reimaginación completa del espacio en segundos.",
+    brief: {
+      es: "Plataforma de rediseño de interiores con IA. Sube una foto de tu habitación y recibe una reimaginación completa del espacio en segundos.",
+      en: "An AI interior redesign platform. Upload a photo of your room and get a complete reimagining of the space in seconds.",
+    },
     tools: ["Next.js 16", "Replicate", "Supabase", "Tailwind v4", "TypeScript"],
-    duration: "3 semanas",
+    duration: { es: "3 semanas", en: "3 weeks" },
     deliverables: [
-      "Landing page",
-      "Generador IA",
-      "Historial de generaciones",
-      "Almacenamiento en Supabase",
+      { es: "Landing page", en: "Landing page" },
+      { es: "Generador IA", en: "AI generator" },
+      { es: "Historial de generaciones", en: "Generation history" },
+      { es: "Almacenamiento en Supabase", en: "Supabase storage" },
     ],
     metrics: [
-      "Flujo completo: upload → generación IA → historial",
-      "Supabase Storage para imágenes input/output",
-      "Dashboard con datos reales de uso",
+      { es: "Flujo completo: upload → generación IA → historial", en: "Full flow: upload → AI generation → history" },
+      { es: "Supabase Storage para imágenes input/output", en: "Supabase Storage for input/output images" },
+      { es: "Dashboard con datos reales de uso", en: "Dashboard with real usage data" },
     ],
     // — Case study sections —
-    context:
-      "El mercado de herramientas de diseño de interiores con IA estaba dominado por productos con prompts complejos o flujos de pago inmediato. Vi la oportunidad de construir algo que cualquier persona pudiera usar sin conocimientos técnicos ni de diseño.",
-    problem:
-      "Visualizar cómo quedaría tu habitación con un estilo diferente requiere contratar un diseñador o aprender software complejo. El 90% de las personas decoran a ciegas, comprando sin saber el resultado final.",
-    solution:
-      "Una plataforma donde subir una foto de tu habitación y elegir un estilo genera una reimaginación fotorrealista en segundos. Sin prompts técnicos, sin barreras de entrada. El historial permite comparar variaciones y retomar sesiones anteriores.",
-    research:
-      "Analicé los flujos de Midjourney, Adobe Firefly y herramientas específicas de interiorismo. El patrón común era la sobre-complejidad del input. La decisión clave fue eliminar la pantalla de configuración y centrar todo en dos acciones: subir foto y elegir estilo.",
+    context: {
+      es: "El mercado de herramientas de diseño de interiores con IA estaba dominado por productos con prompts complejos o flujos de pago inmediato. Vi la oportunidad de construir algo que cualquier persona pudiera usar sin conocimientos técnicos ni de diseño.",
+      en: "The AI interior design tool market was dominated by products with complex prompts or immediate paywalls. I saw an opportunity to build something anyone could use without technical or design knowledge.",
+    },
+    problem: {
+      es: "Visualizar cómo quedaría tu habitación con un estilo diferente requiere contratar un diseñador o aprender software complejo. El 90% de las personas decoran a ciegas, comprando sin saber el resultado final.",
+      en: "Visualizing how your room would look in a different style usually means hiring a designer or learning complex software. 90% of people decorate blind, buying without knowing the final result.",
+    },
+    solution: {
+      es: "Una plataforma donde subir una foto de tu habitación y elegir un estilo genera una reimaginación fotorrealista en segundos. Sin prompts técnicos, sin barreras de entrada. El historial permite comparar variaciones y retomar sesiones anteriores.",
+      en: "A platform where uploading a photo of your room and picking a style generates a photorealistic reimagining in seconds. No technical prompts, no barrier to entry. The history lets you compare variations and pick up earlier sessions.",
+    },
+    research: {
+      es: "Analicé los flujos de Midjourney, Adobe Firefly y herramientas específicas de interiorismo. El patrón común era la sobre-complejidad del input. La decisión clave fue eliminar la pantalla de configuración y centrar todo en dos acciones: subir foto y elegir estilo.",
+      en: "I studied the flows of Midjourney, Adobe Firefly and interior-design-specific tools. The common pattern was over-complicated input. The key decision was cutting the configuration screen and centering everything on two actions: upload a photo and pick a style.",
+    },
     constraints: [
-      "Latencia de Replicate (8-15s por generación), que requirió estados de carga expresivos",
-      "Coste por generación, sin tier gratuito ilimitado",
-      "Calidad variable del modelo según calidad de la foto de entrada",
+      { es: "Latencia de Replicate (8-15s por generación), que requirió estados de carga expresivos", en: "Replicate latency (8-15s per generation), which required expressive loading states" },
+      { es: "Coste por generación, sin tier gratuito ilimitado", en: "Per-generation cost, with no unlimited free tier" },
+      { es: "Calidad variable del modelo según calidad de la foto de entrada", en: "Model output quality varies with the quality of the input photo" },
     ],
-    interactionDesign:
-      'El mayor reto fue gestionar la espera de 8-15 segundos sin que el usuario abandonara. Diseñé un estado de carga con animación de "transformación" que comunica progreso y mantiene la expectativa activa. La comparativa before/after al recibir el resultado es el momento de mayor impacto emocional del flujo.',
-    reflection:
-      "Replicate es ideal para prototipar pero costoso para escalar. Con más tiempo, evaluaría self-hosting del modelo en Fly.io para reducir coste por generación y mejorar la latencia. El flujo de onboarding también se beneficiaría de un paso de calibración con la foto antes de lanzar la primera generación.",
+    interactionDesign: {
+      es: 'El mayor reto fue gestionar la espera de 8-15 segundos sin que el usuario abandonara. Diseñé un estado de carga con animación de "transformación" que comunica progreso y mantiene la expectativa activa. La comparativa before/after al recibir el resultado es el momento de mayor impacto emocional del flujo.',
+      en: 'The biggest challenge was managing the 8-15 second wait without users bouncing. I designed a loading state with a "transformation" animation that communicates progress and keeps anticipation alive. The before/after comparison when the result lands is the flow\'s biggest emotional payoff.',
+    },
+    reflection: {
+      es: "Replicate es ideal para prototipar pero costoso para escalar. Con más tiempo, evaluaría self-hosting del modelo en Fly.io para reducir coste por generación y mejorar la latencia. El flujo de onboarding también se beneficiaría de un paso de calibración con la foto antes de lanzar la primera generación.",
+      en: "Replicate is great for prototyping but costly to scale. With more time, I'd evaluate self-hosting the model on Fly.io to cut cost per generation and improve latency. The onboarding flow would also benefit from a photo-calibration step before running the first generation.",
+    },
     image: "/projects/herodecoriai.png",
     imageFit: "contain",
-    images: [
-      "/projects/decoriai-1.jpg",
-      "/projects/decoriai-2.jpg",
-      "/projects/decoriai-3.jpg",
-    ],
+    images: ["/projects/decoriai-1.jpg", "/projects/decoriai-2.jpg", "/projects/decoriai-3.jpg"],
     sectionImages: [
-      { src: "/projects/decoriai-section-1.jpg", alt: "Pantalla de inicio de sesión" },
-      { src: "/projects/decoriai-section-2.jpg", alt: "Selector de estilo en el generador" },
-      { src: "/projects/decoriai-section-3.jpg", alt: "Registro de cuenta" },
+      { src: "/projects/decoriai-section-1.jpg", alt: { es: "Pantalla de inicio de sesión", en: "Sign-in screen" } },
+      { src: "/projects/decoriai-section-2.jpg", alt: { es: "Selector de estilo en el generador", en: "Style picker in the generator" } },
+      { src: "/projects/decoriai-section-3.jpg", alt: { es: "Registro de cuenta", en: "Account sign-up" } },
     ],
     liveUrl: "https://interior-ai-xi.vercel.app",
     repoUrl: "https://github.com/MiguelPCO/Decoriai",
@@ -121,55 +132,55 @@ export const featuredProjects = [
     slug: "spritz",
     num: "03",
     title: "Spritz",
-    category: "App · Web · Fragancias",
+    category: { es: "App · Web · Fragancias", en: "App · Web · Fragrances" },
     tags: ["App", "Next.js", "Supabase"],
-    brief:
-      "Guardarropa digital para coleccionistas de fragancias. Gestiona tu colección, registra reseñas y descubre nuevos perfumes con ayuda de IA.",
-    tools: [
-      "Next.js 16",
-      "Supabase",
-      "Claude API",
-      "Tailwind v4",
-      "TypeScript",
-    ],
-    duration: "2 meses",
+    brief: {
+      es: "Guardarropa digital para coleccionistas de fragancias. Gestiona tu colección, registra reseñas y descubre nuevos perfumes con ayuda de IA.",
+      en: "A digital wardrobe for fragrance collectors. Manage your collection, log reviews and discover new perfumes with AI.",
+    },
+    tools: ["Next.js 16", "Supabase", "Claude API", "Tailwind v4", "TypeScript"],
+    duration: { es: "2 meses", en: "2 months" },
     deliverables: [
-      "App web full-stack",
-      "CRUD completo de colección",
-      "Integración Claude AI",
-      "Auth con Supabase",
+      { es: "App web full-stack", en: "Full-stack web app" },
+      { es: "CRUD completo de colección", en: "Full collection CRUD" },
+      { es: "Integración Claude AI", en: "Claude AI integration" },
+      { es: "Auth con Supabase", en: "Supabase auth" },
     ],
     metrics: [
-      "Sistema de colección con estados (stock/vendido/enviado)",
-      "Claude AI para recomendaciones personalizadas",
-      "Desplegado en Vercel",
+      { es: "Sistema de colección con estados (stock/vendido/enviado)", en: "Collection system with states (in stock/sold/gifted)" },
+      { es: "Claude AI para recomendaciones personalizadas", en: "Claude AI for personalized recommendations" },
+      { es: "Desplegado en Vercel", en: "Deployed on Vercel" },
     ],
     // — Case study sections —
-    context:
-      "Los aficionados a la perfumería de nicho no tienen una herramienta seria para gestionar colecciones grandes. Las alternativas son hojas de cálculo, Notion o apps genéricas de coleccionismo que no entienden el dominio.",
-    problem:
-      "Sin un registro estructurado, los coleccionistas pierden el rastro de qué tienen, qué les gustó, cuánto pagaron y qué fragancias se complementan entre sí. La recomendación de nuevos perfumes es completamente manual y basada en memoria.",
-    solution:
-      "Un guardarropa digital con CRUD completo de colección, notas de cata por fragancia y un asistente IA integrado con Claude que genera recomendaciones personalizadas basadas en el perfil olfativo del usuario.",
+    context: {
+      es: "Los aficionados a la perfumería de nicho no tienen una herramienta seria para gestionar colecciones grandes. Las alternativas son hojas de cálculo, Notion o apps genéricas de coleccionismo que no entienden el dominio.",
+      en: "Niche fragrance enthusiasts don't have a serious tool for managing large collections. The alternatives are spreadsheets, Notion, or generic collecting apps that don't understand the domain.",
+    },
+    problem: {
+      es: "Sin un registro estructurado, los coleccionistas pierden el rastro de qué tienen, qué les gustó, cuánto pagaron y qué fragancias se complementan entre sí. La recomendación de nuevos perfumes es completamente manual y basada en memoria.",
+      en: "Without a structured record, collectors lose track of what they own, what they liked, what they paid, and which fragrances pair well together. Recommending new perfumes is entirely manual and based on memory.",
+    },
+    solution: {
+      es: "Un guardarropa digital con CRUD completo de colección, notas de cata por fragancia y un asistente IA integrado con Claude que genera recomendaciones personalizadas basadas en el perfil olfativo del usuario.",
+      en: "A digital wardrobe with full collection CRUD, tasting notes per fragrance, and an AI assistant built on Claude that generates personalized recommendations based on the user's scent profile.",
+    },
     features: [
-      "Colección con estados: en stock, vendido, enviado",
-      "Notas y puntuaciones por fragancia",
-      "Recomendaciones personalizadas con Claude API",
-      "Estadísticas de colección e inversión",
-      "Auth completo con Supabase",
+      { es: "Colección con estados: en stock, vendido, enviado", en: "Collection with states: in stock, sold, gifted" },
+      { es: "Notas y puntuaciones por fragancia", en: "Notes and ratings per fragrance" },
+      { es: "Recomendaciones personalizadas con Claude API", en: "Personalized recommendations with the Claude API" },
+      { es: "Estadísticas de colección e inversión", en: "Collection and investment statistics" },
+      { es: "Auth completo con Supabase", en: "Full Supabase auth" },
     ],
-    reflection:
-      'La integración de Claude API para recomendaciones fue más sencilla de lo esperado. El reto real fue diseñar el prompt correcto para que las recomendaciones se sintieran genuinas y no genéricas. Un sistema de feedback explícito ("esta recomendación fue útil") mejoraría mucho la calidad en iteraciones futuras.',
+    reflection: {
+      es: 'La integración de Claude API para recomendaciones fue más sencilla de lo esperado. El reto real fue diseñar el prompt correcto para que las recomendaciones se sintieran genuinas y no genéricas. Un sistema de feedback explícito ("esta recomendación fue útil") mejoraría mucho la calidad en iteraciones futuras.',
+      en: 'Integrating the Claude API for recommendations was easier than expected. The real challenge was designing the right prompt so recommendations felt genuine instead of generic. An explicit feedback system ("was this recommendation useful?") would meaningfully improve quality in future iterations.',
+    },
     image: "/projects/spritz-hero.jpg",
-    images: [
-      "/projects/spritz-1.jpg",
-      "/projects/spritz-2.jpg",
-      "/projects/spritz-3.jpg",
-    ],
+    images: ["/projects/spritz-1.jpg", "/projects/spritz-2.jpg", "/projects/spritz-3.jpg"],
     sectionImages: [
-      { src: "/projects/spritz-section-1.jpg", alt: "Perfil olfativo y recomendaciones de Descubrir" },
-      { src: "/projects/spritz-section-2.jpg", alt: "Búsqueda de fragancias con autocompletado" },
-      { src: "/projects/spritz-section-3.jpg", alt: "Registro de uso en calendario" },
+      { src: "/projects/spritz-section-1.jpg", alt: { es: "Perfil olfativo y recomendaciones de Descubrir", en: "Scent profile and Discover recommendations" } },
+      { src: "/projects/spritz-section-2.jpg", alt: { es: "Búsqueda de fragancias con autocompletado", en: "Fragrance search with autocomplete" } },
+      { src: "/projects/spritz-section-3.jpg", alt: { es: "Registro de uso en calendario", en: "Usage log on a calendar" } },
     ],
     liveUrl: "https://spritz-jet.vercel.app",
     repoUrl: "https://github.com/MiguelPCO/Spritz",
@@ -180,52 +191,60 @@ export const featuredProjects = [
     slug: "matiz",
     num: "04",
     title: "MATIZ",
-    category: "Juego · Percepción del Color",
+    category: { es: "Juego · Percepción del Color", en: "Game · Color Perception" },
     tags: ["Juego", "Next.js", "GSAP"],
-    brief:
-      "Juego de percepción del color a ciegas. Una pista de palabra o imagen, una cuadrícula de matices y tres tiros para acertar el correcto, en solitario, por reto diario o en duelo hotseat.",
+    brief: {
+      es: "Juego de percepción del color a ciegas. Una pista de palabra o imagen, una cuadrícula de matices y tres tiros para acertar el correcto, en solitario, por reto diario o en duelo hotseat.",
+      en: "A blind color-perception game. One word or image clue, a grid of hues, and three shots to find the right one, solo, in the daily challenge, or in hotseat duel.",
+    },
     tools: ["Next.js 15", "TypeScript", "GSAP", "Tailwind CSS"],
-    duration: "En desarrollo",
+    duration: { es: "En desarrollo", en: "In development" },
     deliverables: [
-      "Motor de juego con cuadrículas configurables (4×4 a 8×8)",
-      "Modos Solo, Duelo hotseat y Diario",
-      "Sistema de pistas por palabra o imagen",
-      "Perfil con racha, mejor puntuación y calendario",
+      { es: "Motor de juego con cuadrículas configurables (4×4 a 8×8)", en: "Game engine with configurable grids (4×4 to 8×8)" },
+      { es: "Modos Solo, Duelo hotseat y Diario", en: "Solo, Hotseat Duel and Daily modes" },
+      { es: "Sistema de pistas por palabra o imagen", en: "Word or image clue system" },
+      { es: "Perfil con racha, mejor puntuación y calendario", en: "Profile with streak, best score and calendar" },
     ],
     metrics: [
-      "Termómetro de acierto tras cada tiro sin revelar la dirección",
-      "Duelo hotseat con marcador y pistas por jugador",
-      "Reto Diario con calendario de racha y resultado compartible",
+      { es: "Termómetro de acierto tras cada tiro sin revelar la dirección", en: "Accuracy thermometer after each shot, without revealing direction" },
+      { es: "Duelo hotseat con marcador y pistas por jugador", en: "Hotseat duel with a scoreboard and per-player clues" },
+      { es: "Reto Diario con calendario de racha y resultado compartible", en: "Daily Challenge with a streak calendar and a shareable result" },
     ],
     // — Case study sections —
-    context:
-      "Proyecto personal para explorar cómo perciben el color distintas personas: cada partida reta a encontrar un matiz exacto dentro de una cuadrícula, guiándose solo por una pista de palabra o imagen y una barra de proximidad que no revela dirección.",
-    problem:
-      "La percepción del color es subjetiva y difícil de convertir en un reto claro. Faltaba un formato que obligara a razonar sobre luminosidad e intensidad en vez de adivinar al azar, y que funcionara tanto en solitario como cara a cara con otra persona.",
-    solution:
-      "Una cuadrícula de matices donde el eje horizontal es luminosidad (oscuro → claro) y el vertical es intensidad (vivo → apagado). Cada tiro cuesta puntos y el termómetro solo indica cuánto te falta, nunca hacia el resultado, eso es cosa del jugador. Tres modos cubren distintos contextos: Solo para practicar, Duelo hotseat para competir en el mismo dispositivo con pases de turno y pantalla de \"mantén pulsado\", y Diario con un color nuevo cada 24h, racha y calendario de resultados.",
+    context: {
+      es: "Proyecto personal para explorar cómo perciben el color distintas personas: cada partida reta a encontrar un matiz exacto dentro de una cuadrícula, guiándose solo por una pista de palabra o imagen y una barra de proximidad que no revela dirección.",
+      en: "A personal project exploring how different people perceive color: each round challenges you to find an exact hue inside a grid, guided only by a word or image clue and a proximity bar that never reveals direction.",
+    },
+    problem: {
+      es: "La percepción del color es subjetiva y difícil de convertir en un reto claro. Faltaba un formato que obligara a razonar sobre luminosidad e intensidad en vez de adivinar al azar, y que funcionara tanto en solitario como cara a cara con otra persona.",
+      en: "Color perception is subjective and hard to turn into a clear challenge. What was missing was a format that forces you to reason about lightness and intensity instead of guessing at random, and that works both solo and face to face with another person.",
+    },
+    solution: {
+      es: 'Una cuadrícula de matices donde el eje horizontal es luminosidad (oscuro → claro) y el vertical es intensidad (vivo → apagado). Cada tiro cuesta puntos y el termómetro solo indica cuánto te falta, nunca hacia el resultado, eso es cosa del jugador. Tres modos cubren distintos contextos: Solo para practicar, Duelo hotseat para competir en el mismo dispositivo con pases de turno y pantalla de "mantén pulsado", y Diario con un color nuevo cada 24h, racha y calendario de resultados.',
+      en: 'A grid of hues where the horizontal axis is lightness (dark → light) and the vertical axis is intensity (vivid → muted). Every shot costs points, and the thermometer only shows how far off you are, never which direction, that part is on the player. Three modes cover different contexts: Solo for practice, Hotseat Duel to compete on the same device with turn passing and a "press and hold" screen, and Daily with a new color every 24 hours, a streak, and a results calendar.',
+    },
     features: [
-      "Cuadrículas configurables de 4×4 a 8×8 con tres niveles de dificultad",
-      "Pistas por palabra o por imagen, con coste en puntos por pista pedida",
-      "Modo Duelo hotseat con marcador, pases de turno y revancha",
-      "Reto Diario con racha, mejor puntuación, % de victorias y calendario mensual",
-      "Modo claro/oscuro y guía \"Cómo se juega\" con nota explícita sobre daltonismo",
+      { es: "Cuadrículas configurables de 4×4 a 8×8 con tres niveles de dificultad", en: "Configurable 4×4 to 8×8 grids with three difficulty levels" },
+      { es: "Pistas por palabra o por imagen, con coste en puntos por pista pedida", en: "Word or image clues, each costing points when requested" },
+      { es: "Modo Duelo hotseat con marcador, pases de turno y revancha", en: "Hotseat Duel mode with a scoreboard, turn passing and rematch" },
+      { es: "Reto Diario con racha, mejor puntuación, % de victorias y calendario mensual", en: "Daily Challenge with streak, best score, win % and a monthly calendar" },
+      { es: 'Modo claro/oscuro y guía "Cómo se juega" con nota explícita sobre daltonismo', en: 'Light/dark mode and a "How to play" guide with an explicit note about color blindness' },
     ],
-    interactionDesign:
-      "El detalle que sostiene todo el juego es el termómetro tras cada tiro: solo comunica distancia, no dirección, así que el jugador tiene que razonar con los ejes de la carta en vez de tantear a ciegas. En duelo hotseat, la pantalla \"mantén pulsado\" entre turnos evita que un jugador vea la pista o el tablero del otro por accidente al pasarse el móvil.",
-    reflection:
-      "Diseñar para daltonismo desde el principio cambió decisiones de UI: el eje horizontal (luminosidad) se mantiene legible sin percibir color, y la guía del juego lo dice de forma explícita en vez de ignorar el problema. El modo Diario con calendario y racha fue el que más enganchó en pruebas informales: convertir un puzzle de color en un hábito diario tipo Wordle fue la validación más clara del concepto.",
+    interactionDesign: {
+      es: 'El detalle que sostiene todo el juego es el termómetro tras cada tiro: solo comunica distancia, no dirección, así que el jugador tiene que razonar con los ejes de la carta en vez de tantear a ciegas. En duelo hotseat, la pantalla "mantén pulsado" entre turnos evita que un jugador vea la pista o el tablero del otro por accidente al pasarse el móvil.',
+      en: 'The detail that holds the whole game together is the post-shot thermometer: it only communicates distance, not direction, so the player has to reason with the grid\'s axes instead of guessing blindly. In hotseat duel, the "press and hold" screen between turns keeps one player from accidentally seeing the other\'s clue or board when handing off the phone.',
+    },
+    reflection: {
+      es: "Diseñar para daltonismo desde el principio cambió decisiones de UI: el eje horizontal (luminosidad) se mantiene legible sin percibir color, y la guía del juego lo dice de forma explícita en vez de ignorar el problema. El modo Diario con calendario y racha fue el que más enganchó en pruebas informales: convertir un puzzle de color en un hábito diario tipo Wordle fue la validación más clara del concepto.",
+      en: "Designing for color blindness from the start changed UI decisions: the horizontal axis (lightness) stays legible without perceiving color, and the game's guide says so explicitly instead of ignoring the problem. The Daily mode with its calendar and streak was the one that hooked people most in informal testing: turning a color puzzle into a Wordle-style daily habit was the clearest validation of the concept.",
+    },
     image: "/projects/matiz-hero.png",
     imageFit: "contain",
-    images: [
-      "/projects/matiz-1.png",
-      "/projects/matiz-2.png",
-      "/projects/matiz-3.png",
-    ],
+    images: ["/projects/matiz-1.png", "/projects/matiz-2.png", "/projects/matiz-3.png"],
     sectionImages: [
-      { src: "/projects/matiz-section-1.png", alt: "Configuración de duelo con nombres de jugadores", fit: "contain" },
-      { src: "/projects/matiz-section-2.png", alt: "Panel de configuración: tamaño, dificultad y tipo de pista", fit: "contain" },
-      { src: "/projects/matiz-section-3.png", alt: "Guía Cómo se juega, con nota sobre daltonismo", fit: "contain" },
+      { src: "/projects/matiz-section-1.png", alt: { es: "Configuración de duelo con nombres de jugadores", en: "Duel setup with player names" }, fit: "contain" },
+      { src: "/projects/matiz-section-2.png", alt: { es: "Panel de configuración: tamaño, dificultad y tipo de pista", en: "Settings panel: size, difficulty and clue type" }, fit: "contain" },
+      { src: "/projects/matiz-section-3.png", alt: { es: "Guía Cómo se juega, con nota sobre daltonismo", en: "How to Play guide, with a note about color blindness" }, fit: "contain" },
     ],
     liveUrl: "https://matiz-eight.vercel.app",
     repoUrl: "https://github.com/MiguelPCO/matiz",
@@ -236,51 +255,59 @@ export const featuredProjects = [
     slug: "zuma",
     num: "05",
     title: "ZUMA",
-    category: "Marca · E-commerce · Fruit Water",
+    category: { es: "Marca · E-commerce · Fruit Water", en: "Brand · E-commerce · Fruit Water" },
     tags: ["Branding", "E-commerce", "Next.js"],
-    brief:
-      "Marca y tienda online de fruit water premium. Dos líneas de producto, quiz de sabor, catálogo filtrable y checkout completo, todo con identidad visual propia.",
+    brief: {
+      es: "Marca y tienda online de fruit water premium. Dos líneas de producto, quiz de sabor, catálogo filtrable y checkout completo, todo con identidad visual propia.",
+      en: "A brand and online store for premium fruit water. Two product lines, a flavor quiz, a filterable catalog and a full checkout, all with its own visual identity.",
+    },
     tools: ["Next.js 16", "TypeScript", "Tailwind CSS", "Framer Motion"],
-    duration: "2 semanas",
+    duration: { es: "2 semanas", en: "2 weeks" },
     deliverables: [
-      "Identidad de marca (naming, paleta, tono)",
-      "Sitio web completo con dos líneas de producto",
-      "Catálogo filtrable + ficha de producto",
-      "Quiz de sabor, carrito y checkout",
+      { es: "Identidad de marca (naming, paleta, tono)", en: "Brand identity (naming, palette, tone)" },
+      { es: "Sitio web completo con dos líneas de producto", en: "Full website with two product lines" },
+      { es: "Catálogo filtrable + ficha de producto", en: "Filterable catalog + product page" },
+      { es: "Quiz de sabor, carrito y checkout", en: "Flavor quiz, cart and checkout" },
     ],
     metrics: [
-      "Dos líneas de producto (FIZZ / STILL) con 16 sabores",
-      "Catálogo filtrable por línea, familia de sabor y formato",
-      "Flujo completo: quiz → catálogo → carrito → checkout",
+      { es: "Dos líneas de producto (FIZZ / STILL) con 16 sabores", en: "Two product lines (FIZZ / STILL) with 16 flavors" },
+      { es: "Catálogo filtrable por línea, familia de sabor y formato", en: "Catalog filterable by line, flavor family and format" },
+      { es: "Flujo completo: quiz → catálogo → carrito → checkout", en: "Full flow: quiz → catalog → cart → checkout" },
     ],
     // — Case study sections —
-    context:
-      "Proyecto de marca desde cero: crear una bebida que compitiera entre las premium accesibles y las aguas saborizadas genéricas, con una idea simple: la hidratación no tiene por qué ser neutra. Definí naming, paleta, tono de voz y arquitectura de producto antes de tocar código.",
-    problem:
-      "El mercado de aguas saborizadas se divide en dos extremos: marcas premium con precio elevado y marcas genéricas sin identidad. Faltaba un punto medio con personalidad visual fuerte, fruta real y una web que se sintiera tan cuidada como el producto.",
-    solution:
-      "Una marca paraguas con dos líneas diferenciadas: ZUMA FIZZ (con gas, en lata, energética) y ZUMA STILL (sin gas, en botella, de consumo diario), que comparten logo, tipografía e iconografía de fruta pero se distinguen por ritmo cromático. La web traduce esa dualidad en un catálogo filtrable, un quiz de sabor en home que recomienda producto según preferencias, y un flujo de compra propio de principio a fin.",
+    context: {
+      es: "Proyecto de marca desde cero: crear una bebida que compitiera entre las premium accesibles y las aguas saborizadas genéricas, con una idea simple: la hidratación no tiene por qué ser neutra. Definí naming, paleta, tono de voz y arquitectura de producto antes de tocar código.",
+      en: "A brand project from zero: create a drink that competes between accessible premium brands and generic flavored waters, built on a simple idea: hydration doesn't have to be neutral. I defined naming, palette, tone of voice and product architecture before touching any code.",
+    },
+    problem: {
+      es: "El mercado de aguas saborizadas se divide en dos extremos: marcas premium con precio elevado y marcas genéricas sin identidad. Faltaba un punto medio con personalidad visual fuerte, fruta real y una web que se sintiera tan cuidada como el producto.",
+      en: "The flavored water market splits into two extremes: expensive premium brands and generic brands with no identity. What was missing was a middle ground with strong visual personality, real fruit, and a website that felt as considered as the product.",
+    },
+    solution: {
+      es: "Una marca paraguas con dos líneas diferenciadas: ZUMA FIZZ (con gas, en lata, energética) y ZUMA STILL (sin gas, en botella, de consumo diario), que comparten logo, tipografía e iconografía de fruta pero se distinguen por ritmo cromático. La web traduce esa dualidad en un catálogo filtrable, un quiz de sabor en home que recomienda producto según preferencias, y un flujo de compra propio de principio a fin.",
+      en: "An umbrella brand with two distinct lines: ZUMA FIZZ (sparkling, canned, energetic) and ZUMA STILL (still, bottled, everyday), sharing a logo, typography and fruit iconography but distinguished by their color rhythm. The site translates that duality into a filterable catalog, a homepage flavor quiz that recommends a product based on preferences, and a custom checkout flow from start to finish.",
+    },
     features: [
-      "Quiz de sabor en home que recomienda producto según respuestas",
-      "Catálogo filtrable por línea (FIZZ/STILL), familia de sabor y formato",
-      "16 sabores con ficha propia, variety packs y página de marca (Our Story)",
-      "Carrito y checkout completos construidos a medida",
-      "Sistema visual por sabor: color dominante, fruta protagonista y acento secundario",
+      { es: "Quiz de sabor en home que recomienda producto según respuestas", en: "Homepage flavor quiz that recommends a product based on answers" },
+      { es: "Catálogo filtrable por línea (FIZZ/STILL), familia de sabor y formato", en: "Catalog filterable by line (FIZZ/STILL), flavor family and format" },
+      { es: "16 sabores con ficha propia, variety packs y página de marca (Our Story)", en: "16 flavors with their own product pages, variety packs and a brand page (Our Story)" },
+      { es: "Carrito y checkout completos construidos a medida", en: "Full custom-built cart and checkout" },
+      { es: "Sistema visual por sabor: color dominante, fruta protagonista y acento secundario", en: "Per-flavor visual system: dominant color, hero fruit and secondary accent" },
     ],
-    interactionDesign:
-      "El reto de interacción fue que las dos líneas se sintieran hermanas sin ser idénticas: FIZZ usa transiciones más rápidas y saturadas, STILL más lentas y limpias, ambas con Framer Motion sobre la misma base de componentes. El quiz de home actúa como puerta de entrada emocional antes de llegar al catálogo funcional.",
-    reflection:
-      "Diseñar la marca y la web en paralelo obligó a tomar decisiones de identidad directamente en código: probar si una paleta funciona en un grid de 16 productos es distinto a verla en un moodboard. Con más tiempo, llevaría el sistema de color por sabor a variables de marca reutilizables para escalar a nuevas líneas sin tocar componentes.",
+    interactionDesign: {
+      es: "El reto de interacción fue que las dos líneas se sintieran hermanas sin ser idénticas: FIZZ usa transiciones más rápidas y saturadas, STILL más lentas y limpias, ambas con Framer Motion sobre la misma base de componentes. El quiz de home actúa como puerta de entrada emocional antes de llegar al catálogo funcional.",
+      en: "The interaction challenge was making the two lines feel like siblings without being identical: FIZZ uses faster, more saturated transitions, STILL uses slower, cleaner ones, both built on Framer Motion over the same component base. The homepage quiz acts as an emotional entry point before reaching the functional catalog.",
+    },
+    reflection: {
+      es: "Diseñar la marca y la web en paralelo obligó a tomar decisiones de identidad directamente en código: probar si una paleta funciona en un grid de 16 productos es distinto a verla en un moodboard. Con más tiempo, llevaría el sistema de color por sabor a variables de marca reutilizables para escalar a nuevas líneas sin tocar componentes.",
+      en: "Designing the brand and the website in parallel forced identity decisions to happen directly in code: testing whether a palette works across a 16-product grid is different from seeing it on a moodboard. With more time, I'd turn the per-flavor color system into reusable brand variables to scale to new lines without touching components.",
+    },
     image: "/projects/zuma-hero.png",
-    images: [
-      "/projects/zuma-1.png",
-      "/projects/zuma-2.png",
-      "/projects/zuma-3.jpg",
-    ],
+    images: ["/projects/zuma-1.png", "/projects/zuma-2.png", "/projects/zuma-3.jpg"],
     sectionImages: [
-      { src: "/projects/zuma-section-1.jpg", alt: "Home con quiz de sabor" },
-      { src: "/projects/zuma-section-2.jpg", alt: "Línea ZUMA FIZZ" },
-      { src: "/projects/zuma-section-3.jpg", alt: "Carrito de compra" },
+      { src: "/projects/zuma-section-1.jpg", alt: { es: "Home con quiz de sabor", en: "Homepage with the flavor quiz" } },
+      { src: "/projects/zuma-section-2.jpg", alt: { es: "Línea ZUMA FIZZ", en: "ZUMA FIZZ line" } },
+      { src: "/projects/zuma-section-3.jpg", alt: { es: "Carrito de compra", en: "Shopping cart" } },
     ],
     liveUrl: "",
     repoUrl: "https://github.com/MiguelPCO/zuma",
@@ -293,14 +320,20 @@ export const smallWorks = [
   {
     slug: "unfilt",
     title: "unfilt",
-    category: "E-commerce · Skincare",
+    category: { es: "E-commerce · Skincare", en: "E-commerce · Skincare" },
     tags: ["Next.js", "GSAP", "Zustand"],
-    description:
-      "Tienda de skincare clínico. Ficha de producto con rueda de ingredientes interactiva, carrito propio y prueba social con estadísticas clínicas.",
-    brief:
-      "unfilt es una marca de skincare que vende transparencia como producto: fórmulas cortas, cold-process, sin marketing hueco. Construí la tienda completa (home, catálogo, ficha de producto con selector de formato y rueda de ingredientes interactiva que visualiza el porcentaje de cada activo, sección de ciencia con los resultados clínicos, historia de marca y carrito propio con recomendaciones cruzadas), todo animado con GSAP para reforzar la sensación premium sin sacrificar velocidad.",
-    insight:
-      "El componente más interesante fue la rueda de ingredientes: un SVG generado dinámicamente a partir de los porcentajes de cada activo, no una imagen estática. Eso significa que cambiar la fórmula de un producto en los datos actualiza automáticamente el gráfico sin tocar diseño: la clase de detalle que hace escalable un catálogo con decenas de referencias.",
+    description: {
+      es: "Tienda de skincare clínico. Ficha de producto con rueda de ingredientes interactiva, carrito propio y prueba social con estadísticas clínicas.",
+      en: "A clinical skincare store. Product pages with an interactive ingredient wheel, a custom cart, and social proof backed by clinical stats.",
+    },
+    brief: {
+      es: "unfilt es una marca de skincare que vende transparencia como producto: fórmulas cortas, cold-process, sin marketing hueco. Construí la tienda completa (home, catálogo, ficha de producto con selector de formato y rueda de ingredientes interactiva que visualiza el porcentaje de cada activo, sección de ciencia con los resultados clínicos, historia de marca y carrito propio con recomendaciones cruzadas), todo animado con GSAP para reforzar la sensación premium sin sacrificar velocidad.",
+      en: "unfilt is a skincare brand that sells transparency as the product: short formulas, cold-process, no empty marketing. I built the full store (home, catalog, product pages with a format selector and an interactive ingredient wheel that visualizes each active's percentage, a science section with clinical results, brand story, and a custom cart with cross-sell recommendations), all animated with GSAP to reinforce the premium feel without sacrificing speed.",
+    },
+    insight: {
+      es: "El componente más interesante fue la rueda de ingredientes: un SVG generado dinámicamente a partir de los porcentajes de cada activo, no una imagen estática. Eso significa que cambiar la fórmula de un producto en los datos actualiza automáticamente el gráfico sin tocar diseño: la clase de detalle que hace escalable un catálogo con decenas de referencias.",
+      en: "The most interesting component was the ingredient wheel: an SVG generated dynamically from each active's percentage, not a static image. That means changing a product's formula in the data automatically updates the chart without touching design, the kind of detail that makes a catalog with dozens of SKUs scale.",
+    },
     tools: ["Next.js 16", "TypeScript", "GSAP", "Zustand", "React Hook Form", "Tailwind v4"],
     image: "/projects/unfilt-hero.jpg",
     images: [
@@ -320,14 +353,20 @@ export const smallWorks = [
   {
     slug: "nodo",
     title: "NODO",
-    category: "E-commerce · Producto",
+    category: { es: "E-commerce · Producto", en: "E-commerce · Product" },
     tags: ["Next.js", "Supabase", "Motion"],
-    description:
-      "Cápsulas de memoria familiar: caja física + archivo digital privado para guardar fotos, cartas y voces que merecen volver.",
-    brief:
-      "NODO es un producto físico-digital: cajas de archivo premium con tarjetas guiadas y QR privados que enlazan cada objeto a su versión digital en un archivo propio, sin feeds ni redes sociales de por medio. Construí el sitio de marca completo: Memory Box, tres kits temáticos (Primeros Años, Promesa, Legado), guía de regalos, journal editorial con contenido MDX y una app autenticada donde las familias crean y gestionan sus cápsulas. Magic link con Supabase, sin contraseñas.",
-    insight:
-      "El reto fue diseñar para un producto que vive a la vez en papel y en pantalla: cada página tenía que transmitir la calidez de una caja física sin renunciar a que la parte digital (login, cápsulas, archivo) se sintiera igual de cuidada. La tipografía editorial y la fotografía de producto hacen ese puente.",
+    description: {
+      es: "Cápsulas de memoria familiar: caja física + archivo digital privado para guardar fotos, cartas y voces que merecen volver.",
+      en: "Family memory capsules: a physical box plus a private digital archive for photos, letters and voices worth keeping.",
+    },
+    brief: {
+      es: "NODO es un producto físico-digital: cajas de archivo premium con tarjetas guiadas y QR privados que enlazan cada objeto a su versión digital en un archivo propio, sin feeds ni redes sociales de por medio. Construí el sitio de marca completo: Memory Box, tres kits temáticos (Primeros Años, Promesa, Legado), guía de regalos, journal editorial con contenido MDX y una app autenticada donde las familias crean y gestionan sus cápsulas. Magic link con Supabase, sin contraseñas.",
+      en: "NODO is a physical-digital product: premium archive boxes with guided cards and private QR codes linking each object to its digital version in a personal archive, no feeds or social networks involved. I built the full brand site: Memory Box, three themed kits (First Years, Promise, Legacy), a gift guide, an editorial journal with MDX content, and an authenticated app where families create and manage their capsules. Magic-link auth with Supabase, no passwords.",
+    },
+    insight: {
+      es: "El reto fue diseñar para un producto que vive a la vez en papel y en pantalla: cada página tenía que transmitir la calidez de una caja física sin renunciar a que la parte digital (login, cápsulas, archivo) se sintiera igual de cuidada. La tipografía editorial y la fotografía de producto hacen ese puente.",
+      en: "The challenge was designing for a product that lives on paper and on screen at once: every page had to carry the warmth of a physical box without letting the digital side (login, capsules, archive) feel any less considered. Editorial typography and product photography bridge that gap.",
+    },
     tools: ["Next.js 16", "TypeScript", "Supabase", "Motion", "Tailwind v4"],
     image: "/projects/nodo-hero.jpg",
     images: [
@@ -347,14 +386,20 @@ export const smallWorks = [
   {
     slug: "veta",
     title: "VETA",
-    category: "E-commerce · Branding",
+    category: { es: "E-commerce · Branding", en: "E-commerce · Branding" },
     tags: ["Next.js", "Tailwind v4", "Framer Motion"],
-    description:
-      "Tienda online de cuidado personal inspirada en mármol. Catálogo, guía de aromas, sets de regalo y carrito completo.",
-    brief:
-      "VETA es una marca de jabones sólidos minerales que necesitaba presencia digital coherente con sus valores: naturaleza, artesanía y autenticidad. Sin tienda propia, dependía de redes sociales para vender, lo que limitaba el SEO y la capacidad de contar el proceso detrás de cada pieza. Construí un sitio de marca completo con diez páginas (catálogo filtrable por familia olfativa, ficha de producto, guía de aromas, ingredientes, sets de regalo, historia de marca, journal editorial y una sección de hospitality para hoteles y spas), con carrito propio y persistencia local, usando fotografía de producto y tipografía editorial como protagonistas.",
-    insight:
-      "El reto de diseño fue comunicar artesanía sin caer en el tópico rústico del sector: cada textura y veta de mármol tenía que sentirse deliberada, no decorativa. Con diez páginas y un catálogo de diez productos, definir tokens de color, tipografía y espaciado antes de maquetar fue lo que mantuvo todo coherente de principio a fin.",
+    description: {
+      es: "Tienda online de cuidado personal inspirada en mármol. Catálogo, guía de aromas, sets de regalo y carrito completo.",
+      en: "A marble-inspired personal care online store. Catalog, scent guide, gift sets and a full cart.",
+    },
+    brief: {
+      es: "VETA es una marca de jabones sólidos minerales que necesitaba presencia digital coherente con sus valores: naturaleza, artesanía y autenticidad. Sin tienda propia, dependía de redes sociales para vender, lo que limitaba el SEO y la capacidad de contar el proceso detrás de cada pieza. Construí un sitio de marca completo con diez páginas (catálogo filtrable por familia olfativa, ficha de producto, guía de aromas, ingredientes, sets de regalo, historia de marca, journal editorial y una sección de hospitality para hoteles y spas), con carrito propio y persistencia local, usando fotografía de producto y tipografía editorial como protagonistas.",
+      en: "VETA is a mineral soap brand that needed a digital presence consistent with its values: nature, craft and authenticity. Without its own store, it depended on social media to sell, which limited SEO and the ability to tell the process behind each piece. I built a full ten-page brand site (catalog filterable by scent family, product pages, scent guide, ingredients, gift sets, brand story, an editorial journal, and a hospitality section for hotels and spas), with a custom cart and local persistence, using product photography and editorial typography as the leads.",
+    },
+    insight: {
+      es: "El reto de diseño fue comunicar artesanía sin caer en el tópico rústico del sector: cada textura y veta de mármol tenía que sentirse deliberada, no decorativa. Con diez páginas y un catálogo de diez productos, definir tokens de color, tipografía y espaciado antes de maquetar fue lo que mantuvo todo coherente de principio a fin.",
+      en: "The design challenge was communicating craft without falling into the sector's rustic cliché: every texture and marble vein had to feel deliberate, not decorative. With ten pages and a ten-product catalog, defining color, typography and spacing tokens before laying anything out was what kept everything coherent start to finish.",
+    },
     tools: ["Next.js 16", "TypeScript", "Tailwind v4", "Framer Motion", "Radix UI"],
     image: "/projects/veta-hero.jpg",
     images: [
@@ -374,39 +419,36 @@ export const smallWorks = [
   {
     slug: "vybe",
     title: "VYBE",
-    category: "App · Música",
+    category: { es: "App · Música", en: "App · Music" },
     tags: ["React", "Supabase", "TanStack Query"],
-    description:
-      "Playlists colaborativas con votación en tiempo real. Crea una sala, invita colaboradores y decide juntos qué suena.",
-    brief:
-      "App para crear playlists colaborativas: invitas a otros usuarios, cada uno propone canciones y el grupo vota qué entra en la lista. Login con Spotify, Google o magic link. Proyecto en desarrollo activo, todavía sin desplegar.",
+    description: {
+      es: "Playlists colaborativas con votación en tiempo real. Crea una sala, invita colaboradores y decide juntos qué suena.",
+      en: "Collaborative playlists with real-time voting. Create a room, invite collaborators and decide together what plays.",
+    },
+    brief: {
+      es: "App para crear playlists colaborativas: invitas a otros usuarios, cada uno propone canciones y el grupo vota qué entra en la lista. Login con Spotify, Google o magic link. Proyecto en desarrollo activo, todavía sin desplegar.",
+      en: "An app for creating collaborative playlists: you invite other users, each one proposes songs, and the group votes on what makes the list. Login with Spotify, Google or a magic link. Actively in development, not yet deployed.",
+    },
     tools: ["React 19", "TypeScript", "Vite", "Supabase", "TanStack Query", "Tailwind CSS"],
     image: "/projects/vybe-hero.jpg",
-    images: [
-      "/projects/vybe-1-dashboard.jpg",
-      "/projects/vybe-2-playlists.jpg",
-      "/projects/vybe-3-session.jpg",
-    ],
+    images: ["/projects/vybe-1-dashboard.jpg", "/projects/vybe-2-playlists.jpg", "/projects/vybe-3-session.jpg"],
     liveUrl: "",
     repoUrl: "https://github.com/MiguelPCO/VYBE",
   },
   {
     slug: "magic-tracker",
     title: "Magic Tracker",
-    category: "App · Dashboard",
+    category: { es: "App · Dashboard", en: "App · Dashboard" },
     tags: ["Next.js", "Supabase", "Tailwind v4"],
-    description:
-      "Gestión de colecciones e inventario personal. CRUD completo, KPIs de inversión/beneficio, filtros y exportación CSV.",
-    brief:
-      "Herramienta personal para gestionar una colección de objetos coleccionables. Registra compras, ventas y envíos, calcula ROI y beneficio acumulado, y exporta el historial a CSV. Construida como proyecto real para uso diario, adaptable a cualquier tipo de colección o inventario de producto.",
-    tools: [
-      "Next.js 16",
-      "TypeScript",
-      "Supabase",
-      "Tailwind v4",
-      "shadcn/ui",
-      "Zod",
-    ],
+    description: {
+      es: "Gestión de colecciones e inventario personal. CRUD completo, KPIs de inversión/beneficio, filtros y exportación CSV.",
+      en: "Personal collection and inventory management. Full CRUD, investment/profit KPIs, filters and CSV export.",
+    },
+    brief: {
+      es: "Herramienta personal para gestionar una colección de objetos coleccionables. Registra compras, ventas y envíos, calcula ROI y beneficio acumulado, y exporta el historial a CSV. Construida como proyecto real para uso diario, adaptable a cualquier tipo de colección o inventario de producto.",
+      en: "A personal tool for managing a collection of collectible items. It logs purchases, sales and shipments, calculates ROI and cumulative profit, and exports the history to CSV. Built as a real project for daily use, adaptable to any kind of collection or product inventory.",
+    },
+    tools: ["Next.js 16", "TypeScript", "Supabase", "Tailwind v4", "shadcn/ui", "Zod"],
     image: "/projects/magictracker-hero.jpg",
     images: [
       "/projects/magictracker-1-dashboard.jpg",
@@ -419,12 +461,16 @@ export const smallWorks = [
   {
     slug: "cupping",
     title: "CUPPING",
-    category: "App · Café",
+    category: { es: "App · Café", en: "App · Coffee" },
     tags: ["Next.js", "Supabase", "shadcn/ui"],
-    description:
-      "App de cata de café de especialidad. Notas de cata, puntuaciones, historial y comparativas.",
-    brief:
-      "App para aficionados y profesionales del café de especialidad que quieren llevar un registro serio de sus catas. Permite puntuar atributos sensoriales, añadir notas y comparar lotes a lo largo del tiempo.",
+    description: {
+      es: "App de cata de café de especialidad. Notas de cata, puntuaciones, historial y comparativas.",
+      en: "A specialty coffee cupping app. Tasting notes, scores, history and comparisons.",
+    },
+    brief: {
+      es: "App para aficionados y profesionales del café de especialidad que quieren llevar un registro serio de sus catas. Permite puntuar atributos sensoriales, añadir notas y comparar lotes a lo largo del tiempo.",
+      en: "An app for specialty coffee enthusiasts and professionals who want a serious record of their cuppings. It lets you score sensory attributes, add notes, and compare batches over time.",
+    },
     tools: ["Next.js", "TypeScript", "Supabase", "shadcn/ui", "Tailwind CSS"],
     images: [],
     liveUrl: "",
@@ -433,12 +479,16 @@ export const smallWorks = [
   {
     slug: "hued",
     title: "Hued",
-    category: "Mobile · Expo",
+    category: { es: "Mobile · Expo", en: "Mobile · Expo" },
     tags: ["Expo", "React Native", "Tailwind"],
-    description:
-      "App móvil de paletas de color infográficas. Genera y exporta paletas visuales para diseñadores.",
-    brief:
-      "App móvil para diseñadores que necesitan generar y exportar paletas de color de forma rápida. Combina teoría del color con una interfaz táctil pensada para el móvil, exportando en formatos listos para usar en Figma o CSS.",
+    description: {
+      es: "App móvil de paletas de color infográficas. Genera y exporta paletas visuales para diseñadores.",
+      en: "A mobile app for infographic color palettes. Generate and export visual palettes for designers.",
+    },
+    brief: {
+      es: "App móvil para diseñadores que necesitan generar y exportar paletas de color de forma rápida. Combina teoría del color con una interfaz táctil pensada para el móvil, exportando en formatos listos para usar en Figma o CSS.",
+      en: "A mobile app for designers who need to generate and export color palettes quickly. It combines color theory with a touch interface built for mobile, exporting in formats ready to use in Figma or CSS.",
+    },
     tools: ["Expo", "React Native", "NativeWind", "TypeScript"],
     images: [],
     liveUrl: "",
