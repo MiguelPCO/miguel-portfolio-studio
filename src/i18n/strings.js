@@ -162,4 +162,42 @@ export const strings = {
     formSuccessTitle: { es: '¡Mensaje enviado!', en: 'Message sent!' },
     formSuccessBody: { es: 'Te respondo en menos de 24 horas.', en: "I'll get back to you within 24 hours." },
   },
+  services: {
+    heroTitleLine1: { es: 'MI DISEÑO Y', en: 'MY DESIGN AND' },
+    heroTitleLine2: { es: 'SERVICIOS.', en: 'SERVICES.' },
+    heroDescription: {
+      es: 'Combino diseño, desarrollo y estrategia para crear soluciones digitales que generan resultados reales y experiencias que conectan con las personas.',
+      en: 'I combine design, development and strategy to create digital solutions that deliver real results and experiences that connect with people.',
+    },
+  },
+  shared: {
+    stepLabel: { es: 'Paso', en: 'Step' },
+    processLabel: { es: 'Mi proceso', en: 'My process' },
+    processSteps: [
+      {
+        title: { es: 'Descubrir', en: 'Discover' },
+        duration: { es: '1–2 semanas', en: '1–2 weeks' },
+        description: {
+          es: 'Entiendo tu marca, audiencia y objetivos. A través de preguntas y análisis descubro los insights que dan forma a la dirección del proyecto.',
+          en: "I get to know your brand, audience and goals. Through questions and analysis I uncover the insights that shape the project's direction.",
+        },
+      },
+      {
+        title: { es: 'Diseñar', en: 'Design' },
+        duration: { es: '2–4 semanas', en: '2–4 weeks' },
+        description: {
+          es: 'Creo conceptos visuales, wireframes y diseños de alta fidelidad. Cada píxel tiene un propósito, cada interacción tiene sentido.',
+          en: 'I create visual concepts, wireframes and high-fidelity designs. Every pixel has a purpose, every interaction makes sense.',
+        },
+      },
+      {
+        title: { es: 'Entregar', en: 'Deliver' },
+        duration: { es: '2–3 semanas', en: '2–3 weeks' },
+        description: {
+          es: 'Construyo, pruebo y lanzo. Del desarrollo al despliegue, me aseguro de que todo funcione perfectamente en cualquier dispositivo.',
+          en: 'I build, test and launch. From development to deployment, I make sure everything works perfectly on any device.',
+        },
+      },
+    ],
+  },
 }

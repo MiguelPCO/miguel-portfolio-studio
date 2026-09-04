@@ -3,30 +3,13 @@ import { useGSAP } from '@gsap/react'
 import { gsap } from 'gsap'
 import SectionTag from '../ui/SectionTag'
 import { prefersReducedMotion } from '../animations/animationConfig'
-
-const steps = [
-  {
-    num: '01',
-    title: 'Descubrir',
-    duration: '1–2 semanas',
-    description: 'Entiendo tu marca, audiencia y objetivos. A través de preguntas y análisis descubro los insights que dan forma a la dirección del proyecto.',
-  },
-  {
-    num: '02',
-    title: 'Diseñar',
-    duration: '2–4 semanas',
-    description: 'Creo conceptos visuales, wireframes y diseños de alta fidelidad. Cada píxel tiene un propósito, cada interacción tiene sentido.',
-  },
-  {
-    num: '03',
-    title: 'Entregar',
-    duration: '2–3 semanas',
-    description: 'Construyo, pruebo y lanzo. Del desarrollo al despliegue, me aseguro de que todo funcione perfectamente en cualquier dispositivo.',
-  },
-]
+import { useTranslate } from '../../context/LanguageContext'
+import { strings } from '../../i18n/strings'
 
 export default function WorkProcess() {
   const sectionRef = useRef(null)
+  const t = useTranslate()
+  const steps = strings.shared.processSteps
 
   useGSAP(() => {
     if (prefersReducedMotion()) return
@@ -49,24 +32,21 @@ export default function WorkProcess() {
     <section ref={sectionRef} className="px-6 pb-20 md:pb-30">
       <div className="max-w-[1200px] mx-auto">
         <div className="grid grid-cols-1 md:grid-cols-3 gap-4">
-          {steps.map((step) => (
+          {steps.map((step, i) => (
             <div
-              key={step.num}
+              key={i}
               className="process-card bg-card rounded-[24px] p-8 relative overflow-hidden"
             >
-              {/* Tag */}
               <div className="mb-6">
-                <SectionTag>Paso {step.num} · Mi proceso</SectionTag>
+                <SectionTag>{t(strings.shared.stepLabel)} {String(i + 1).padStart(2, '0')} · {t(strings.shared.processLabel)}</SectionTag>
               </div>
 
-              {/* Contenido */}
               <h3 className="font-display font-bold text-2xl text-ink mb-2">
-                {step.title}
+                {t(step.title)}
               </h3>
-              <p className="text-sm text-accent font-semibold mb-4">{step.duration}</p>
-              <p className="text-sm text-muted leading-relaxed">{step.description}</p>
+              <p className="text-sm text-accent font-semibold mb-4">{t(step.duration)}</p>
+              <p className="text-sm text-muted leading-relaxed">{t(step.description)}</p>
 
-              {/* [PLACEHOLDER 3D: objeto decorativo] */}
               <div className="absolute -bottom-6 -right-6 w-28 h-28
                               bg-gradient-to-br from-gray-200 to-gray-300
                               rounded-full opacity-20 blur-sm" />
