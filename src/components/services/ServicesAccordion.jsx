@@ -35,11 +35,11 @@ export default function ServicesAccordion() {
             <div className="flex flex-wrap gap-2">
               {service.tags.map((tag) => (
                 <span
-                  key={tag}
+                  key={typeof tag === 'string' ? tag : tag.en}
                   className="px-4 py-1.5 rounded-full text-xs font-medium
                              bg-white/10 text-white/70 border border-white/15"
                 >
-                  {tag}
+                  {t(tag)}
                 </span>
               ))}
             </div>

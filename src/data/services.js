@@ -16,7 +16,7 @@ export const services = [
       es: 'Interfaces limpias centradas en el usuario. Combino sistemas de diseño cohesivos con animaciones fluidas para crear experiencias que se ven bien y funcionan de forma intuitiva.',
       en: 'Clean, user-centered interfaces. I combine cohesive design systems with fluid animation to create experiences that look good and work intuitively.',
     },
-    tags: ['Figma', 'Design Systems', 'Prototipado', 'GSAP', 'Tailwind CSS'],
+    tags: ['Figma', 'Design Systems', { es: 'Prototipado', en: 'Prototyping' }, 'GSAP', 'Tailwind CSS'],
     image: null,
   },
   {

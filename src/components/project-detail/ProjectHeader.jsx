@@ -24,7 +24,7 @@ export default function ProjectHeader({ project }) {
               key={tag}
               className="text-xs font-semibold uppercase tracking-wider text-muted bg-card px-3 py-1 rounded-full"
             >
-              {tag}
+              {t(strings.projects.tagLabels[tag] ?? tag)}
             </span>
           ))}
         </div>

@@ -5,6 +5,7 @@ import Button from '../ui/Button'
 import Accordion from '../ui/Accordion'
 import { useScrollReveal } from '../animations/useScrollReveal'
 import { useTranslate } from '../../context/LanguageContext'
+import { strings } from '../../i18n/strings'
 
 const serviceIcons = {
   '01': Code2,
@@ -35,10 +36,10 @@ export default function ServicesPreview() {
             <div className="flex flex-wrap gap-2">
               {service.tags.map((tag) => (
                 <span
-                  key={tag}
+                  key={typeof tag === 'string' ? tag : tag.en}
                   className="px-3 py-1 rounded-full text-xs font-medium bg-white/10 text-white/70"
                 >
-                  {tag}
+                  {t(tag)}
                 </span>
               ))}
             </div>
@@ -60,9 +61,9 @@ export default function ServicesPreview() {
     <section ref={sectionRef} className="px-6 py-20 md:py-30">
       <div className="max-w-[1200px] mx-auto">
         <div className="flex items-center justify-between mb-12">
-          <SectionTag>Servicios</SectionTag>
-          <Button href="/services" variant="outline" ariaLabel="Ver todos los servicios">
-            Ver todos
+          <SectionTag>{t(strings.nav.services)}</SectionTag>
+          <Button href="/services" variant="outline" ariaLabel={t(strings.home.viewAllServicesAria)}>
+            {t(strings.home.viewAll)}
           </Button>
         </div>
 

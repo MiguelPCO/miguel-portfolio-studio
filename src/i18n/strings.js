@@ -120,6 +120,7 @@ export const strings = {
     selectedProjectsTag: { es: 'Proyectos Seleccionados', en: 'Selected Projects' },
     viewAll: { es: 'Ver todos', en: 'View all' },
     viewAllProjectsAria: { es: 'Ver todos los proyectos', en: 'View all projects' },
+    viewAllServicesAria: { es: 'Ver todos los servicios', en: 'View all services' },
   },
   contact: {
     sectionTag: { es: 'Contacto', en: 'Contact' },
@@ -196,6 +197,10 @@ export const strings = {
       en: "Project not found. The project you're looking for doesn't exist or has been removed.",
     },
     viewAllProjectsLink: { es: 'Ver todos los proyectos', en: 'View all projects' },
+    tagLabels: {
+      IA: { es: 'IA', en: 'AI' },
+      Juego: { es: 'Juego', en: 'Game' },
+    },
   },
   projectDetail: {
     projectLabel: { es: 'Proyecto', en: 'Project' },

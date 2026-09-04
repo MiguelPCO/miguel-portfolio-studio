@@ -4,6 +4,7 @@ import { useGSAP } from '@gsap/react'
 import { gsap } from 'gsap'
 import { prefersReducedMotion } from '../animations/animationConfig'
 import { useTranslate } from '../../context/LanguageContext'
+import { strings } from '../../i18n/strings'
 
 /**
  * Card de proyecto a ancho completo con imagen, hover zoom y scroll reveal
@@ -116,7 +117,7 @@ export default function ProjectCard({ project }) {
         <div className="p-6 flex flex-col sm:flex-row justify-between items-start gap-4">
           <div>
             <p className="text-xs text-muted mb-1">
-              {project.tags.join(' · ')}
+              {project.tags.map((tag) => t(strings.projects.tagLabels[tag] ?? tag)).join(' · ')}
             </p>
             <h2 className="text-2xl md:text-3xl font-display font-bold text-ink">
               {project.title}
