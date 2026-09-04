@@ -2,24 +2,11 @@ import { useState } from 'react'
 import SectionTag from '../ui/SectionTag'
 import Lightbox from '../ui/Lightbox'
 import { useScrollReveal } from '../animations/useScrollReveal'
+import { useTranslate } from '../../context/LanguageContext'
+import { strings } from '../../i18n/strings'
 
-const SECTION_LABELS = {
-  context:           'Contexto',
-  problem:           'El problema',
-  solution:          'La solución',
-  research:          'Research',
-  constraints:       'Restricciones',
-  designGoal:        'Objetivo de diseño',
-  designExploration: 'Exploración de diseño',
-  features:          'Funcionalidades',
-  interactionDesign: 'Interaction design',
-  onboarding:        'Onboarding',
-  takeaways:         'Impacto y aprendizajes',
-  reflection:        'Reflexión',
-}
-
-function SectionCard({ field, value, className = '' }) {
-  const label = SECTION_LABELS[field] || field
+function SectionCard({ field, value, t, className = '' }) {
+  const label = t(strings.projectDetail.sectionLabels[field]) || field
   const isArray = Array.isArray(value)
 
   return (
@@ -27,15 +14,15 @@ function SectionCard({ field, value, className = '' }) {
       <SectionTag>{label}</SectionTag>
       {isArray ? (
         <ul className="flex flex-col gap-2">
-          {value.map((item) => (
-            <li key={item} className="flex items-start gap-3 text-ink leading-relaxed">
+          {value.map((item, i) => (
+            <li key={i} className="flex items-start gap-3 text-ink leading-relaxed">
               <span className="text-accent mt-1 shrink-0">&#10003;</span>
-              <span>{item}</span>
+              <span>{t(item)}</span>
             </li>
           ))}
         </ul>
       ) : (
-        <p className="text-ink leading-relaxed">{value}</p>
+        <p className="text-ink leading-relaxed">{t(value)}</p>
       )}
     </div>
   )
@@ -59,8 +46,9 @@ const PLACEHOLDER_GRADIENTS = [
   'from-gray-200 to-gray-300 dark:from-card dark:to-surface',
 ]
 
-function SectionImage({ src, alt, index = 0, onOpen, fit = 'cover' }) {
+function SectionImage({ src, alt, index = 0, onOpen, fit = 'cover', t }) {
   const gradient = PLACEHOLDER_GRADIENTS[index % PLACEHOLDER_GRADIENTS.length]
+  const resolvedAlt = t(alt)
 
   if (src) {
     return (
@@ -69,10 +57,10 @@ function SectionImage({ src, alt, index = 0, onOpen, fit = 'cover' }) {
         onClick={onOpen}
         role="button"
         tabIndex={0}
-        aria-label={`Ampliar imagen: ${alt}`}
+        aria-label={`${t(strings.projectDetail.enlargeImage)}: ${resolvedAlt}`}
         onKeyDown={(e) => { if (e.key === 'Enter' || e.key === ' ') { e.preventDefault(); onOpen() } }}
       >
-        <img src={src} alt={alt} className={`w-full h-full ${fit === 'contain' ? 'object-contain' : 'object-cover'}`} loading="lazy" />
+        <img src={src} alt={resolvedAlt} className={`w-full h-full ${fit === 'contain' ? 'object-contain' : 'object-cover'}`} loading="lazy" />
         <div className="absolute inset-0 bg-black/0 group-hover:bg-black/20
                         transition-colors duration-300 flex items-center justify-center">
           <span
@@ -91,7 +79,7 @@ function SectionImage({ src, alt, index = 0, onOpen, fit = 'cover' }) {
   return (
     <div className={`w-full h-[320px] md:h-[440px] rounded-[20px] bg-gradient-to-br ${gradient}
                      flex items-center justify-center`}>
-      <span className="text-muted text-sm font-display">{alt}</span>
+      <span className="text-muted text-sm font-display">{resolvedAlt}</span>
     </div>
   )
 }
@@ -99,6 +87,7 @@ function SectionImage({ src, alt, index = 0, onOpen, fit = 'cover' }) {
 export default function ProjectSections({ project }) {
   const sectionRef = useScrollReveal({ selector: '.ps-card', y: 30, stagger: 0.1 })
   const [lightboxIndex, setLightboxIndex] = useState(null)
+  const t = useTranslate()
 
   const presentOptional = OPTIONAL_FIELDS.filter((f) => project[f])
   const hasSolution   = !!project.solution
@@ -108,7 +97,7 @@ export default function ProjectSections({ project }) {
   // sectionImages[]: optional array de { src, alt } — uno por visual break
   const imgs = project.sectionImages || []
   const lightboxImages = imgs.reduce((acc, img) => {
-    if (img?.src) acc.push({ src: img.src, alt: img.alt || project.title })
+    if (img?.src) acc.push({ src: img.src, alt: t(img.alt) || project.title })
     return acc
   }, [])
 
@@ -122,8 +111,8 @@ export default function ProjectSections({ project }) {
 
         {/* Context + Problem */}
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-6">
-          {project.context && <SectionCard field="context" value={project.context} />}
-          {project.problem && <SectionCard field="problem" value={project.problem} />}
+          {project.context && <SectionCard field="context" value={project.context} t={t} />}
+          {project.problem && <SectionCard field="problem" value={project.problem} t={t} />}
         </div>
 
         {/* Visual break 1 */}
@@ -133,10 +122,11 @@ export default function ProjectSections({ project }) {
           index={0}
           fit={imgs[0]?.fit}
           onOpen={() => setLightboxIndex(lightboxIndexFor(0))}
+          t={t}
         />
 
         {/* Solution — full width */}
-        {hasSolution && <SectionCard field="solution" value={project.solution} />}
+        {hasSolution && <SectionCard field="solution" value={project.solution} t={t} />}
 
         {/* Optional fields */}
         {presentOptional.length > 0 && (
@@ -148,10 +138,11 @@ export default function ProjectSections({ project }) {
               index={1}
               fit={imgs[1]?.fit}
               onOpen={() => setLightboxIndex(lightboxIndexFor(1))}
+              t={t}
             />
             <div className="grid grid-cols-1 lg:grid-cols-2 gap-6">
               {presentOptional.map((field) => (
-                <SectionCard key={field} field={field} value={project[field]} />
+                <SectionCard key={field} field={field} value={project[field]} t={t} />
               ))}
             </div>
           </>
@@ -165,14 +156,15 @@ export default function ProjectSections({ project }) {
             index={2}
             fit={imgs[2]?.fit}
             onOpen={() => setLightboxIndex(lightboxIndexFor(2))}
+            t={t}
           />
         )}
 
         {/* Takeaways + Reflection */}
         {(hasTakeaways || hasReflection) && (
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-6">
-            {hasTakeaways  && <SectionCard field="takeaways"  value={project.takeaways} />}
-            {hasReflection && <SectionCard field="reflection" value={project.reflection} />}
+            {hasTakeaways  && <SectionCard field="takeaways"  value={project.takeaways} t={t} />}
+            {hasReflection && <SectionCard field="reflection" value={project.reflection} t={t} />}
           </div>
         )}
 

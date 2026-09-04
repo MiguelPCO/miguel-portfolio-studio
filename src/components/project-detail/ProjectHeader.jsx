@@ -1,5 +1,7 @@
 import SectionTag from "../ui/SectionTag";
 import { useScrollReveal } from "../animations/useScrollReveal";
+import { useTranslate } from "../../context/LanguageContext";
+import { strings } from "../../i18n/strings";
 
 const toAbsUrl = (url) =>
   url && !/^https?:\/\//i.test(url) ? `https://${url}` : url;
@@ -9,13 +11,14 @@ export default function ProjectHeader({ project }) {
     selector: ".header-reveal",
     stagger: 0.08,
   });
+  const t = useTranslate();
 
   return (
     <section ref={sectionRef} className="px-6 pt-20 pb-12 md:pt-28 md:pb-16">
       <div className="max-w-[1200px] mx-auto flex flex-col gap-8">
         {/* Fila 1: tags */}
         <div className="header-reveal flex flex-wrap items-center gap-3">
-          <SectionTag>Proyecto {project.num}</SectionTag>
+          <SectionTag>{t(strings.projectDetail.projectLabel)} {project.num}</SectionTag>
           {project.tags.map((tag) => (
             <span
               key={tag}
@@ -39,9 +42,9 @@ export default function ProjectHeader({ project }) {
           {/* Descripción — 2 cols en lg */}
           <div className="lg:col-span-2 flex flex-col gap-2">
             <span className="text-xs font-semibold uppercase tracking-widest text-muted">
-              Descripción
+              {t(strings.projectDetail.descriptionLabel)}
             </span>
-            <p className="text-ink leading-relaxed text-sm">{project.brief}</p>
+            <p className="text-ink leading-relaxed text-sm">{t(project.brief)}</p>
             {(project.liveUrl || project.repoUrl) && (
               <div className="flex flex-wrap gap-2 mt-3">
                 {project.liveUrl && (
@@ -52,7 +55,7 @@ export default function ProjectHeader({ project }) {
                     className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-ink text-surface
                                text-xs font-semibold hover:bg-ink/90 transition-colors duration-200"
                   >
-                    Ver proyecto
+                    {t(strings.projectDetail.viewProject)}
                     <svg
                       width="11"
                       height="11"
@@ -102,12 +105,12 @@ export default function ProjectHeader({ project }) {
           {/* Entregables */}
           <div className="flex flex-col gap-2">
             <span className="text-xs font-semibold uppercase tracking-widest text-muted">
-              Entregables
+              {t(strings.projectDetail.deliverablesLabel)}
             </span>
             <ul className="flex flex-col gap-1">
-              {project.deliverables.map((d) => (
-                <li key={d} className="text-sm text-ink leading-snug">
-                  {d}
+              {project.deliverables.map((d, i) => (
+                <li key={i} className="text-sm text-ink leading-snug">
+                  {t(d)}
                 </li>
               ))}
             </ul>

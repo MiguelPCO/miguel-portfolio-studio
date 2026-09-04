@@ -1,5 +1,7 @@
 import SectionTag from '../ui/SectionTag'
 import { useScrollReveal } from '../animations/useScrollReveal'
+import { useTranslate } from '../../context/LanguageContext'
+import { strings } from '../../i18n/strings'
 
 /**
  * Testimonio del cliente en tarjeta centrada
@@ -7,6 +9,7 @@ import { useScrollReveal } from '../animations/useScrollReveal'
  */
 export default function ProjectTestimonial({ testimonial }) {
   const sectionRef = useScrollReveal({ y: 30 })
+  const t = useTranslate()
 
   if (!testimonial) return null
 
@@ -15,7 +18,7 @@ export default function ProjectTestimonial({ testimonial }) {
       <div ref={sectionRef} className="max-w-3xl mx-auto bg-card rounded-[24px] p-8 md:p-14 text-center">
         {/* Tag */}
         <div className="flex justify-center mb-8">
-          <SectionTag>What The Client Says</SectionTag>
+          <SectionTag>{t(strings.projectDetail.testimonialTag)}</SectionTag>
         </div>
 
         {/* Cita */}

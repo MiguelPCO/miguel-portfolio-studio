@@ -1,6 +1,8 @@
 import { Link } from 'react-router'
 import { featuredProjects } from '../../data/projects'
 import { useScrollReveal } from '../animations/useScrollReveal'
+import { useTranslate } from '../../context/LanguageContext'
+import { strings } from '../../i18n/strings'
 
 /**
  * Navegación al siguiente proyecto
@@ -8,6 +10,7 @@ import { useScrollReveal } from '../animations/useScrollReveal'
  */
 export default function NextProject({ nextSlug }) {
   const sectionRef = useScrollReveal({ y: 30 })
+  const t = useTranslate()
 
   // Buscar el proyecto siguiente en el array
   const nextProject = featuredProjects.find((p) => p.slug === nextSlug)
@@ -28,7 +31,7 @@ export default function NextProject({ nextSlug }) {
           <div className="flex-1 flex flex-col md:flex-row items-start md:items-center justify-between gap-4 w-full">
             <div>
               <p className="text-xs font-semibold uppercase tracking-widest text-muted mb-2">
-                Siguiente Proyecto
+                {t(strings.projectDetail.nextProjectLabel)}
               </p>
               <h3 className="font-display font-bold text-2xl md:text-3xl text-ink">
                 {nextProject.title}
@@ -40,9 +43,9 @@ export default function NextProject({ nextSlug }) {
               className="inline-flex items-center gap-3 bg-ink text-surface
                          px-6 py-3 rounded-full font-semibold text-sm
                          hover:bg-ink/90 transition-colors shrink-0"
-              aria-label={`Ver proyecto ${nextProject.title}`}
+              aria-label={`${t(strings.projectDetail.viewProjectAria)} ${nextProject.title}`}
             >
-              Siguiente Proyecto
+              {t(strings.projectDetail.nextProjectLabel)}
               <span className="w-7 h-7 bg-accent rounded-full flex items-center
                                justify-center text-accent-ink text-xs">
                 &rarr;

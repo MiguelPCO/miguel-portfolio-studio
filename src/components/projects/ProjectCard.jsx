@@ -3,6 +3,7 @@ import { Link } from 'react-router'
 import { useGSAP } from '@gsap/react'
 import { gsap } from 'gsap'
 import { prefersReducedMotion } from '../animations/animationConfig'
+import { useTranslate } from '../../context/LanguageContext'
 
 /**
  * Card de proyecto a ancho completo con imagen, hover zoom y scroll reveal
@@ -13,6 +14,7 @@ export default function ProjectCard({ project }) {
   const imgRef = useRef(null)
   const [imgError, setImgError] = useState(false)
   const showImage = project.image && !imgError
+  const t = useTranslate()
 
   // Animación de entrada al scroll
   useGSAP(() => {
@@ -123,8 +125,8 @@ export default function ProjectCard({ project }) {
 
           {/* Métricas destacadas */}
           <div className="text-sm text-muted text-right shrink-0">
-            <p>{project.metrics[0]}</p>
-            <p>{project.metrics[1]}</p>
+            <p>{t(project.metrics[0])}</p>
+            <p>{t(project.metrics[1])}</p>
           </div>
         </div>
       </article>

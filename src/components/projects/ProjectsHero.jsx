@@ -1,4 +1,6 @@
 import { useTextReveal } from "../animations/useTextReveal";
+import { useTranslate } from "../../context/LanguageContext";
+import { strings } from "../../i18n/strings";
 
 /**
  * Hero de la página de proyectos
@@ -6,6 +8,7 @@ import { useTextReveal } from "../animations/useTextReveal";
  */
 export default function ProjectsHero() {
   const headingRef = useTextReveal({ scrollTriggered: false });
+  const t = useTranslate();
 
   return (
     <section className="px-6 pt-20 pb-16 md:pt-28 md:pb-24">
@@ -15,15 +18,14 @@ export default function ProjectsHero() {
           ref={headingRef}
           className="font-display font-bold text-[clamp(48px,8vw,96px)] leading-[1.05]"
         >
-          <span className="text-ink">MI PORTAFOLIO.</span>
+          <span className="text-ink">{t(strings.projects.heroTitleLine1)}</span>
           <br />
-          <span className="text-muted">DESCUBRE MI TRABAJO.</span>
+          <span className="text-muted">{t(strings.projects.heroTitleLine2)}</span>
         </h1>
 
         {/* Columna derecha — Descripción */}
         <p className="text-muted text-lg leading-relaxed lg:pb-3">
-          Una selección de proyectos donde el diseño se une al código, de
-          principio a fin: apps, e-commerce, juegos y marcas construidas desde cero.
+          {t(strings.projects.heroDescription)}
         </p>
       </div>
     </section>

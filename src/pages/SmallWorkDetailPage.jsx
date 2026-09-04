@@ -9,18 +9,21 @@ import { prefersReducedMotion } from '../components/animations/animationConfig'
 import SectionTag from '../components/ui/SectionTag'
 import { useScrollReveal } from '../components/animations/useScrollReveal'
 import CTASection from '../components/home/CTASection'
+import { useTranslate } from '../context/LanguageContext'
+import { strings } from '../i18n/strings'
 
 function WorkHeader({ work }) {
   const sectionRef = useScrollReveal({ selector: '.wh-reveal', stagger: 0.1 })
+  const t = useTranslate()
 
   return (
     <section ref={sectionRef} className="px-6 pt-20 pb-16 md:pt-28 md:pb-20">
       <div className="max-w-[1200px] mx-auto">
         {/* Tag + category */}
         <div className="wh-reveal flex flex-wrap items-center gap-4 mb-8">
-          <SectionTag>Proyecto</SectionTag>
+          <SectionTag>{t(strings.projectDetail.projectLabel)}</SectionTag>
           <span className="text-xs font-semibold uppercase tracking-wider text-muted bg-card px-3 py-1 rounded-full">
-            {work.category}
+            {t(work.category)}
           </span>
         </div>
 
@@ -40,7 +43,7 @@ function WorkHeader({ work }) {
                     className="inline-flex items-center gap-2 px-5 py-2.5 rounded-full bg-ink text-surface
                                text-sm font-semibold hover:bg-ink/90 transition-colors duration-200"
                   >
-                    Ver proyecto
+                    {t(strings.projectDetail.viewProject)}
                     <svg width="12" height="12" viewBox="0 0 14 14" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
                       <path d="M2.5 11.5L11.5 2.5M11.5 2.5H6.5M11.5 2.5V7.5" />
                     </svg>
@@ -65,9 +68,9 @@ function WorkHeader({ work }) {
           <div className="wh-reveal flex flex-col gap-6">
             <div>
               <h3 className="text-xs font-semibold uppercase tracking-widest text-muted mb-2">
-                Descripción
+                {t(strings.projectDetail.descriptionLabel)}
               </h3>
-              <p className="text-ink leading-relaxed">{work.brief}</p>
+              <p className="text-ink leading-relaxed">{t(work.brief)}</p>
             </div>
             {work.tools?.length > 0 && (
               <div>
@@ -136,25 +139,26 @@ function WorkHero({ work }) {
 
 function WorkContent({ work }) {
   const sectionRef = useScrollReveal({ selector: '.wc-reveal', stagger: 0.12 })
+  const t = useTranslate()
 
   return (
     <section ref={sectionRef} className="px-6 pb-16">
       <div className="max-w-[1200px] mx-auto grid grid-cols-1 lg:grid-cols-2 gap-6">
         {/* Qué es */}
         <div className="wc-reveal bg-card rounded-[20px] p-8 flex flex-col gap-4">
-          <SectionTag>Qué es</SectionTag>
-          <p className="text-ink leading-relaxed">{work.brief}</p>
+          <SectionTag>{t(strings.projectDetail.whatItIs)}</SectionTag>
+          <p className="text-ink leading-relaxed">{t(work.brief)}</p>
         </div>
 
         {/* Lo interesante */}
         <div className="wc-reveal bg-card rounded-[20px] p-8 flex flex-col gap-4">
-          <SectionTag>Lo interesante</SectionTag>
+          <SectionTag>{t(strings.projectDetail.theInterestingPart)}</SectionTag>
           {work.insight ? (
-            <p className="text-ink/70 leading-relaxed">{work.insight}</p>
+            <p className="text-ink/70 leading-relaxed">{t(work.insight)}</p>
           ) : (
             <>
               <p className="text-ink/60 leading-relaxed italic">
-                Case study en desarrollo, próximamente.
+                {t(strings.projectDetail.caseStudyComingSoon)}
               </p>
               <div className="mt-auto w-full h-24 rounded-[12px] bg-gradient-to-br from-ink/5 to-ink/10 dark:from-surface dark:to-card" />
             </>
@@ -204,17 +208,18 @@ function WorkGallery({ work }) {
 function MoreWorks({ currentSlug }) {
   const others = smallWorks.filter((w) => w.slug !== currentSlug).slice(0, 3)
   const sectionRef = useScrollReveal({ selector: '.mw-card', y: 20, stagger: 0.1 })
+  const t = useTranslate()
 
   return (
     <section ref={sectionRef} className="px-6 pb-10">
       <div className="max-w-[1200px] mx-auto">
         <div className="flex items-center justify-between mb-6">
-          <SectionTag>Más proyectos</SectionTag>
+          <SectionTag>{t(strings.projects.moreProjectsTag)}</SectionTag>
           <Link
             to="/projects"
             className="text-sm font-semibold text-muted hover:text-ink transition-colors duration-200"
           >
-            Ver todos →
+            {t(strings.projectDetail.viewAllArrow)} →
           </Link>
         </div>
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-5">
@@ -229,7 +234,7 @@ function MoreWorks({ currentSlug }) {
                 </div>
                 <div className="p-5 flex flex-col gap-2">
                   <h3 className="font-display font-bold text-base text-ink leading-tight">{work.title}</h3>
-                  <p className="text-xs font-semibold uppercase tracking-widest text-muted">{work.category}</p>
+                  <p className="text-xs font-semibold uppercase tracking-widest text-muted">{t(work.category)}</p>
                   <div className="flex flex-wrap gap-1.5 mt-1">
                     {work.tags.map((tag) => (
                       <span key={tag} className="px-2.5 py-0.5 rounded-full bg-ink/5 text-xs font-medium text-ink/60">
@@ -250,16 +255,17 @@ function MoreWorks({ currentSlug }) {
 export default function SmallWorkDetailPage() {
   const { slug } = useParams()
   const work = smallWorks.find((w) => w.slug === slug)
+  const t = useTranslate()
 
   if (!work) {
     return (
       <section className="min-h-[60vh] flex flex-col items-center justify-center px-6 text-center">
         <h1 className="font-display font-bold text-5xl text-ink mb-4">404</h1>
         <p className="text-muted text-lg">
-          Proyecto no encontrado. El proyecto que buscas no existe o ha sido eliminado.
+          {t(strings.projects.notFoundBody)}
         </p>
         <Link to="/projects" className="mt-6 text-sm font-semibold text-ink underline">
-          Ver todos los proyectos
+          {t(strings.projects.viewAllProjectsLink)}
         </Link>
       </section>
     )

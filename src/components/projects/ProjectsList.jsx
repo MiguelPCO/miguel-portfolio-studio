@@ -3,11 +3,12 @@ import { featuredProjects, smallWorks } from '../../data/projects'
 import ProjectCard from './ProjectCard'
 import SmallWorksGrid from './SmallWorksGrid'
 import { cn } from '../../lib/utils'
-
-const FILTER_TAGS = ['Todos', 'App', 'Web', 'IA', 'Landing']
+import { useTranslate } from '../../context/LanguageContext'
+import { strings } from '../../i18n/strings'
 
 export default function ProjectsList() {
   const [activeFilter, setActiveFilter] = useState('Todos')
+  const t = useTranslate()
 
   const filtered = activeFilter === 'Todos'
     ? featuredProjects
@@ -21,21 +22,21 @@ export default function ProjectsList() {
           <div
             className="flex flex-wrap gap-3"
             role="group"
-            aria-label="Filtrar proyectos por categoría"
+            aria-label={t(strings.projects.filterAria)}
           >
-            {FILTER_TAGS.map((tag) => (
+            {strings.projects.filters.map((tag) => (
               <button
-                key={tag}
-                onClick={() => setActiveFilter(tag)}
-                aria-pressed={activeFilter === tag}
+                key={tag.value}
+                onClick={() => setActiveFilter(tag.value)}
+                aria-pressed={activeFilter === tag.value}
                 className={cn(
                   'px-5 py-2 rounded-full text-sm font-medium transition-all duration-200',
-                  activeFilter === tag
+                  activeFilter === tag.value
                     ? 'bg-ink text-surface'
                     : 'bg-card text-ink/70 hover:bg-ink/10'
                 )}
               >
-                {tag}
+                {t(tag.label)}
               </button>
             ))}
           </div>
@@ -49,7 +50,7 @@ export default function ProjectsList() {
 
           {filtered.length === 0 && (
             <p className="text-center text-muted py-20 text-lg">
-              No hay proyectos en esta categoría.
+              {t(strings.projects.emptyFiltered)}
             </p>
           )}
         </div>

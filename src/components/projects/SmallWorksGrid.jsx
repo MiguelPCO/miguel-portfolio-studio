@@ -1,8 +1,12 @@
 import { Link } from 'react-router'
 import { useScrollReveal } from '../animations/useScrollReveal'
 import SectionTag from '../ui/SectionTag'
+import { useTranslate } from '../../context/LanguageContext'
+import { strings } from '../../i18n/strings'
 
 function SmallWorkCard({ work }) {
+  const t = useTranslate()
+
   return (
     <Link to={`/work/${work.slug}`} className="block group">
       <div className="small-work-card bg-card rounded-[20px] overflow-hidden flex flex-col h-full">
@@ -40,7 +44,7 @@ function SmallWorkCard({ work }) {
                 }}
                 className="group shrink-0 w-8 h-8 rounded-full bg-ink/10 hover:bg-accent
                            flex items-center justify-center transition-colors duration-200"
-                aria-label={`Ver ${work.title} en vivo`}
+                aria-label={`${t(strings.projects.viewLiveAria)} ${work.title} ${t(strings.projects.liveSuffix)}`}
               >
                 <svg width="14" height="14" viewBox="0 0 14 14" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className="text-ink group-hover:text-accent-ink">
                   <path d="M2.5 11.5L11.5 2.5M11.5 2.5H6.5M11.5 2.5V7.5" />
@@ -50,12 +54,12 @@ function SmallWorkCard({ work }) {
           </div>
 
           <p className="text-xs font-semibold uppercase tracking-widest text-muted">
-            {work.category}
+            {t(work.category)}
           </p>
 
           {work.description && (
             <p className="text-sm text-ink/60 leading-relaxed line-clamp-2">
-              {work.description}
+              {t(work.description)}
             </p>
           )}
 
@@ -78,6 +82,7 @@ function SmallWorkCard({ work }) {
 
 export default function SmallWorksGrid({ works }) {
   const sectionRef = useScrollReveal({ selector: '.small-work-card', y: 30, stagger: 0.1 })
+  const t = useTranslate()
 
   if (!works || works.length === 0) return null
 
@@ -86,9 +91,9 @@ export default function SmallWorksGrid({ works }) {
       <div className="max-w-[1200px] mx-auto">
         {/* Section header */}
         <div className="mb-10 flex flex-col gap-3">
-          <SectionTag>Más proyectos</SectionTag>
+          <SectionTag>{t(strings.projects.moreProjectsTag)}</SectionTag>
           <h2 className="font-display font-bold text-3xl md:text-4xl text-ink">
-            Proyectos
+            {t(strings.projects.moreProjectsHeading)}
           </h2>
         </div>
 

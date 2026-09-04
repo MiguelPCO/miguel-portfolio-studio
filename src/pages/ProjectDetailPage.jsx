@@ -7,6 +7,8 @@ import ProjectGallery from '../components/project-detail/ProjectGallery'
 import ProjectTestimonial from '../components/project-detail/ProjectTestimonial'
 import NextProject from '../components/project-detail/NextProject'
 import CTASection from '../components/home/CTASection'
+import { useTranslate } from '../context/LanguageContext'
+import { strings } from '../i18n/strings'
 
 /**
  * Página de detalle de un proyecto individual
@@ -15,6 +17,7 @@ import CTASection from '../components/home/CTASection'
 export default function ProjectDetailPage() {
   const { slug } = useParams()
   const project = featuredProjects.find((p) => p.slug === slug)
+  const t = useTranslate()
 
   // Proyecto no encontrado
   if (!project) {
@@ -22,7 +25,7 @@ export default function ProjectDetailPage() {
       <section className="min-h-[60vh] flex flex-col items-center justify-center px-6 text-center">
         <h1 className="font-display font-bold text-5xl text-ink mb-4">404</h1>
         <p className="text-muted text-lg">
-          Proyecto no encontrado. El proyecto que buscas no existe o ha sido eliminado.
+          {t(strings.projects.notFoundBody)}
         </p>
       </section>
     )

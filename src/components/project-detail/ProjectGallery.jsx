@@ -3,6 +3,8 @@ import { useGSAP } from '@gsap/react'
 import { gsap } from 'gsap'
 import { prefersReducedMotion, STAGGER } from '../animations/animationConfig'
 import Lightbox from '../ui/Lightbox'
+import { useTranslate } from '../../context/LanguageContext'
+import { strings } from '../../i18n/strings'
 
 /**
  * Galería masonry de imágenes del proyecto
@@ -23,6 +25,7 @@ const placeholderGradients = [
 export default function ProjectGallery({ project }) {
   const galleryRef = useRef(null)
   const [lightboxIndex, setLightboxIndex] = useState(null)
+  const t = useTranslate()
 
   const lightboxImages = project.images
     .filter(Boolean)
@@ -72,6 +75,7 @@ export default function ProjectGallery({ project }) {
               index={i}
               constrain={project.imageFit === 'contain'}
               onOpen={() => setLightboxIndex(i)}
+              t={t}
             />
           ))}
         </div>
@@ -90,7 +94,7 @@ export default function ProjectGallery({ project }) {
 }
 
 // Item de galería: imagen real con fallback a placeholder degradado si no existe/falla
-function GalleryItem({ project, src, index, onOpen, constrain = false }) {
+function GalleryItem({ project, src, index, onOpen, constrain = false, t }) {
   const [imgError, setImgError] = useState(false)
   const showImage = src && !imgError
 
@@ -102,7 +106,7 @@ function GalleryItem({ project, src, index, onOpen, constrain = false }) {
       onClick={showImage ? onOpen : undefined}
       role={showImage ? 'button' : undefined}
       tabIndex={showImage ? 0 : undefined}
-      aria-label={showImage ? `Ampliar imagen ${index + 1} de ${project.title}` : undefined}
+      aria-label={showImage ? `${t(strings.projectDetail.enlargeImage)} ${index + 1} ${t(strings.projectDetail.ofWord)} ${project.title}` : undefined}
       onKeyDown={showImage ? (e) => { if (e.key === 'Enter' || e.key === ' ') { e.preventDefault(); onOpen() } } : undefined}
     >
       {showImage ? (
