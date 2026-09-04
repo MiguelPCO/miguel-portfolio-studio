@@ -1,6 +1,7 @@
 import { lazy, Suspense } from 'react'
 import { Routes, Route } from 'react-router'
 import { ThemeProvider } from './context/ThemeContext'
+import { LanguageProvider } from './context/LanguageContext'
 import Navbar from './components/layout/Navbar'
 import Footer from './components/layout/Footer'
 import SkipLink from './components/layout/SkipLink'
@@ -27,27 +28,29 @@ function PageLoader() {
 
 export default function App() {
   return (
-    <ThemeProvider>
-      <div className="min-h-screen bg-surface">
-        <CustomCursor />
-        <SkipLink />
-        <ScrollToTop />
-        <Navbar />
-        <main id="main-content" className="pt-[72px]">
-          <Suspense fallback={<PageLoader />}>
-            <Routes>
-              <Route path="/" element={<HomePage />} />
-              <Route path="/about" element={<AboutPage />} />
-              <Route path="/projects" element={<ProjectsPage />} />
-              <Route path="/projects/:slug" element={<ProjectDetailPage />} />
-              <Route path="/work/:slug" element={<SmallWorkDetailPage />} />
-              <Route path="/services" element={<ServicesPage />} />
-              <Route path="/contact" element={<ContactPage />} />
-            </Routes>
-          </Suspense>
-        </main>
-        <Footer />
-      </div>
-    </ThemeProvider>
+    <LanguageProvider>
+      <ThemeProvider>
+        <div className="min-h-screen bg-surface">
+          <CustomCursor />
+          <SkipLink />
+          <ScrollToTop />
+          <Navbar />
+          <main id="main-content" className="pt-[72px]">
+            <Suspense fallback={<PageLoader />}>
+              <Routes>
+                <Route path="/" element={<HomePage />} />
+                <Route path="/about" element={<AboutPage />} />
+                <Route path="/projects" element={<ProjectsPage />} />
+                <Route path="/projects/:slug" element={<ProjectDetailPage />} />
+                <Route path="/work/:slug" element={<SmallWorkDetailPage />} />
+                <Route path="/services" element={<ServicesPage />} />
+                <Route path="/contact" element={<ContactPage />} />
+              </Routes>
+            </Suspense>
+          </main>
+          <Footer />
+        </div>
+      </ThemeProvider>
+    </LanguageProvider>
   )
 }
