@@ -1,5 +1,10 @@
+import { useTranslate } from '../../context/LanguageContext'
+import { strings } from '../../i18n/strings'
+
 /** Skip link de accesibilidad — primer elemento focusable, visible solo con focus */
 export default function SkipLink() {
+  const t = useTranslate()
+
   return (
     <a
       href="#main-content"
@@ -7,7 +12,7 @@ export default function SkipLink() {
                  focus:bg-accent focus:text-accent-ink focus:px-4 focus:py-2 focus:rounded-full
                  focus:text-sm focus:font-semibold focus:shadow-lg"
     >
-      Saltar al contenido
+      {t(strings.skipLink.label)}
     </a>
   )
 }

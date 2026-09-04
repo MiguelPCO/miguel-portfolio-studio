@@ -1,11 +1,14 @@
 import { useEffect, useRef, useCallback } from 'react'
 import { createPortal } from 'react-dom'
+import { useTranslate } from '../../context/LanguageContext'
+import { strings } from '../../i18n/strings'
 
 /**
  * Lightbox de pantalla completa para ampliar imágenes de proyecto
  * ESC cierra, flechas navegan (si hay más de una imagen), click en backdrop cierra
  */
 export default function Lightbox({ images, index, onClose, onNavigate }) {
+  const t = useTranslate()
   const closeBtnRef = useRef(null)
   const hasMultiple = images.length > 1
   const current = images[index]
@@ -57,7 +60,7 @@ export default function Lightbox({ images, index, onClose, onNavigate }) {
         onClick={(e) => { e.stopPropagation(); onClose() }}
         className="absolute top-6 right-6 w-11 h-11 rounded-full bg-white/10 hover:bg-white/20
                    text-white flex items-center justify-center text-xl transition-colors"
-        aria-label="Cerrar"
+        aria-label={t(strings.lightbox.close)}
       >
         &#10005;
       </button>
@@ -69,7 +72,7 @@ export default function Lightbox({ images, index, onClose, onNavigate }) {
             className="absolute left-4 md:left-8 top-1/2 -translate-y-1/2 w-11 h-11 rounded-full
                        bg-white/10 hover:bg-white/20 text-white flex items-center justify-center
                        text-2xl transition-colors"
-            aria-label="Imagen anterior"
+            aria-label={t(strings.lightbox.previous)}
           >
             &#8249;
           </button>
@@ -78,7 +81,7 @@ export default function Lightbox({ images, index, onClose, onNavigate }) {
             className="absolute right-4 md:right-8 top-1/2 -translate-y-1/2 w-11 h-11 rounded-full
                        bg-white/10 hover:bg-white/20 text-white flex items-center justify-center
                        text-2xl transition-colors"
-            aria-label="Siguiente imagen"
+            aria-label={t(strings.lightbox.next)}
           >
             &#8250;
           </button>

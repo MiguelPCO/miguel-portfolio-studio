@@ -3,6 +3,8 @@ import { Link, useLocation } from 'react-router'
 import { cn } from '../../lib/utils'
 import DiamondIcon from '../ui/DiamondIcon'
 import { useTheme } from '../../context/ThemeContext'
+import { useLanguage, useTranslate } from '../../context/LanguageContext'
+import { strings } from '../../i18n/strings'
 
 function SunIcon() {
   return (
@@ -29,15 +31,17 @@ function MoonIcon() {
 }
 
 const navLinks = [
-  { href: '/', label: 'Home' },
-  { href: '/about', label: 'About' },
-  { href: '/projects', label: 'Projects' },
-  { href: '/services', label: 'Services' },
+  { href: '/', label: strings.nav.home },
+  { href: '/about', label: strings.nav.about },
+  { href: '/projects', label: strings.nav.projects },
+  { href: '/services', label: strings.nav.services },
 ]
 
 export default function Navbar() {
   const location = useLocation()
   const { theme, toggleTheme } = useTheme()
+  const { lang, toggleLang } = useLanguage()
+  const t = useTranslate()
   const [scrolled, setScrolled] = useState(false)
   const [menuOpen, setMenuOpen] = useState(false)
 
@@ -67,7 +71,7 @@ export default function Navbar() {
     >
       <nav className="max-w-[1200px] mx-auto flex items-center justify-between">
         {/* Logo */}
-        <Link to="/" className="flex items-center gap-2" aria-label="Ir al inicio">
+        <Link to="/" className="flex items-center gap-2" aria-label={t(strings.nav.goHome)}>
           <DiamondIcon className="w-8 h-8 text-ink" />
         </Link>
 
@@ -87,7 +91,7 @@ export default function Navbar() {
                     : 'text-ink/70 hover:bg-card'
                 )}
               >
-                {link.label}
+                {t(link.label)}
               </Link>
             )
           })}
@@ -99,9 +103,18 @@ export default function Navbar() {
           <button
             onClick={toggleTheme}
             className="p-2.5 rounded-full text-ink/70 hover:bg-card transition-colors"
-            aria-label={theme === 'dark' ? 'Cambiar a modo claro' : 'Cambiar a modo oscuro'}
+            aria-label={theme === 'dark' ? t(strings.nav.switchToLight) : t(strings.nav.switchToDark)}
           >
             {theme === 'dark' ? <SunIcon /> : <MoonIcon />}
+          </button>
+
+          {/* Language switch — desktop */}
+          <button
+            onClick={toggleLang}
+            className="px-3 py-2.5 rounded-full text-sm font-semibold text-ink/70 hover:bg-card transition-colors"
+            aria-label={lang === 'es' ? t(strings.nav.switchToEnglish) : t(strings.nav.switchToSpanish)}
+          >
+            {lang === 'es' ? 'EN' : 'ES'}
           </button>
 
           {/* CTA */}
@@ -110,9 +123,9 @@ export default function Navbar() {
             className="flex items-center gap-2 bg-accent text-accent-ink
                        px-5 py-2.5 rounded-full text-sm font-semibold
                        hover:bg-yellow-300 transition-colors"
-            aria-label="Ir a contacto"
+            aria-label={t(strings.nav.goContact)}
           >
-            Get In Touch
+            {t(strings.nav.getInTouch)}
             <span className="w-6 h-6 bg-ink text-surface rounded-full flex items-center
                              justify-center text-xs">
               →
@@ -124,7 +137,7 @@ export default function Navbar() {
         <button
           onClick={() => setMenuOpen(!menuOpen)}
           className="md:hidden flex flex-col gap-1.5 p-2"
-          aria-label={menuOpen ? 'Cerrar menú' : 'Abrir menú'}
+          aria-label={menuOpen ? t(strings.nav.closeMenu) : t(strings.nav.openMenu)}
           aria-expanded={menuOpen}
         >
           <span className={cn(
@@ -156,7 +169,7 @@ export default function Navbar() {
                   isActive ? 'text-accent' : 'text-ink'
                 )}
               >
-                {link.label}
+                {t(link.label)}
               </Link>
             )
           })}
@@ -164,10 +177,19 @@ export default function Navbar() {
           <button
             onClick={toggleTheme}
             className="flex items-center gap-2 text-ink/60 text-sm font-medium"
-            aria-label={theme === 'dark' ? 'Cambiar a modo claro' : 'Cambiar a modo oscuro'}
+            aria-label={theme === 'dark' ? t(strings.nav.switchToLight) : t(strings.nav.switchToDark)}
           >
             {theme === 'dark' ? <SunIcon /> : <MoonIcon />}
-            <span>{theme === 'dark' ? 'Modo claro' : 'Modo oscuro'}</span>
+            <span>{theme === 'dark' ? t(strings.nav.lightMode) : t(strings.nav.darkMode)}</span>
+          </button>
+
+          {/* Language switch — mobile */}
+          <button
+            onClick={toggleLang}
+            className="flex items-center gap-2 text-ink/60 text-sm font-medium"
+            aria-label={lang === 'es' ? t(strings.nav.switchToEnglish) : t(strings.nav.switchToSpanish)}
+          >
+            <span>{lang === 'es' ? 'EN' : 'ES'}</span>
           </button>
 
           <Link
@@ -175,7 +197,7 @@ export default function Navbar() {
             className="mt-4 flex items-center gap-2 bg-accent text-accent-ink
                        px-8 py-3 rounded-full text-lg font-semibold"
           >
-            Get In Touch
+            {t(strings.nav.getInTouch)}
             <span className="w-7 h-7 bg-ink text-surface rounded-full flex items-center
                              justify-center text-sm">
               →
