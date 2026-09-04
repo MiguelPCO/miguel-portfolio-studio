@@ -2,6 +2,8 @@ import { useRef } from 'react'
 import { useGSAP } from '@gsap/react'
 import { gsap } from 'gsap'
 import { prefersReducedMotion } from '../animations/animationConfig'
+import { useTranslate } from '../../context/LanguageContext'
+import { strings } from '../../i18n/strings'
 
 // Iconos de línea inline (stroke, currentColor) — mismo tratamiento minimal que el resto de la UI
 const iconProps = {
@@ -42,31 +44,32 @@ const ClockIcon = () => (
   </svg>
 )
 
-const infoCards = [
-  {
-    Icon: MailIcon,
-    title: 'Email',
-    lines: ['miguelcastilloolivares@gmail.com'],
-  },
-  {
-    Icon: MapPinIcon,
-    title: 'Ubicación',
-    lines: ['España', 'Disponible para trabajo remoto'],
-  },
-  {
-    Icon: GithubIcon,
-    title: 'GitHub',
-    lines: ['github.com/MiguelPCO'],
-  },
-  {
-    Icon: ClockIcon,
-    title: 'Disponibilidad',
-    lines: ['Lunes – Viernes', '9:00 – 18:00'],
-  },
-]
-
 export default function ContactInfo() {
   const gridRef = useRef(null)
+  const t = useTranslate()
+
+  const infoCards = [
+    {
+      Icon: MailIcon,
+      title: t(strings.contact.infoEmailTitle),
+      lines: ['miguelcastilloolivares@gmail.com'],
+    },
+    {
+      Icon: MapPinIcon,
+      title: t(strings.contact.infoLocationTitle),
+      lines: [t(strings.contact.infoLocationLine1), t(strings.contact.infoLocationLine2)],
+    },
+    {
+      Icon: GithubIcon,
+      title: t(strings.contact.infoGithubTitle),
+      lines: ['github.com/MiguelPCO'],
+    },
+    {
+      Icon: ClockIcon,
+      title: t(strings.contact.infoAvailabilityTitle),
+      lines: [t(strings.contact.infoAvailabilityLine1), t(strings.contact.infoAvailabilityLine2)],
+    },
+  ]
 
   useGSAP(() => {
     if (prefersReducedMotion()) return

@@ -1,4 +1,4 @@
-import { useState, useRef } from 'react'
+import { useState, useRef, useMemo } from 'react'
 import { useForm } from 'react-hook-form'
 import { zodResolver } from '@hookform/resolvers/zod'
 import { z } from 'zod'
@@ -6,20 +6,25 @@ import { useGSAP } from '@gsap/react'
 import { gsap } from 'gsap'
 import Button from '../ui/Button'
 import { prefersReducedMotion } from '../animations/animationConfig'
-
-// Esquema de validación
-const contactSchema = z.object({
-  name: z.string().min(2, 'El nombre es requerido'),
-  email: z.email('Email inválido'),
-  location: z.string().optional(),
-  message: z.string().min(10, 'El mensaje debe tener al menos 10 caracteres'),
-})
+import { useTranslate, useLanguage } from '../../context/LanguageContext'
+import { strings } from '../../i18n/strings'
 
 export default function ContactForm() {
   const [submitted, setSubmitted] = useState(false)
   const [sendError, setSendError] = useState(null)
   const successRef = useRef(null)
   const formRef = useRef(null)
+  const t = useTranslate()
+  const { lang } = useLanguage()
+
+  // Esquema de validación — reconstruido por idioma, ya que Zod fija los mensajes
+  // de error en el esquema al crearlo (no se resuelven dinámicamente como el JSX)
+  const contactSchema = useMemo(() => z.object({
+    name: z.string().min(2, t(strings.contact.formNameError)),
+    email: z.email(t(strings.contact.formEmailError)),
+    location: z.string().optional(),
+    message: z.string().min(10, t(strings.contact.formMessageError)),
+  }), [lang])
 
   const {
     register,
@@ -58,7 +63,7 @@ export default function ContactForm() {
       // Resetear estado después de 3 segundos
       setTimeout(() => setSubmitted(false), 3000)
     } catch {
-      setSendError('No se pudo enviar el mensaje. Inténtalo de nuevo o escríbeme directamente por email.')
+      setSendError(t(strings.contact.formSendError))
     }
   })
 
@@ -76,21 +81,21 @@ export default function ContactForm() {
                 ✓
               </div>
               <h3 className="font-display font-bold text-2xl text-ink mb-2">
-                ¡Mensaje enviado!
+                {t(strings.contact.formSuccessTitle)}
               </h3>
-              <p className="text-muted">Te respondo en menos de 24 horas.</p>
+              <p className="text-muted">{t(strings.contact.formSuccessBody)}</p>
             </div>
           ) : (
             <form onSubmit={handleSubmit(onSubmit)} className="space-y-5">
               {/* Name */}
               <div>
                 <label htmlFor="name" className="block text-sm font-medium text-ink mb-2">
-                  Nombre
+                  {t(strings.contact.formNameLabel)}
                 </label>
                 <input
                   id="name"
                   type="text"
-                  placeholder="Tu nombre"
+                  placeholder={t(strings.contact.formNamePlaceholder)}
                   className={inputBase}
                   aria-describedby={errors.name ? 'name-error' : undefined}
                   {...register('name')}
@@ -103,7 +108,7 @@ export default function ContactForm() {
               {/* Email */}
               <div>
                 <label htmlFor="email" className="block text-sm font-medium text-ink mb-2">
-                  Email
+                  {t(strings.contact.formEmailLabel)}
                 </label>
                 <input
                   id="email"
@@ -121,31 +126,31 @@ export default function ContactForm() {
               {/* Location */}
               <div>
                 <label htmlFor="location" className="block text-sm font-medium text-ink mb-2">
-                  Ubicación
+                  {t(strings.contact.formLocationLabel)}
                 </label>
                 <select
                   id="location"
                   className={inputBase}
                   {...register('location')}
                 >
-                  <option value="">Selecciona tu ubicación</option>
-                  <option value="spain">España</option>
-                  <option value="europe">Europa</option>
-                  <option value="latam">Latinoamérica</option>
-                  <option value="north-america">Norteamérica</option>
-                  <option value="other">Otro</option>
+                  <option value="">{t(strings.contact.formLocationPlaceholder)}</option>
+                  <option value="spain">{t(strings.contact.formLocationSpain)}</option>
+                  <option value="europe">{t(strings.contact.formLocationEurope)}</option>
+                  <option value="latam">{t(strings.contact.formLocationLatam)}</option>
+                  <option value="north-america">{t(strings.contact.formLocationNorthAmerica)}</option>
+                  <option value="other">{t(strings.contact.formLocationOther)}</option>
                 </select>
               </div>
 
               {/* Message */}
               <div>
                 <label htmlFor="message" className="block text-sm font-medium text-ink mb-2">
-                  Mensaje
+                  {t(strings.contact.formMessageLabel)}
                 </label>
                 <textarea
                   id="message"
                   rows={5}
-                  placeholder="Cuéntame sobre tu proyecto..."
+                  placeholder={t(strings.contact.formMessagePlaceholder)}
                   className={`${inputBase} resize-none`}
                   aria-describedby={errors.message ? 'message-error' : undefined}
                   {...register('message')}
@@ -163,10 +168,10 @@ export default function ContactForm() {
               <Button
                 variant="yellow-pill"
                 onClick={handleSubmit(onSubmit)}
-                ariaLabel="Enviar formulario"
+                ariaLabel={t(strings.contact.formSubmitAria)}
                 className={isSubmitting ? 'opacity-70 pointer-events-none' : ''}
               >
-                {isSubmitting ? 'Enviando...' : 'Enviar mensaje'}
+                {isSubmitting ? t(strings.contact.formSubmitBusy) : t(strings.contact.formSubmitIdle)}
               </Button>
             </form>
           )}
