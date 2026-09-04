@@ -4,6 +4,8 @@ import { useGSAP } from '@gsap/react'
 import { gsap } from 'gsap'
 import DiamondIcon from '../ui/DiamondIcon'
 import { prefersReducedMotion, EASE_BACK } from '../animations/animationConfig'
+import { useTranslate } from '../../context/LanguageContext'
+import { strings } from '../../i18n/strings'
 
 const socialLinks = [
   { name: 'GitHub', icon: 'GH', href: 'https://github.com/MiguelPCO' },
@@ -26,6 +28,7 @@ function handleMouseLeave(e) {
 
 export default function CTASection() {
   const sectionRef = useRef(null)
+  const t = useTranslate()
 
   useGSAP(() => {
     if (prefersReducedMotion()) return
@@ -50,22 +53,22 @@ export default function CTASection() {
             <div className="inline-flex items-center gap-2 mb-6">
               <DiamondIcon className="w-4 h-4 text-accent" />
               <span className="text-xs font-semibold uppercase tracking-widest text-muted">
-                Trabajemos juntos
+                {t(strings.home.ctaTag)}
               </span>
             </div>
 
             <div>
               <h2 className="font-display font-bold text-3xl md:text-5xl leading-tight mb-8">
-                ¿Listo para dar vida<br />a tu proyecto?
+                {t(strings.home.ctaHeadingLine1)}<br />{t(strings.home.ctaHeadingLine2)}
               </h2>
               <Link
                 to="/contact"
                 className="inline-flex items-center gap-3 bg-ink text-surface
                            px-6 py-3 rounded-full font-semibold text-sm
                            hover:opacity-90 transition-opacity"
-                aria-label="Ir a contacto"
+                aria-label={t(strings.nav.goContact)}
               >
-                Hablemos
+                {t(strings.home.ctaLink)}
                 <span className="w-7 h-7 bg-accent rounded-full flex items-center
                                  justify-center text-accent-ink text-xs">
                   →
@@ -93,7 +96,7 @@ export default function CTASection() {
                   className={`bg-card rounded-[24px] flex items-center justify-center
                              min-h-[190px] hover:bg-ink/10 transition-colors
                              ${social.full ? 'col-span-2' : ''}`}
-                  aria-label={`Visitar ${social.name}`}
+                  aria-label={`${t(strings.home.visitSocial)} ${social.name}`}
                 >
                   <span className="social-icon text-3xl font-display font-bold text-ink">
                     {social.icon}

@@ -6,9 +6,12 @@ import { featuredProjects } from "../../data/projects";
 import SectionTag from "../ui/SectionTag";
 import Button from "../ui/Button";
 import { prefersReducedMotion } from "../animations/animationConfig";
+import { useTranslate } from "../../context/LanguageContext";
+import { strings } from "../../i18n/strings";
 
 export default function ProjectsPreview() {
   const containerRef = useRef(null);
+  const t = useTranslate();
 
   useGSAP(
     () => {
@@ -56,13 +59,13 @@ export default function ProjectsPreview() {
     <section ref={containerRef} className="px-6 py-20 md:py-30">
       <div className="max-w-[1200px] mx-auto">
         <div className="flex items-center justify-between mb-12">
-          <SectionTag>Proyectos Seleccionados</SectionTag>
+          <SectionTag>{t(strings.home.selectedProjectsTag)}</SectionTag>
           <Button
             href="/projects"
             variant="outline"
-            ariaLabel="Ver todos los proyectos"
+            ariaLabel={t(strings.home.viewAllProjectsAria)}
           >
-            Ver todos
+            {t(strings.home.viewAll)}
           </Button>
         </div>
 
@@ -79,15 +82,15 @@ export default function ProjectsPreview() {
                 <div className="p-6 flex flex-col sm:flex-row justify-between items-start gap-4">
                   <div>
                     <p className="text-xs text-muted mb-1">
-                      {project.category}
+                      {t(project.category)}
                     </p>
                     <h3 className="text-xl md:text-2xl font-display font-bold text-ink">
                       {project.title}
                     </h3>
                   </div>
                   <div className="text-sm text-muted text-right">
-                    <p>{project.metrics[0]}</p>
-                    <p>{project.metrics[1]}</p>
+                    <p>{t(project.metrics[0])}</p>
+                    <p>{t(project.metrics[1])}</p>
                   </div>
                 </div>
               </article>

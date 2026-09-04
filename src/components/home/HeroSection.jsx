@@ -3,16 +3,19 @@ import { useGSAP } from '@gsap/react'
 import { gsap } from 'gsap'
 import Button from '../ui/Button'
 import { prefersReducedMotion } from '../animations/animationConfig'
-
-const heroStats = [
-  { label: 'Proyectos completados', value: '10+' },
-  { label: 'Años de experiencia', value: '3+' },
-]
+import { useTranslate } from '../../context/LanguageContext'
+import { strings } from '../../i18n/strings'
 
 const HERO_NAME = 'MIGUEL'
 
 export default function HeroSection() {
   const heroRef = useRef(null)
+  const t = useTranslate()
+
+  const heroStats = [
+    { label: t(strings.home.statProjects), value: '10+' },
+    { label: t(strings.home.statYears), value: '3+' },
+  ]
 
   useGSAP(() => {
     if (prefersReducedMotion()) return
@@ -92,7 +95,7 @@ export default function HeroSection() {
         {/* Columna izquierda */}
         <div>
           <p className="hero-greeting text-lg md:text-xl text-muted mb-1">
-            Hola, soy
+            {t(strings.home.greeting)}
           </p>
 
           <h1
@@ -107,7 +110,7 @@ export default function HeroSection() {
           </h1>
 
           <p className="hero-intro text-xl md:text-2xl font-medium text-ink/80 leading-snug max-w-md mb-8">
-            Diseño y desarrollo productos digitales.
+            {t(strings.home.intro)}
           </p>
 
           {/* Pill de consulta */}
@@ -117,11 +120,11 @@ export default function HeroSection() {
               M
             </div>
             <div className="mr-2">
-              <p className="text-sm font-semibold text-ink">¿Tienes un proyecto en mente?</p>
-              <p className="text-xs text-muted">Hablemos</p>
+              <p className="text-sm font-semibold text-ink">{t(strings.home.consultationQuestion)}</p>
+              <p className="text-xs text-muted">{t(strings.home.consultationCaption)}</p>
             </div>
-            <Button href="/contact" variant="yellow-pill" ariaLabel="Contactar para consulta">
-              Contactar
+            <Button href="/contact" variant="yellow-pill" ariaLabel={t(strings.home.consultationAria)}>
+              {t(strings.home.consultationCta)}
             </Button>
           </div>
         </div>
