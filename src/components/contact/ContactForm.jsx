@@ -1,4 +1,4 @@
-import { useState, useRef, useMemo } from 'react'
+import { useState, useRef, useMemo, useEffect } from 'react'
 import { useForm } from 'react-hook-form'
 import { zodResolver } from '@hookform/resolvers/zod'
 import { z } from 'zod'
@@ -11,7 +11,7 @@ import { strings } from '../../i18n/strings'
 
 export default function ContactForm() {
   const [submitted, setSubmitted] = useState(false)
-  const [sendError, setSendError] = useState(null)
+  const [hasSendError, setHasSendError] = useState(false)
   const successRef = useRef(null)
   const formRef = useRef(null)
   const t = useTranslate()
@@ -31,14 +31,25 @@ export default function ContactForm() {
     handleSubmit,
     formState: { errors, isSubmitting },
     reset,
+    trigger,
   } = useForm({
     resolver: zodResolver(contactSchema),
   })
 
+  // Si el usuario cambia de idioma mientras hay errores de validación visibles,
+  // se revalidan para que el mensaje de error se muestre en el idioma activo
+  // (el resolver de Zod ya se reconstruyó arriba con el nuevo idioma).
+  useEffect(() => {
+    if (Object.keys(errors).length > 0) {
+      trigger()
+    }
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, [lang])
+
   const { contextSafe } = useGSAP(() => {}, { scope: formRef })
 
   const onSubmit = contextSafe(async (data) => {
-    setSendError(null)
+    setHasSendError(false)
 
     try {
       const res = await fetch('/api/contact', {
@@ -63,7 +74,7 @@ export default function ContactForm() {
       // Resetear estado después de 3 segundos
       setTimeout(() => setSubmitted(false), 3000)
     } catch {
-      setSendError(t(strings.contact.formSendError))
+      setHasSendError(true)
     }
   })
 
@@ -160,8 +171,8 @@ export default function ContactForm() {
                 )}
               </div>
 
-              {sendError && (
-                <p className="text-red-500 text-sm">{sendError}</p>
+              {hasSendError && (
+                <p className="text-red-500 text-sm">{t(strings.contact.formSendError)}</p>
               )}
 
               {/* Submit */}
