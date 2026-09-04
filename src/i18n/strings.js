@@ -34,4 +34,9 @@ export const strings = {
     previous: { es: 'Imagen anterior', en: 'Previous image' },
     next: { es: 'Siguiente imagen', en: 'Next image' },
   },
+  about: {
+    sectionTag: { es: 'Sobre mí', en: 'About me' },
+    learnMoreCta: { es: 'Conocerme mejor', en: 'Get to know me' },
+    learnMoreAria: { es: 'Saber más sobre Miguel', en: 'Learn more about Miguel' },
+  },
 }

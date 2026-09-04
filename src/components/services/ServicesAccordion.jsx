@@ -2,6 +2,7 @@ import { Code2, Palette, Sparkles } from 'lucide-react'
 import { services } from '../../data/services'
 import Accordion from '../ui/Accordion'
 import { useScrollReveal } from '../animations/useScrollReveal'
+import { useTranslate } from '../../context/LanguageContext'
 
 const serviceIcons = {
   '01': Code2,
@@ -11,6 +12,7 @@ const serviceIcons = {
 
 export default function ServicesAccordion() {
   const sectionRef = useScrollReveal()
+  const t = useTranslate()
 
   // Preparar items del acordeón con toda la info
   const accordionItems = services.map((service) => {
@@ -21,14 +23,14 @@ export default function ServicesAccordion() {
         <div className="flex items-center gap-4">
           <span className="text-muted text-sm font-medium">{service.num}</span>
           <span className="text-muted">•</span>
-          <span className="text-xl font-semibold">{service.title}</span>
+          <span className="text-xl font-semibold">{t(service.title)}</span>
         </div>
       ),
       content: (
         <div className="flex flex-col sm:flex-row justify-between gap-6">
           <div className="flex-1">
             <p className="text-sm text-white/60 mb-4 leading-relaxed">
-              {service.description}
+              {t(service.description)}
             </p>
             <div className="flex flex-wrap gap-2">
               {service.tags.map((tag) => (

@@ -2,9 +2,12 @@ import { profile } from '../../data/team'
 import SectionTag from '../ui/SectionTag'
 import Button from '../ui/Button'
 import { useScrollReveal } from '../animations/useScrollReveal'
+import { useTranslate } from '../../context/LanguageContext'
+import { strings } from '../../i18n/strings'
 
 export default function AboutPreview() {
   const sectionRef = useScrollReveal({ selector: '.about-preview-content', y: 30 })
+  const t = useTranslate()
 
   return (
     <section ref={sectionRef} className="px-6 py-20 md:py-30">
@@ -29,19 +32,19 @@ export default function AboutPreview() {
           {/* Info */}
           <div className="flex-1 text-center md:text-left">
             <div className="mb-4">
-              <SectionTag>Sobre mí</SectionTag>
+              <SectionTag>{t(strings.about.sectionTag)}</SectionTag>
             </div>
             <h2 className="font-display font-bold text-3xl md:text-4xl text-ink mb-3">
               {profile.name}
             </h2>
             <p className="text-muted text-sm font-medium uppercase tracking-widest mb-5">
-              {profile.role}
+              {t(profile.role)}
             </p>
             <p className="text-ink/80 leading-relaxed mb-8 max-w-xl">
-              {profile.bio}
+              {t(profile.bio)}
             </p>
-            <Button href="/about" variant="black-pill" ariaLabel="Saber más sobre Miguel">
-              Conocerme mejor
+            <Button href="/about" variant="black-pill" ariaLabel={t(strings.about.learnMoreAria)}>
+              {t(strings.about.learnMoreCta)}
             </Button>
           </div>
         </div>
