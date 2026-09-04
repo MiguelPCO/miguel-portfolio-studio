@@ -1,3 +1,4 @@
+import { useState } from 'react'
 import { Link } from 'react-router'
 import { featuredProjects } from '../../data/projects'
 import { useScrollReveal } from '../animations/useScrollReveal'
@@ -11,20 +12,44 @@ import { strings } from '../../i18n/strings'
 export default function NextProject({ nextSlug }) {
   const sectionRef = useScrollReveal({ y: 30 })
   const t = useTranslate()
+  const [imgError, setImgError] = useState(false)
 
   // Buscar el proyecto siguiente en el array
   const nextProject = featuredProjects.find((p) => p.slug === nextSlug)
   if (!nextProject) return null
 
+  const showImage = nextProject.image && !imgError
+
   return (
     <section ref={sectionRef} className="px-6 pb-20 md:pb-30">
       <div className="max-w-[1200px] mx-auto">
         <div className="bg-card rounded-[24px] p-8 md:p-12 flex flex-col md:flex-row items-center gap-8">
-          {/* Preview de imagen placeholder */}
-          <div className="w-full md:w-64 h-44 rounded-[16px] overflow-hidden shrink-0
+          {/* Preview de imagen */}
+          <div className="relative w-full md:w-64 h-44 rounded-[16px] overflow-hidden shrink-0
                           bg-gradient-to-br from-gray-200 to-gray-300
+                          dark:from-gray-800 dark:to-gray-700
                           flex items-center justify-center">
-            <span className="text-muted text-sm font-display">{nextProject.title}</span>
+            {showImage && nextProject.imageFit === 'contain' && (
+              <img
+                src={nextProject.image}
+                alt=""
+                aria-hidden="true"
+                loading="lazy"
+                className="absolute inset-0 w-full h-full object-cover blur-2xl scale-110 opacity-40"
+              />
+            )}
+            {showImage && (
+              <img
+                src={nextProject.image}
+                alt={nextProject.title}
+                loading="lazy"
+                className={`absolute inset-0 w-full h-full ${nextProject.imageFit === 'contain' ? 'object-contain' : 'object-cover'}`}
+                onError={() => setImgError(true)}
+              />
+            )}
+            {!showImage && (
+              <span className="relative text-muted text-sm font-display z-10">{nextProject.title}</span>
+            )}
           </div>
 
           {/* Info y CTA */}
