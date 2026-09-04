@@ -2,6 +2,8 @@ import Card from '../ui/Card'
 import SectionTag from '../ui/SectionTag'
 import DiamondIcon from '../ui/DiamondIcon'
 import { useScrollReveal } from '../animations/useScrollReveal'
+import { useTranslate } from '../../context/LanguageContext'
+import { strings } from '../../i18n/strings'
 
 const DOT_PATTERN = {
   backgroundImage: 'radial-gradient(circle, #FFE830 1.5px, transparent 1.5px)',
@@ -14,6 +16,7 @@ const DOT_PATTERN = {
  */
 export default function VisionMission() {
   const sectionRef = useScrollReveal({ selector: '.vm-card', stagger: 0.15 })
+  const t = useTranslate()
 
   return (
     <section ref={sectionRef} className="px-6 py-20 md:py-30">
@@ -23,11 +26,10 @@ export default function VisionMission() {
           <Card variant="dark" className="vm-card p-8 md:p-12 flex flex-col justify-between min-h-[400px]">
             <div>
               <div className="mb-6">
-                <SectionTag>Vision</SectionTag>
+                <SectionTag>{t(strings.about.visionTag)}</SectionTag>
               </div>
               <p className="text-white/80 text-base md:text-lg leading-relaxed">
-                Crear productos digitales que combinen diseño de alta calidad con código sólido,
-                donde cada píxel tiene un propósito y cada función tiene sentido para quien la usa.
+                {t(strings.about.visionBody)}
               </p>
             </div>
 
@@ -46,12 +48,10 @@ export default function VisionMission() {
           <Card variant="light" className="vm-card p-8 md:p-12 flex flex-col justify-between min-h-[400px]">
             <div>
               <div className="mb-6">
-                <SectionTag>Mission</SectionTag>
+                <SectionTag>{t(strings.about.missionTag)}</SectionTag>
               </div>
               <p className="text-muted text-base md:text-lg leading-relaxed">
-                Construir con cuidado: entender el problema antes de escribir código,
-                diseñar con intención antes de elegir colores, y entregar productos que
-                superen las expectativas técnicas y estéticas del cliente.
+                {t(strings.about.missionBody)}
               </p>
             </div>
 

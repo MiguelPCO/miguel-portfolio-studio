@@ -4,6 +4,8 @@ import { gsap } from "gsap";
 import { SplitText } from "gsap/SplitText";
 import SectionTag from "../ui/SectionTag";
 import { prefersReducedMotion } from "../animations/animationConfig";
+import { useTranslate } from "../../context/LanguageContext";
+import { strings } from "../../i18n/strings";
 
 /**
  * Hero de la página About — imagen de equipo a pantalla completa con texto superpuesto
@@ -11,6 +13,7 @@ import { prefersReducedMotion } from "../animations/animationConfig";
  */
 export default function AboutHero() {
   const heroRef = useRef(null);
+  const t = useTranslate();
 
   useGSAP(
     () => {
@@ -52,7 +55,7 @@ export default function AboutHero() {
         >
           <img
             src="/about-hero.jpg"
-            alt="Moodboard de referencias — workspace, tipografía y materiales"
+            alt={t(strings.about.heroImageAlt)}
             className="absolute inset-0 w-full h-full  object-cover"
           />
 
@@ -62,7 +65,7 @@ export default function AboutHero() {
           {/* Tag circular centrado */}
           <div className="about-hero-tag absolute top-6 left-1/2 -translate-x-1/2 z-10">
             <div className="bg-white/90 dark:bg-card/90 backdrop-blur-sm rounded-full px-5 py-2">
-              <SectionTag>Sobre mí</SectionTag>
+              <SectionTag>{t(strings.about.sectionTag)}</SectionTag>
             </div>
           </div>
         </div>
@@ -72,7 +75,7 @@ export default function AboutHero() {
           <h1 className="about-hero-title font-display font-black text-[clamp(36px,6vw,80px)] leading-[1.05]">
             <span className="text-ink">MIGUEL DE LA PEÑA,</span>
             <br />
-            <span className="text-muted">DISEÑADOR & DESARROLLADOR.</span>
+            <span className="text-muted">{t(strings.about.heroTitleLine2)}</span>
           </h1>
         </div>
       </div>

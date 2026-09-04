@@ -2,6 +2,8 @@ import SectionTag from '../ui/SectionTag'
 import Marquee from '../ui/Marquee'
 import { useScrollReveal } from '../animations/useScrollReveal'
 import { techStack } from '../../data/team'
+import { useTranslate } from '../../context/LanguageContext'
+import { strings } from '../../i18n/strings'
 
 function createTextLogoSrc(name) {
   const svg = `<svg xmlns="http://www.w3.org/2000/svg" width="120" height="32" viewBox="0 0 120 32">
@@ -18,12 +20,13 @@ const techItems = techStack.map((tech) => ({
 
 export default function ClientsMarquee() {
   const sectionRef = useScrollReveal()
+  const t = useTranslate()
 
   return (
     <section ref={sectionRef} className="px-6 py-16 md:py-20">
       <div className="max-w-[1200px] mx-auto">
         <div className="text-center mb-8">
-          <SectionTag>Stack tecnológico</SectionTag>
+          <SectionTag>{t(strings.about.techStackTag)}</SectionTag>
         </div>
         <Marquee items={techItems} speed={25} />
       </div>

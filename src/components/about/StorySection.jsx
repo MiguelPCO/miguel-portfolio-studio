@@ -3,10 +3,13 @@ import { useGSAP } from '@gsap/react'
 import { gsap } from 'gsap'
 import { prefersReducedMotion } from '../animations/animationConfig'
 import { useScrollReveal } from '../animations/useScrollReveal'
+import { useTranslate } from '../../context/LanguageContext'
+import { strings } from '../../i18n/strings'
 
 export default function StorySection() {
   const sectionRef = useRef(null)
   const contentRef = useScrollReveal({ y: 30 })
+  const t = useTranslate()
 
   useGSAP(() => {
     if (prefersReducedMotion()) return
@@ -32,20 +35,15 @@ export default function StorySection() {
                      pointer-events-none select-none"
           aria-hidden="true"
         >
-          MI HISTORIA, MI CAMINO.
+          {t(strings.about.storyGhostText)}
         </p>
 
         <div ref={contentRef} className="relative z-[1] max-w-2xl pt-16 md:pt-24">
           <p className="text-lg md:text-xl leading-relaxed text-ink">
-            Empecé con una <strong>curiosidad simple</strong>: ¿cómo se construye algo que la gente quiere usar?
-            Esa pregunta me llevó a combinar diseño y código, dos disciplinas que parecen opuestas
-            pero que juntas crean los <strong>productos digitales más potentes</strong>.
+            {t(strings.about.storyP1Start)}<strong>{t(strings.about.storyP1Bold1)}</strong>{t(strings.about.storyP1Mid)}<strong>{t(strings.about.storyP1Bold2)}</strong>{t(strings.about.storyP1End)}
           </p>
           <p className="text-lg md:text-xl leading-relaxed text-muted mt-6">
-            Hoy diseño y desarrollo aplicaciones web modernas, desde apps gamificadas hasta
-            plataformas con inteligencia artificial integrada. Me interesa el <strong className="text-ink">detalle que marca la diferencia</strong>:
-            la animación que hace fluida una transición, la arquitectura que escala sin romperse,
-            la interfaz que se entiende sin leer instrucciones.
+            {t(strings.about.storyP2Start)}<strong className="text-ink">{t(strings.about.storyP2Bold)}</strong>{t(strings.about.storyP2End)}
           </p>
         </div>
       </div>

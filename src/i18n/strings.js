@@ -38,5 +38,69 @@ export const strings = {
     sectionTag: { es: 'Sobre mí', en: 'About me' },
     learnMoreCta: { es: 'Conocerme mejor', en: 'Get to know me' },
     learnMoreAria: { es: 'Saber más sobre Miguel', en: 'Learn more about Miguel' },
+    heroImageAlt: { es: 'Moodboard de referencias: workspace, tipografía y materiales', en: 'Reference moodboard: workspace, typography and materials' },
+    heroTitleLine2: { es: 'DISEÑADOR & DESARROLLADOR.', en: 'DESIGNER & DEVELOPER.' },
+    storyGhostText: { es: 'MI HISTORIA, MI CAMINO.', en: 'MY STORY, MY PATH.' },
+    storyP1Start: { es: 'Empecé con una ', en: 'I started with a ' },
+    storyP1Bold1: { es: 'curiosidad simple', en: 'simple curiosity' },
+    storyP1Mid: {
+      es: ': ¿cómo se construye algo que la gente quiere usar? Esa pregunta me llevó a combinar diseño y código, dos disciplinas que parecen opuestas pero que juntas crean los ',
+      en: ': how do you build something people actually want to use? That question led me to combine design and code, two disciplines that seem opposite but together create the ',
+    },
+    storyP1Bold2: { es: 'productos digitales más potentes', en: 'most powerful digital products' },
+    storyP1End: { es: '.', en: '.' },
+    storyP2Start: {
+      es: 'Hoy diseño y desarrollo aplicaciones web modernas, desde apps gamificadas hasta plataformas con inteligencia artificial integrada. Me interesa el ',
+      en: 'Today I design and build modern web applications, from gamified apps to platforms with integrated AI. What interests me is the ',
+    },
+    storyP2Bold: { es: 'detalle que marca la diferencia', en: 'detail that makes the difference' },
+    storyP2End: {
+      es: ': la animación que hace fluida una transición, la arquitectura que escala sin romperse, la interfaz que se entiende sin leer instrucciones.',
+      en: ': the animation that makes a transition feel smooth, the architecture that scales without breaking, the interface that needs no instructions to understand.',
+    },
+    techStackTag: { es: 'Stack tecnológico', en: 'Tech stack' },
+    visionTag: { es: 'Visión', en: 'Vision' },
+    visionBody: {
+      es: 'Crear productos digitales que combinen diseño de alta calidad con código sólido, donde cada píxel tiene un propósito y cada función tiene sentido para quien la usa.',
+      en: 'Create digital products that combine high-quality design with solid code, where every pixel has a purpose and every feature makes sense to the person using it.',
+    },
+    missionTag: { es: 'Misión', en: 'Mission' },
+    missionBody: {
+      es: 'Construir con cuidado: entender el problema antes de escribir código, diseñar con intención antes de elegir colores, y entregar productos que superen las expectativas técnicas y estéticas del cliente.',
+      en: "Build with care: understand the problem before writing code, design with intention before picking colors, and deliver products that exceed the client's technical and aesthetic expectations.",
+    },
+    availabilityTag: { es: 'Disponibilidad', en: 'Availability' },
+    availabilityHeading: { es: 'Abierto a nuevos proyectos', en: 'Open to new projects' },
+    availabilityGhostText: { es: 'DISPONIBLE PARA PROYECTOS', en: 'AVAILABLE FOR PROJECTS' },
+    availabilityButton: { es: 'Hablemos de tu proyecto', en: "Let's talk about your project" },
+    availability: [
+      {
+        title: { es: 'Proyecto freelance', en: 'Freelance project' },
+        detail: { es: 'REMOTO', en: 'REMOTE' },
+        type: { es: 'DISPONIBLE', en: 'AVAILABLE' },
+        description: {
+          es: 'Apps web, landings, dashboards: desde el diseño hasta el deploy. Trabajo con React, Next.js y Supabase. Entrego código limpio, documentado y fácil de mantener.',
+          en: 'Web apps, landing pages, dashboards: from design to deploy. I work with React, Next.js and Supabase, and deliver clean, documented, easy-to-maintain code.',
+        },
+      },
+      {
+        title: { es: 'Colaboración en equipo', en: 'Team collaboration' },
+        detail: { es: 'REMOTO · HÍBRIDO', en: 'REMOTE · HYBRID' },
+        type: { es: 'DISPONIBLE', en: 'AVAILABLE' },
+        description: {
+          es: 'Puedo unirme como desarrollador frontend o fullstack a equipos que necesiten reforzar su capacidad técnica o de diseño en proyectos concretos.',
+          en: 'I can join as a frontend or full-stack developer on teams that need extra technical or design capacity for specific projects.',
+        },
+      },
+      {
+        title: { es: 'Consultoría técnica', en: 'Technical consulting' },
+        detail: { es: 'REMOTO', en: 'REMOTE' },
+        type: { es: 'DISPONIBLE', en: 'AVAILABLE' },
+        description: {
+          es: 'Revisión de arquitectura frontend, auditoría de UX, integración de IA o mejora de rendimiento. Sesiones de trabajo concretas con entregables claros.',
+          en: 'Frontend architecture review, UX audits, AI integration or performance improvements. Focused working sessions with clear deliverables.',
+        },
+      },
+    ],
   },
 }
