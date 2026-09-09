@@ -1,21 +1,24 @@
-import { useRef } from 'react'
+import { useRef, useState } from 'react'
+import { Link } from 'react-router'
 import { useGSAP } from '@gsap/react'
 import { gsap } from 'gsap'
 import Button from '../ui/Button'
 import { prefersReducedMotion } from '../animations/animationConfig'
 import { useTranslate } from '../../context/LanguageContext'
 import { strings } from '../../i18n/strings'
+import { featuredProjects } from '../../data/projects'
 
 const HERO_NAME = 'MIGUEL'
 
 export default function HeroSection() {
   const heroRef = useRef(null)
   const t = useTranslate()
+  const [imgError, setImgError] = useState(false)
 
-  const heroStats = [
-    { label: t(strings.home.statProjects), value: '10+' },
-    { label: t(strings.home.statYears), value: '3+' },
-  ]
+  const [heroProject] = useState(
+    () => featuredProjects[Math.floor(Math.random() * featuredProjects.length)]
+  )
+  const showImage = heroProject.image && !imgError
 
   useGSAP(() => {
     if (prefersReducedMotion()) return
@@ -56,8 +59,8 @@ export default function HeroSection() {
       ease: 'power3.out',
     })
 
-    // Stats: fade-in escalonado
-    gsap.from('.hero-stat', {
+    // Proyecto destacado + stats: fade-in escalonado
+    gsap.from('.hero-right-item', {
       opacity: 0,
       x: 20,
       duration: 0.5,
@@ -129,19 +132,52 @@ export default function HeroSection() {
           </div>
         </div>
 
-        {/* Columna derecha — Stats */}
-        <div className="flex flex-col gap-4 lg:items-end">
-          {heroStats.map((stat) => (
+        {/* Columna derecha — Proyecto destacado */}
+        <div className="flex flex-col gap-3 lg:items-end">
+          <Link
+            to={`/projects/${heroProject.slug}`}
+            className="hero-right-item group block w-full lg:max-w-xs rounded-[24px] overflow-hidden bg-card
+                       transition-[transform,box-shadow] duration-300 hover:-translate-y-1 hover:shadow-xl"
+          >
             <div
-              key={stat.label}
-              className="hero-stat flex items-center gap-3 bg-white/60 dark:bg-card/80 backdrop-blur-sm
-                         rounded-full px-5 py-3 w-full lg:max-w-xs"
+              className="relative w-full h-44 md:h-52 overflow-hidden
+                         bg-gradient-to-br from-gray-200 to-gray-300
+                         dark:from-gray-800 dark:to-gray-700
+                         flex items-center justify-center"
             >
-              <span className="w-2 h-2 rounded-full bg-accent shrink-0" />
-              <span className="text-sm text-muted flex-1">{stat.label}</span>
-              <span className="font-display font-bold text-ink">{stat.value}</span>
+              {showImage && heroProject.imageFit === 'contain' && (
+                <img
+                  src={heroProject.image}
+                  alt=""
+                  aria-hidden="true"
+                  loading="lazy"
+                  className="absolute inset-0 w-full h-full object-cover blur-2xl scale-110 opacity-40"
+                />
+              )}
+              {showImage && (
+                <img
+                  src={heroProject.image}
+                  alt={heroProject.title}
+                  loading="lazy"
+                  className={`absolute inset-0 w-full h-full transition-transform duration-500 group-hover:scale-105 ${heroProject.imageFit === 'contain' ? 'object-contain' : 'object-cover'}`}
+                  onError={() => setImgError(true)}
+                />
+              )}
+              {!showImage && (
+                <span className="relative text-muted text-sm font-display z-10">{heroProject.title}</span>
+              )}
             </div>
-          ))}
+
+            <div className="p-5">
+              <p className="text-xs text-muted mb-1">{t(heroProject.category)}</p>
+              <h3 className="font-display font-bold text-lg text-ink mb-2">{heroProject.title}</h3>
+              <p className="text-sm text-muted mb-3">{t(heroProject.heroSummary)}</p>
+              <span className="text-sm font-semibold text-ink inline-flex items-center gap-1">
+                {t(strings.projectDetail.viewProject)}
+                <span className="transition-transform group-hover:translate-x-1" aria-hidden="true">→</span>
+              </span>
+            </div>
+          </Link>
         </div>
       </div>
     </section>

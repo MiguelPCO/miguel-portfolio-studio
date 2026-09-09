@@ -9,6 +9,10 @@ export const featuredProjects = [
       es: "App de fitness gamificada que convierte tus entrenamientos en misiones. Con sistema de XP, rachas, historial detallado y soporte offline completo.",
       en: "A gamified fitness app that turns your workouts into missions, with an XP system, streaks, detailed history and full offline support.",
     },
+    heroSummary: {
+      es: "Fitness gamificado con misiones, XP y rachas.",
+      en: "Gamified fitness with missions, XP and streaks.",
+    },
     tools: ["React 19", "TypeScript", "Supabase", "Vite", "Tailwind CSS", "Vitest"],
     duration: { es: "6 meses", en: "6 months" },
     deliverables: [
@@ -71,6 +75,10 @@ export const featuredProjects = [
     brief: {
       es: "Plataforma de rediseño de interiores con IA. Sube una foto de tu habitación y recibe una reimaginación completa del espacio en segundos.",
       en: "An AI interior redesign platform. Upload a photo of your room and get a complete reimagining of the space in seconds.",
+    },
+    heroSummary: {
+      es: "Rediseño de interiores con IA en segundos.",
+      en: "AI interior redesign in seconds.",
     },
     tools: ["Next.js 16", "Replicate", "Supabase", "Tailwind v4", "TypeScript"],
     duration: { es: "3 semanas", en: "3 weeks" },
@@ -138,6 +146,10 @@ export const featuredProjects = [
       es: "Guardarropa digital para coleccionistas de fragancias. Gestiona tu colección, registra reseñas y descubre nuevos perfumes con ayuda de IA.",
       en: "A digital wardrobe for fragrance collectors. Manage your collection, log reviews and discover new perfumes with AI.",
     },
+    heroSummary: {
+      es: "Guardarropa digital de fragancias con IA.",
+      en: "Digital fragrance wardrobe powered by AI.",
+    },
     tools: ["Next.js 16", "Supabase", "Claude API", "Tailwind v4", "TypeScript"],
     duration: { es: "2 meses", en: "2 months" },
     deliverables: [
@@ -196,6 +208,10 @@ export const featuredProjects = [
     brief: {
       es: "Juego de percepción del color a ciegas. Una pista de palabra o imagen, una cuadrícula de matices y tres tiros para acertar el correcto, en solitario, por reto diario o en duelo hotseat.",
       en: "A blind color-perception game. One word or image clue, a grid of hues, and three shots to find the right one, solo, in the daily challenge, or in hotseat duel.",
+    },
+    heroSummary: {
+      es: "Juego de percepción del color, en solitario o duelo.",
+      en: "Color-perception game, solo or head-to-head.",
     },
     tools: ["Next.js 15", "TypeScript", "GSAP", "Tailwind CSS"],
     duration: { es: "En desarrollo", en: "In development" },
@@ -260,6 +276,10 @@ export const featuredProjects = [
     brief: {
       es: "Marca y tienda online de fruit water premium. Dos líneas de producto, quiz de sabor, catálogo filtrable y checkout completo, todo con identidad visual propia.",
       en: "A brand and online store for premium fruit water. Two product lines, a flavor quiz, a filterable catalog and a full checkout, all with its own visual identity.",
+    },
+    heroSummary: {
+      es: "Marca y tienda online de fruit water premium.",
+      en: "Brand and online store for premium fruit water.",
     },
     tools: ["Next.js 16", "TypeScript", "Tailwind CSS", "Framer Motion"],
     duration: { es: "2 semanas", en: "2 weeks" },
