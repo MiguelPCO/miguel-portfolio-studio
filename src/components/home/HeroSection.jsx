@@ -62,7 +62,7 @@ export default function HeroSection() {
     // Proyecto destacado + stats: fade-in escalonado
     gsap.from('.hero-right-item', {
       opacity: 0,
-      x: 20,
+      y: 20,
       duration: 0.5,
       stagger: 0.1,
       delay: 0.8,
@@ -117,16 +117,16 @@ export default function HeroSection() {
           </p>
 
           {/* Pill de consulta */}
-          <div className="hero-consultation flex items-center gap-4 bg-white dark:bg-card rounded-full px-4 py-3 shadow-sm w-fit">
+          <div className="hero-consultation flex items-center gap-3 sm:gap-4 bg-white dark:bg-card rounded-full px-4 py-3 shadow-sm w-full sm:w-fit">
             {/* Avatar placeholder */}
-            <div className="w-10 h-10 rounded-full bg-accent flex items-center justify-center text-accent-ink text-sm font-bold shrink-0">
+            <div className="hidden sm:flex w-10 h-10 rounded-full bg-accent items-center justify-center text-accent-ink text-sm font-bold shrink-0">
               M
             </div>
-            <div className="mr-2">
+            <div className="flex-1 min-w-0 sm:flex-none sm:mr-2 pl-2 sm:pl-0">
               <p className="text-sm font-semibold text-ink">{t(strings.home.consultationQuestion)}</p>
               <p className="text-xs text-muted">{t(strings.home.consultationCaption)}</p>
             </div>
-            <Button href="/contact" variant="yellow-pill" ariaLabel={t(strings.home.consultationAria)}>
+            <Button href="/contact" variant="yellow-pill" className="px-4 gap-2 sm:px-6 sm:gap-3" ariaLabel={t(strings.home.consultationAria)}>
               {t(strings.home.consultationCta)}
             </Button>
           </div>
