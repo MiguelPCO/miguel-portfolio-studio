@@ -72,7 +72,7 @@ export default function ProjectsPreview() {
         <div className="flex flex-col gap-8">
           {previewProjects.map((project) => (
             <Link key={project.slug} to={`/projects/${project.slug}`}>
-              <article className="project-preview-card rounded-[24px] overflow-hidden bg-card group">
+              <article className="project-preview-card rounded-[24px] overflow-hidden bg-card card-edge group">
                 {/* Imagen del proyecto */}
                 <div className="overflow-hidden">
                   <PreviewImage project={project} />

@@ -31,6 +31,14 @@
      el amarillo y su texto de contraste (siempre oscuro) funcionan igual en ambos modos */
 }
 
+/* Borde fino para cards bg-card: en light el contraste card/surface es ~1.07:1 y el límite casi no se ve */
+@utility card-edge {
+  border: 1px solid color-mix(in srgb, var(--color-ink) 12%, transparent);
+  &:where(.dark, .dark *) {
+    border-color: color-mix(in srgb, var(--color-ink) 8%, transparent);
+  }
+}
+
 /* ━━━━ Base Styles ━━━━ */
 body {
   font-family: var(--font-body);

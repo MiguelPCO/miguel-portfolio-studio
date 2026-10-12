@@ -136,7 +136,7 @@ export default function HeroSection() {
         <div className="flex flex-col gap-3 lg:items-end">
           <Link
             to={`/projects/${heroProject.slug}`}
-            className="hero-right-item group block w-full lg:max-w-xs rounded-[24px] overflow-hidden bg-card
+            className="hero-right-item group block w-full lg:max-w-xs rounded-[24px] overflow-hidden bg-card card-edge
                        transition-[transform,box-shadow] duration-300 hover:-translate-y-1 hover:shadow-xl"
           >
             <div

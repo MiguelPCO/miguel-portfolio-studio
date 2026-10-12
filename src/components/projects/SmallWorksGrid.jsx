@@ -9,7 +9,7 @@ function SmallWorkCard({ work }) {
 
   return (
     <Link to={`/work/${work.slug}`} className="block group">
-      <div className="small-work-card bg-card rounded-[20px] overflow-hidden flex flex-col h-full">
+      <div className="small-work-card bg-card card-edge rounded-[20px] overflow-hidden flex flex-col h-full">
         {/* Imagen — real si existe, si no placeholder con el título */}
         <div
           className="w-full aspect-video bg-gradient-to-br from-ink/5 to-ink/10 dark:from-surface dark:to-card

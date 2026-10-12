@@ -10,7 +10,7 @@ function SectionCard({ field, value, t, className = '' }) {
   const isArray = Array.isArray(value)
 
   return (
-    <div className={`ps-card bg-card rounded-[20px] p-8 md:p-10 flex flex-col gap-5 ${className}`}>
+    <div className={`ps-card bg-card card-edge rounded-[20px] p-8 md:p-10 flex flex-col gap-5 ${className}`}>
       <SectionTag>{label}</SectionTag>
       {isArray ? (
         <ul className="flex flex-col gap-2">
@@ -53,7 +53,7 @@ function SectionImage({ src, alt, index = 0, onOpen, fit = 'cover', t }) {
   if (src) {
     return (
       <div
-        className={`w-full h-[320px] md:h-[440px] rounded-[20px] overflow-hidden relative group cursor-pointer ${fit === 'contain' ? 'bg-card' : ''}`}
+        className={`w-full h-[320px] md:h-[440px] rounded-[20px] overflow-hidden relative group cursor-pointer ${fit === 'contain' ? 'bg-card card-edge' : ''}`}
         onClick={onOpen}
         role="button"
         tabIndex={0}

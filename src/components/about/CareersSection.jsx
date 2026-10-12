@@ -49,7 +49,7 @@ export default function CareersSection() {
             {t(strings.about.availabilityHeading)}
           </h2>
 
-          <div className="bg-card rounded-[24px] p-4 md:p-8 flex flex-col gap-4">
+          <div className="bg-card card-edge rounded-[24px] p-4 md:p-8 flex flex-col gap-4">
             {availabilityTypes.map((item, i) => (
               <div key={i} className="border-b border-ink/10 last:border-0 pb-6 last:pb-0 pt-2">
                 <div className="flex flex-col sm:flex-row sm:items-center gap-2 sm:gap-4 mb-3">

@@ -145,13 +145,13 @@ function WorkContent({ work }) {
     <section ref={sectionRef} className="px-6 pb-16">
       <div className="max-w-[1200px] mx-auto grid grid-cols-1 lg:grid-cols-2 gap-6">
         {/* Qué es */}
-        <div className="wc-reveal bg-card rounded-[20px] p-8 flex flex-col gap-4">
+        <div className="wc-reveal bg-card card-edge rounded-[20px] p-8 flex flex-col gap-4">
           <SectionTag>{t(strings.projectDetail.whatItIs)}</SectionTag>
           <p className="text-ink leading-relaxed">{t(work.brief)}</p>
         </div>
 
         {/* Lo interesante */}
-        <div className="wc-reveal bg-card rounded-[20px] p-8 flex flex-col gap-4">
+        <div className="wc-reveal bg-card card-edge rounded-[20px] p-8 flex flex-col gap-4">
           <SectionTag>{t(strings.projectDetail.theInterestingPart)}</SectionTag>
           {work.insight ? (
             <p className="text-ink/70 leading-relaxed">{t(work.insight)}</p>
@@ -225,7 +225,7 @@ function MoreWorks({ currentSlug }) {
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-5">
           {others.map((work) => (
             <Link key={work.slug} to={`/work/${work.slug}`} className="mw-card block group">
-              <div className="bg-card rounded-[20px] overflow-hidden flex flex-col h-full">
+              <div className="bg-card card-edge rounded-[20px] overflow-hidden flex flex-col h-full">
                 <div className="w-full aspect-video bg-gradient-to-br from-ink/5 to-ink/10 dark:from-surface dark:to-card
                                 flex items-center justify-center overflow-hidden">
                   <span className="font-display font-bold text-xl text-ink/20 group-hover:scale-110 transition-transform duration-500">

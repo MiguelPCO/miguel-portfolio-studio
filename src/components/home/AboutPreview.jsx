@@ -12,7 +12,7 @@ export default function AboutPreview() {
   return (
     <section ref={sectionRef} className="px-6 py-20 md:py-30">
       <div className="max-w-[1200px] mx-auto">
-        <div className="about-preview-content bg-card rounded-[24px] p-8 md:p-14 flex flex-col md:flex-row items-center gap-10">
+        <div className="about-preview-content bg-card card-edge rounded-[24px] p-8 md:p-14 flex flex-col md:flex-row items-center gap-10">
           {/* Avatar */}
           <div className="shrink-0">
             {profile.avatar ? (

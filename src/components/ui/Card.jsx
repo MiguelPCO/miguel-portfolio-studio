@@ -10,7 +10,7 @@ export default function Card({ children, variant = 'light', radius = 'lg', class
     <div
       className={cn(
         'overflow-hidden',
-        variant === 'dark' ? 'bg-ink dark:bg-card text-white' : 'bg-card text-ink',
+        variant === 'dark' ? 'bg-ink dark:bg-card text-white' : 'bg-card card-edge text-ink',
         radius === 'lg' ? 'rounded-[24px]' : 'rounded-[16px]',
         className
       )}

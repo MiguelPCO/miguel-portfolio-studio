@@ -67,7 +67,7 @@ export default function ServicesPreview() {
           </Button>
         </div>
 
-        <div className="bg-card rounded-[24px] p-4 md:p-8">
+        <div className="bg-card card-edge rounded-[24px] p-4 md:p-8">
           <Accordion items={accordionItems} defaultOpen={0} />
         </div>
       </div>

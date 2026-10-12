@@ -60,7 +60,7 @@ export default function ServicesAccordion() {
   return (
     <section ref={sectionRef} className="px-6 pb-20 md:pb-30">
       <div className="max-w-[1200px] mx-auto">
-        <div className="bg-card rounded-[24px] p-4 md:p-8">
+        <div className="bg-card card-edge rounded-[24px] p-4 md:p-8">
           <Accordion items={accordionItems} defaultOpen={0} />
         </div>
       </div>

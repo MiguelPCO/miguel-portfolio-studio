@@ -15,7 +15,7 @@ export default function ProjectTestimonial({ testimonial }) {
 
   return (
     <section className="px-6 pb-20 md:pb-30">
-      <div ref={sectionRef} className="max-w-3xl mx-auto bg-card rounded-[24px] p-8 md:p-14 text-center">
+      <div ref={sectionRef} className="max-w-3xl mx-auto bg-card card-edge rounded-[24px] p-8 md:p-14 text-center">
         {/* Tag */}
         <div className="flex justify-center mb-8">
           <SectionTag>{t(strings.projectDetail.testimonialTag)}</SectionTag>

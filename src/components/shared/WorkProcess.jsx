@@ -35,7 +35,7 @@ export default function WorkProcess() {
           {steps.map((step, i) => (
             <div
               key={i}
-              className="process-card bg-card rounded-[24px] p-8 relative overflow-hidden"
+              className="process-card bg-card card-edge rounded-[24px] p-8 relative overflow-hidden"
             >
               <div className="mb-6">
                 <SectionTag>{t(strings.shared.stepLabel)} {String(i + 1).padStart(2, '0')} · {t(strings.shared.processLabel)}</SectionTag>

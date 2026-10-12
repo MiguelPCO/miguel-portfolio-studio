@@ -68,7 +68,7 @@ export default function ProjectCard({ project }) {
     <Link to={`/projects/${project.slug}`}>
       <article
         ref={cardRef}
-        className="rounded-[24px] overflow-hidden bg-card group"
+        className="rounded-[24px] overflow-hidden bg-card card-edge group"
         onMouseEnter={handleMouseEnter}
         onMouseLeave={handleMouseLeave}
       >

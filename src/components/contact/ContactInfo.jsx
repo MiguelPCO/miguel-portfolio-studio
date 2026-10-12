@@ -95,7 +95,7 @@ export default function ContactInfo() {
         {infoCards.map(({ Icon, title, lines }) => (
           <div
             key={title}
-            className="info-card bg-card rounded-[24px] p-8 relative"
+            className="info-card bg-card card-edge rounded-[24px] p-8 relative"
           >
             {/* Icono */}
             <div className="w-10 h-10 bg-accent rounded-xl flex items-center justify-center text-accent-ink mb-6">

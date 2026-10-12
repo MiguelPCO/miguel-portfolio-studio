@@ -48,7 +48,7 @@ export default function CTASection() {
       <div className="max-w-[1200px] mx-auto">
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-4">
           {/* Card principal — CTA */}
-          <div className="relative bg-card rounded-[24px] p-10 md:p-14 overflow-hidden flex flex-col justify-between min-h-[400px]">
+          <div className="relative bg-card card-edge rounded-[24px] p-10 md:p-14 overflow-hidden flex flex-col justify-between min-h-[400px]">
             {/* Tag */}
             <div className="inline-flex items-center gap-2 mb-6">
               <DiamondIcon className="w-4 h-4 text-accent" />
@@ -93,7 +93,7 @@ export default function CTASection() {
                   {...(isExternal && { target: '_blank', rel: 'noopener noreferrer' })}
                   onMouseEnter={handleMouseEnter}
                   onMouseLeave={handleMouseLeave}
-                  className={`bg-card rounded-[24px] flex items-center justify-center
+                  className={`bg-card card-edge rounded-[24px] flex items-center justify-center
                              min-h-[190px] hover:bg-ink/10 transition-colors
                              ${social.full ? 'col-span-2' : ''}`}
                   aria-label={`${t(strings.home.visitSocial)} ${social.name}`}

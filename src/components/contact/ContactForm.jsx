@@ -85,7 +85,7 @@ export default function ContactForm() {
   return (
     <section ref={formRef} className="px-6 pb-20">
       <div className="max-w-[1200px] mx-auto">
-        <div className="bg-card rounded-[24px] p-8 md:p-12 max-w-2xl mx-auto">
+        <div className="bg-card card-edge rounded-[24px] p-8 md:p-12 max-w-2xl mx-auto">
           {submitted ? (
             <div ref={successRef} className="text-center py-12">
               <div className="w-16 h-16 bg-accent text-accent-ink rounded-full flex items-center justify-center mx-auto mb-4 text-2xl">
