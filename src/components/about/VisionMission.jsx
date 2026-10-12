@@ -1,6 +1,6 @@
 import Card from '../ui/Card'
 import SectionTag from '../ui/SectionTag'
-import DiamondIcon from '../ui/DiamondIcon'
+import { Eye, Target } from 'lucide-react'
 import { useScrollReveal } from '../animations/useScrollReveal'
 import { useTranslate } from '../../context/LanguageContext'
 import { strings } from '../../i18n/strings'
@@ -33,14 +33,16 @@ export default function VisionMission() {
               </p>
             </div>
 
-            {/* Marca decorativa: grano de diamantes + glow acento */}
+            {/* Marca decorativa: puntos + glow acento + icono */}
             <div className="relative mt-8 w-full h-32 rounded-2xl overflow-hidden bg-white/5">
               <div className="absolute inset-0 opacity-[0.15]" style={DOT_PATTERN} />
               <div
                 className="absolute inset-0"
                 style={{ background: 'radial-gradient(circle at 50% 50%, rgba(255,232,48,0.18), transparent 65%)' }}
               />
-              <DiamondIcon className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-12 h-12 text-accent opacity-60" />
+              <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-20 h-20 rounded-2xl flex items-center justify-center bg-accent/10 border border-accent/20">
+                <Eye className="w-9 h-9 text-accent" strokeWidth={1.5} aria-hidden="true" />
+              </div>
             </div>
           </Card>
 
@@ -55,14 +57,16 @@ export default function VisionMission() {
               </p>
             </div>
 
-            {/* Marca decorativa: grano de diamantes + glow acento */}
+            {/* Marca decorativa: puntos + glow acento + icono */}
             <div className="relative mt-8 w-full h-32 rounded-2xl overflow-hidden bg-ink/[0.06] border border-ink/10">
               <div className="absolute inset-0 opacity-[0.2]" style={DOT_PATTERN} />
               <div
                 className="absolute inset-0"
                 style={{ background: 'radial-gradient(circle at 50% 50%, rgba(255,232,48,0.22), transparent 65%)' }}
               />
-              <DiamondIcon className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-12 h-12 text-accent opacity-80" />
+              <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-20 h-20 rounded-2xl flex items-center justify-center bg-ink border border-ink">
+                <Target className="w-9 h-9 text-accent" strokeWidth={1.5} aria-hidden="true" />
+              </div>
             </div>
           </Card>
         </div>
