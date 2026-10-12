@@ -325,9 +325,9 @@ export const featuredProjects = [
     image: "/projects/zuma-hero.png",
     images: ["/projects/zuma-1.png", "/projects/zuma-2.png", "/projects/zuma-3.jpg"],
     sectionImages: [
-      { src: "/projects/zuma-section-1.jpg", alt: { es: "Home con quiz de sabor", en: "Homepage with the flavor quiz" } },
-      { src: "/projects/zuma-section-2.jpg", alt: { es: "Línea ZUMA FIZZ", en: "ZUMA FIZZ line" } },
-      { src: "/projects/zuma-section-3.jpg", alt: { es: "Carrito de compra", en: "Shopping cart" } },
+      { src: "/projects/zuma-section-1.jpg", alt: { es: "Home con quiz de sabor", en: "Homepage with the flavor quiz" }, fit: "contain" },
+      { src: "/projects/zuma-section-2.jpg", alt: { es: "Línea ZUMA FIZZ", en: "ZUMA FIZZ line" }, fit: "contain" },
+      { src: "/projects/zuma-3.jpg", alt: { es: "Catálogo filtrable por línea, familia y formato", en: "Catalog filterable by line, family and format" } },
     ],
     liveUrl: "",
     repoUrl: "https://github.com/MiguelPCO/zuma",
