@@ -1,5 +1,6 @@
 import { lazy, Suspense } from 'react'
 import { Routes, Route } from 'react-router'
+import { Analytics } from '@vercel/analytics/react'
 import { ThemeProvider } from './context/ThemeContext'
 import { LanguageProvider } from './context/LanguageContext'
 import Navbar from './components/layout/Navbar'
@@ -49,6 +50,7 @@ export default function App() {
             </Suspense>
           </main>
           <Footer />
+          <Analytics />
         </div>
       </ThemeProvider>
     </LanguageProvider>
